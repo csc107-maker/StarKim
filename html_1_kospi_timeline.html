@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>코스피 역사적 돌파 타임라인 2025-2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;900&family=Bebas+Neue&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .tl-wrap {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 50%, #fef9ec 100%);
+    border-radius: 20px;
+    padding: 36px 28px;
+    font-family: 'Noto Sans KR', sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0,80,180,0.08);
+  }
+
+  .tl-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .tl-header .badge {
+    display: inline-block;
+    background: #1a5fb4;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .tl-header h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0d2244;
+    line-height: 1.3;
+  }
+  .tl-header p {
+    font-size: 13px;
+    color: #6c8097;
+    margin-top: 6px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #1a5fb4, #e8a000, #d9363e);
+    border-radius: 2px;
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 20px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .tl-item:nth-child(1) { animation-delay: 0.1s; }
+  .tl-item:nth-child(2) { animation-delay: 0.2s; }
+  .tl-item:nth-child(3) { animation-delay: 0.3s; }
+  .tl-item:nth-child(4) { animation-delay: 0.4s; }
+  .tl-item:nth-child(5) { animation-delay: 0.5s; }
+  .tl-item:nth-child(6) { animation-delay: 0.6s; }
+  .tl-item:nth-child(7) { animation-delay: 0.7s; }
+  .tl-item:nth-child(8) { animation-delay: 0.8s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .tl-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-left: 4px solid transparent;
+    transition: transform 0.2s;
+  }
+  .tl-card:hover { transform: translateX(4px); }
+
+  .tl-level {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    line-height: 1;
+    min-width: 90px;
+    text-align: center;
+  }
+
+  .tl-info { flex: 1; }
+  .tl-date {
+    font-size: 11px;
+    color: #8a9ab0;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .tl-desc {
+    font-size: 13px;
+    color: #1a2a3a;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .tl-note {
+    font-size: 11px;
+    color: #6c8097;
+    margin-top: 3px;
+  }
+
+  .tl-change {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* Color themes per milestone */
+  .m3 { border-left-color: #3498db; }
+  .m3 .tl-dot { background: #3498db; }
+  .m3 .tl-level { color: #3498db; }
+
+  .m4 { border-left-color: #27ae60; }
+  .m4 .tl-dot { background: #27ae60; }
+  .m4 .tl-level { color: #27ae60; }
+
+  .m5 { border-left-color: #8e44ad; }
+  .m5 .tl-dot { background: #8e44ad; }
+  .m5 .tl-level { color: #8e44ad; }
+
+  .m6 { border-left-color: #e67e22; }
+  .m6 .tl-dot { background: #e67e22; }
+  .m6 .tl-level { color: #e67e22; }
+
+  .m7 { border-left-color: #e74c3c; }
+  .m7 .tl-dot { background: #e74c3c; }
+  .m7 .tl-level { color: #e74c3c; }
+
+  .m8 {
+    border-left-color: #c0392b;
+    background: linear-gradient(135deg, #fff8f8, #fff);
+  }
+  .m8 .tl-dot { background: #c0392b; }
+  .m8 .tl-level { color: #c0392b; }
+
+  .tl-change.up { background: #fde8e8; color: #c0392b; }
+  .tl-change.mid { background: #e8f4e8; color: #27ae60; }
+  .tl-change.low { background: #eaf2fb; color: #2980b9; }
+
+  .tl-footer {
+    margin-top: 20px;
+    background: #1a2a3a;
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .tl-footer i { font-size: 28px; color: #f39c12; }
+  .tl-footer .ft-text .ft-title { font-size: 14px; font-weight: 700; }
+  .tl-footer .ft-text .ft-sub { font-size: 12px; color: #aab8c8; margin-top: 3px; }
+
+  .src-note {
+    text-align: right;
+    font-size: 10px;
+    color: #aab8c8;
+    margin-top: 14px;
+  }
+</style>
+</head>
+<body>
+<div class="tl-wrap">
+  <div class="tl-header">
+    <div class="badge">📊 KOSPI 돌파 기록</div>
+    <h2>코스피, 3,000에서 8,000까지<br>12개월의 기적</h2>
+    <p>2025년 6월 ~ 2026년 5월 역대급 상승 타임라인</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot m3"><i class="fa fa-star" style="font-size:8px"></i></div>
+      <div class="tl-card m3">
+        <div class="tl-level m3">3,000</div>
+        <div class="tl-info">
+          <div class="tl-date">2025년 6월 20일</div>
+          <div class="tl-desc">이재명 정부 출범 이후 3,000선 회복</div>
+          <div class="tl-note">친주식 정책 기대감 반영 시작</div>
+        </div>
+        <div class="tl-change low">출발점</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot m4"><i class="fa fa-arrow-up" style="font-size:8px"></i></div>
+      <div class="tl-card m4">
+        <div class="tl-level m4">4,000</div>
+        <div class="tl-info">
+          <div class="tl-date">2025년 10월 27일</div>
+          <div class="tl-desc">4,000선 돌파, 4개월 만에 +33%</div>
+          <div class="tl-note">상법 개정·배당소득 분리과세 모멘텀</div>
+        </div>
+        <div class="tl-change mid">+33%</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot m5"></div>
+      <div class="tl-card m5">
+        <div class="tl-level m5">5,000</div>
+        <div class="tl-info">
+          <div class="tl-date">2026년 1월 22일 (장중)</div>
+          <div class="tl-desc">역대 최초 5,000선 장중 돌파</div>
+          <div class="tl-note">종가 기준은 1월 27일 안착</div>
+        </div>
+        <div class="tl-change mid">+67%</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot m6"></div>
+      <div class="tl-card m6">
+        <div class="tl-level m6">6,000</div>
+        <div class="tl-info">
+          <div class="tl-date">2026년 2월 25일</div>
+          <div class="tl-desc">6,000선 돌파, AI 반도체 슈퍼사이클 가속</div>
+          <div class="tl-note">엔비디아 어닝서프라이즈 연동 급등</div>
+        </div>
+        <div class="tl-change up">+100%</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot m7"></div>
+      <div class="tl-card m7">
+        <div class="tl-level m7">7,000</div>
+        <div class="tl-info">
+          <div class="tl-date">2026년 5월 6일 (장중 최초)</div>
+          <div class="tl-desc">7,000선 돌파, 당일 코스피 +6.45% 폭등</div>
+          <div class="tl-note">삼성전자 +14.41% · SK하이닉스 +10.64% 견인</div>
+        </div>
+        <div class="tl-change up">+133%</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot m8"></div>
+      <div class="tl-card m8">
+        <div class="tl-level m8">8,000</div>
+        <div class="tl-info">
+          <div class="tl-date">2026년 5월 15일 🏆 역대 최초</div>
+          <div class="tl-desc">사상 첫 8,000선 돌파 후 사이드카 발동</div>
+          <div class="tl-note">5월 1~14일 코스피 +20% 급등 → 차익 매물 폭발</div>
+        </div>
+        <div class="tl-change up">+167%</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tl-footer">
+    <i class="fa fa-bullseye"></i>
+    <div class="ft-text">
+      <div class="ft-title">증권가 목표치: 코스피 1만 ~ 1만 500</div>
+      <div class="ft-sub">KB증권 10,500 · JP모건 강세장 10,000 · 씨티·NH·대신 목표치 일제 상향</div>
+    </div>
+  </div>
+
+  <div class="src-note">출처: 나무위키·머니투데이·전자신문·KB증권 (2026.05.27 기준)</div>
+</div>
+</body>
+</html>
