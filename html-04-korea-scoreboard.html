@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>코스피 슈퍼위크 스코어보드 – 관세 12.5%, 원화, 반도체 수급 점검</title>
+
+<meta property="og:title" content="코스피 슈퍼위크 스코어보드 – 관세 12.5%·환율·반도체 수급 한눈에" />
+<meta property="og:description" content="코스피 6,690, 원/달러 1,460~1,470원대, 한국산 관세 12.5%. 미국 슈퍼위크가 국내 증시로 전달되는 네 개의 경로를 지표와 함께 정리했습니다." />
+<meta property="og:image" content="https://example.com/images/superweek-thumbnail.png" />
+<meta property="og:url" content="https://example.com/blog/2026-07-us-super-week" />
+<meta property="og:type" content="article" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  .kor-root *{box-sizing:border-box;margin:0;padding:0}
+  .kor-root{
+    font-family:"Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+    background:#EEF2F5;color:#10202F;padding:26px 16px 30px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .kor-wrap{max-width:880px;margin:0 auto}
+
+  .kor-head{margin-bottom:16px}
+  .kor-eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+    color:#A8761A;text-transform:uppercase;display:flex;align-items:center;gap:7px;margin-bottom:8px;
+  }
+  .kor-head h2{font-size:23px;font-weight:800;letter-spacing:-.025em;line-height:1.34}
+  .kor-head p{font-size:13.5px;color:#5A6B7C;margin-top:8px;letter-spacing:-.01em}
+
+  /* scoreboard */
+  .kor-board{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:#D6DEE5;border:1px solid #D6DEE5;border-radius:12px;overflow:hidden;margin-bottom:16px;
+  }
+  .kor-tile{background:#FFFFFF;padding:14px 15px}
+  .kor-tlabel{font-size:11.5px;color:#8C9BA9;margin-bottom:6px;letter-spacing:-.01em;display:flex;align-items:center;gap:5px}
+  .kor-tlabel i{font-size:13px;color:#B4C0CB}
+  .kor-tval{
+    font-family:"IBM Plex Mono",monospace;font-size:21px;font-weight:700;
+    letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.2;
+  }
+  .kor-tval small{font-size:11.5px;font-weight:500;color:#8C9BA9;margin-left:3px;letter-spacing:0}
+  .kor-tdelta{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;margin-top:5px;
+    display:inline-block;padding:2px 7px;border-radius:4px;
+  }
+  .kor-dn{color:#B23A2E;background:#FBEAE7}
+  .kor-up{color:#1E7A5A;background:#E7F0EC}
+  .kor-fl{color:#5A6B7C;background:#EEF2F5}
+
+  /* channels */
+  .kor-ch{background:#FFFFFF;border:1px solid #D6DEE5;border-radius:12px;overflow:hidden;margin-bottom:16px}
+  .kor-chhead{
+    padding:13px 18px;background:#0F2436;color:#EAF1F6;
+    font-size:14px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;
+  }
+  .kor-chhead i{color:#F2A93B;font-size:17px}
+  .kor-chitem{padding:15px 18px;border-bottom:1px solid #EEF2F5;display:grid;grid-template-columns:30px 1fr;gap:13px}
+  .kor-chitem:last-child{border-bottom:none}
+  .kor-chnum{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:700;color:#FFFFFF;
+    background:#14608F;width:26px;height:26px;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .kor-chnum.hot{background:#B23A2E}
+  .kor-chnum.gold{background:#A8761A}
+  .kor-chtitle{font-size:14.5px;font-weight:800;letter-spacing:-.02em;margin-bottom:5px}
+  .kor-chbody{font-size:12.9px;color:#5A6B7C;letter-spacing:-.01em;line-height:1.68}
+  .kor-chbody b{color:#10202F;font-weight:700}
+  .kor-chbody .hl{color:#B23A2E;font-weight:700}
+  .kor-chdata{
+    margin-top:9px;padding:9px 12px;background:#F7F9FB;border-radius:7px;
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:#5A6B7C;line-height:1.75;letter-spacing:-.005em;
+  }
+  .kor-chdata em{font-style:normal;color:#14608F;font-weight:600}
+
+  /* checklist */
+  .kor-check{background:#FFFFFF;border:1px solid #D6DEE5;border-radius:12px;padding:18px 20px}
+  .kor-check h3{font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+  .kor-check h3 i{color:#1E7A5A}
+  .kor-cl{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed #EEF2F5;align-items:flex-start}
+  .kor-cl:last-child{border-bottom:none}
+  .kor-cl i{color:#B4C0CB;font-size:17px;flex-shrink:0;margin-top:1px}
+  .kor-cl span{font-size:13px;color:#3D4E5E;letter-spacing:-.01em;line-height:1.6}
+  .kor-cl span b{color:#10202F;font-weight:700}
+
+  .kor-src{margin-top:12px;font-size:11.3px;color:#8C9BA9;line-height:1.62}
+  .kor-src b{color:#5A6B7C}
+
+  @media (max-width:700px){
+    .kor-board{grid-template-columns:repeat(2,1fr)}
+    .kor-head h2{font-size:19px}
+    .kor-tval{font-size:18px}
+  }
+</style>
+</head>
+<body>
+<div class="kor-root">
+ <div class="kor-wrap">
+
+  <div class="kor-head">
+    <div class="kor-eyebrow"><i class="ti ti-map-pin"></i> KOREA TRANSMISSION BOARD · 2026.07.27</div>
+    <h2>미국 슈퍼위크는 네 개의 경로로 코스피에 도착합니다</h2>
+    <p>금리, 유가, 관세, 그리고 반도체 실적. 이번 주 국내 증시를 흔들 변수는 결국 이 네 갈래로 정리됩니다.</p>
+  </div>
+
+  <div class="kor-board">
+    <div class="kor-tile">
+      <div class="kor-tlabel"><i class="ti ti-chart-line"></i>코스피 (7/24 종가)</div>
+      <div class="kor-tval">6,690.62</div>
+      <div class="kor-tdelta kor-dn">-406.27p · -5.72% (일간)</div>
+    </div>
+    <div class="kor-tile">
+      <div class="kor-tlabel"><i class="ti ti-calendar-week"></i>코스피 주간</div>
+      <div class="kor-tval">-1.91<small>%</small></div>
+      <div class="kor-tdelta kor-dn">-129.98p (7/20~24)</div>
+    </div>
+    <div class="kor-tile">
+      <div class="kor-tlabel"><i class="ti ti-target"></i>증권가 이번주 밴드</div>
+      <div class="kor-tval">6,700<small>~7,600</small></div>
+      <div class="kor-tdelta kor-fl">변동성 확대 구간</div>
+    </div>
+    <div class="kor-tile">
+      <div class="kor-tlabel"><i class="ti ti-currency-won"></i>원/달러</div>
+      <div class="kor-tval">1,460<small>~1,475원</small></div>
+      <div class="kor-tdelta kor-fl">7월 넷째 주 등락 범위</div>
+    </div>
+    <div class="kor-tile">
+      <div class="kor-tlabel"><i class="ti ti-building-bank"></i>한은 기준금리</div>
+      <div class="kor-tval">2.75<small>%</small></div>
+      <div class="kor-tdelta kor-up">7/16 만장일치 +25bp</div>
+    </div>
+    <div class="kor-tile">
+      <div class="kor-tlabel"><i class="ti ti-receipt-tax"></i>한국산 대미 관세</div>
+      <div class="kor-tval">12.5<small>%</small></div>
+      <div class="kor-tdelta kor-dn">종전 10% 대비 +2.5%p</div>
+    </div>
+  </div>
+
+  <div class="kor-ch">
+    <div class="kor-chhead"><i class="ti ti-arrows-split-2"></i>전달 경로 4가지</div>
+
+    <div class="kor-chitem">
+      <div class="kor-chnum hot">1</div>
+      <div>
+        <div class="kor-chtitle">금리 경로 — 외국인 수급의 스위치</div>
+        <div class="kor-chbody">
+          FOMC가 <b>매파적 동결</b>로 기울면 미 국채금리와 달러가 오르고, 원/달러 상승 → 외국인 순매도로 이어지는 익숙한 사슬이 작동합니다. 반대로 추가 긴축 우려가 완화되면 금리와 환율이 동시에 안정되며 외국인 매수 여력이 생깁니다.
+          <div class="kor-chdata">
+            7/24 유가증권시장 · 외국인 <em>-3조2,685억원</em> / 기관 <em>-1조9,513억원</em><br />
+            7/23까지 반도체·장비 업종 · 외국인 <em>+4조2,122억원</em> / 기관 <em>-2조998억원</em> (유안타증권 집계)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kor-chitem">
+      <div class="kor-chnum hot">2</div>
+      <div>
+        <div class="kor-chtitle">유가 경로 — 물가와 원화를 동시에 누르는 변수</div>
+        <div class="kor-chbody">
+          미·이란 충돌과 호르무즈 해협 불안으로 <span class="hl">브렌트유가 7월 중 30% 넘게 급등</span>해 한때 100달러를 넘었습니다. 한국은 에너지 수입국이자 정유·석유화학 수출국이라 방향이 양면적이지만, <b>물가와 환율 측면에서는 명백한 부담</b>입니다.
+          <div class="kor-chdata">
+            7/23 브렌트 종가 <em>$100.69</em> (+약 7%) · WTI <em>$92.19</em><br />
+            7/24 브렌트 종가 <em>$96.78</em> (-약 4%, 전일 장중 $102 터치)<br />
+            한국 6월 소비자물가 <em>+3.2%</em> · 근원 <em>+2.5%</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kor-chitem">
+      <div class="kor-chnum gold">3</div>
+      <div>
+        <div class="kor-chtitle">관세 경로 — 7월 24일부터 이미 시작됐습니다</div>
+        <div class="kor-chbody">
+          미 무역대표부(USTR)가 무역법 301조 '강제노동 관세'를 60개 경제권에 발효했습니다. 한국은 일본·스위스와 함께 <b>기존 최혜국(MFN) 관세와 합산해 12.5%</b>가 되도록 적용됩니다. 2월 대법원이 상호관세를 위법으로 판단한 뒤 도입된 122조 10% 글로벌 관세를 대체하는 조치입니다.
+          <div class="kor-chdata">
+            면제 : 원유·가스, 비료, 일부 식품, <em>232조 대상 품목(자동차·철강·알루미늄·구리)</em>, 항공기·부품, 핵심광물<br />
+            운송 중 화물 유예 종료 : <em>미 동부시간 7/28 00:01</em> (한국시간 7/28 13:01)<br />
+            중국 약 <em>25%</em> · EU·대만 <em>10% 상한</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kor-chitem">
+      <div class="kor-chnum">4</div>
+      <div>
+        <div class="kor-chtitle">반도체 실적 경로 — 이번 주의 진짜 주인공</div>
+        <div class="kor-chbody">
+          7월 29일 SK하이닉스, 30일 삼성전자 확정실적 컨퍼런스콜이 이어집니다. 삼성전자는 이미 7월 7일 잠정치로 <b>매출 171조원·영업이익 89.4조원</b>(전년 동기 대비 +1,810%)을 공개했지만, 발표 당일 주가는 오히려 6.9% 하락했습니다. <b>좋은 숫자는 이미 가격에 있고, 시장이 사는 것은 하반기 가이던스</b>라는 뜻입니다.
+          <div class="kor-chdata">
+            SK하이닉스 2Q 컨센서스 : 매출 약 <em>82.9조원</em> · 영업이익 약 <em>63.5조원</em> (에프앤가이드)<br />
+            한국 6월 수출 <em>1,022.5억달러</em> (+70.9%, 사상 첫 1,000억달러 돌파)<br />
+            그중 반도체 <em>448.2억달러</em> (+199.5%) · 무역흑자 <em>361.5억달러</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="kor-check">
+    <h3><i class="ti ti-list-check"></i>이번 주 개인 투자자 체크리스트</h3>
+    <div class="kor-cl"><i class="ti ti-square"></i><span><b>7/28(화) 오후 1시</b> — 301조 관세 운송 중 화물 유예 종료. 대미 수출 비중 높은 종목의 원가 코멘트를 확인하세요.</span></div>
+    <div class="kor-cl"><i class="ti ti-square"></i><span><b>7/29(수) 오전 9시</b> — SK하이닉스 컨퍼런스콜. 숫자가 아니라 <b>하반기 HBM 공급계약·가격·주주환원</b> 문장을 들으세요.</span></div>
+    <div class="kor-cl"><i class="ti ti-square"></i><span><b>7/30(목) 새벽 3시·3시 30분</b> — FOMC 결정과 워시 의장 회견. 국내 장은 오전 9시에 이 결과를 한꺼번에 반영합니다.</span></div>
+    <div class="kor-cl"><i class="ti ti-square"></i><span><b>7/30(목) 오전 10시</b> — 삼성전자 확정실적. DS 부문 분해와 하반기 설비투자 규모가 공개됩니다.</span></div>
+    <div class="kor-cl"><i class="ti ti-square"></i><span><b>7/30(목) 밤 9시 30분</b> — 미 2분기 GDP와 6월 PCE 동시 발표. '성장 둔화 + 물가 재점화' 조합이면 위험자산에 가장 나쁜 그림입니다.</span></div>
+    <div class="kor-cl"><i class="ti ti-square"></i><span><b>7/31(금) 오전 8시</b> — 6월 산업활동동향. 5월 반도체 생산이 전월비 -10%였던 만큼 반등 여부를 확인하세요.</span></div>
+    <div class="kor-cl"><i class="ti ti-square"></i><span><b>7/31(금)부터</b> — 단일종목 레버리지 ETF·ETN 기본예탁금 3,000만원 규제 시행. 레버리지 활용 계좌는 미리 점검이 필요합니다.</span></div>
+  </div>
+
+  <div class="kor-src">
+    <b>자료 :</b> 한국거래소(코스피 지수·투자자별 매매동향), 이데일리·이투데이·EBN 주간 증시전망(증권가 밴드 6,700~7,600, 유안타증권 수급 집계), 미 무역대표부(USTR) 301조 조치 및 로이터·한국경제·YTN·한국무역협회 보도, CNBC 유가 보도(7월 22~24일), 산업통상자원부 6월 수출입동향, 기획재정부 「2026년 7월 최근 경제동향」, 한국은행 2026년 7월 통화정책방향 의결문, 삼성전자 잠정실적 공시(7월 7일), 에프앤가이드 컨센서스.
+    <br /><b>유의 :</b> 원/달러 환율은 집계 기관(서울장 종가·역외 NDF·글로벌 종가)에 따라 값이 다르게 표기됩니다. 본 자료는 정보 제공 목적이며 특정 종목 매수·매도 권유가 아닙니다. 투자 판단과 책임은 투자자 본인에게 있습니다.
+  </div>
+
+ </div>
+</div>
+</body>
+</html>
