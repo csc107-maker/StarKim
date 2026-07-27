@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>태양광 세제 – 통합투자세액공제 vs 중소기업 특별세액감면</title>
+
+<meta property="og:title" content="태양광 세제 – 통합투자세액공제 vs 중소기업 특별세액감면" />
+<meta property="og:description" content="둘은 같은 해에 함께 못 받습니다. 신·재생에너지 발전사업의 감면율, 2026년 공제율, 그리고 감면을 고르면 따라오는 감가상각의제까지 비교했습니다." />
+<meta property="og:image" content="https://example.com/images/thumb_solar_depreciation.png" />
+<meta property="og:url" content="https://example.com/solar-depreciation-tax" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<style>
+  html, body { margin:0; padding:0; }
+  body {
+    background:#F5F8FB;
+    font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    color:#14233A; -webkit-text-size-adjust:100%;
+  }
+  .cv-wrap { max-width:880px; margin:0 auto; padding:26px 16px 34px; box-sizing:border-box; }
+  .cv-eyebrow { display:inline-flex; align-items:center; gap:7px; background:#C0392B; color:#fff; font-size:13px; font-weight:700; padding:7px 15px; border-radius:100px; }
+  .cv-h2 { margin:16px 0 8px; font-size:27px; font-weight:800; letter-spacing:-.85px; line-height:1.35; }
+  .cv-sub { margin:0 0 20px; font-size:14.5px; color:#5A6B85; line-height:1.7; letter-spacing:-.25px; }
+
+  .cv-alert {
+    background:#FFF7F5; border:1px solid #F3CFC8; border-radius:14px; padding:15px 17px; margin-bottom:20px;
+    font-size:14px; line-height:1.75; color:#5B2A22; letter-spacing:-.2px;
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .cv-alert i { font-size:22px; color:#C0392B; flex-shrink:0; margin-top:1px; }
+  .cv-alert b { color:#C0392B; }
+
+  .cv-two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .cv-col { background:#FFFFFF; border:1px solid #DCE5F0; border-radius:16px; overflow:hidden; }
+  .cv-head { padding:16px 18px; color:#fff; }
+  .cv-col.a .cv-head { background:#14396E; }
+  .cv-col.b .cv-head { background:#12796A; }
+  .cv-law { font-size:11.6px; font-weight:700; opacity:.8; letter-spacing:.3px; }
+  .cv-name { font-size:18px; font-weight:800; letter-spacing:-.5px; margin-top:4px; line-height:1.35; }
+  .cv-body { padding:16px 18px 18px; }
+
+  .cv-row { border-bottom:1px solid #EEF3F9; padding:11px 0; }
+  .cv-row:last-child { border-bottom:0; padding-bottom:0; }
+  .cv-k { font-size:11.8px; font-weight:800; color:#8494AC; letter-spacing:.2px; margin-bottom:4px; }
+  .cv-v { font-size:13.6px; line-height:1.68; color:#3D4B63; letter-spacing:-.2px; }
+  .cv-v b { color:#14233A; }
+  .cv-big { font-size:22px; font-weight:800; letter-spacing:-.7px; }
+  .cv-col.a .cv-big { color:#14396E; }
+  .cv-col.b .cv-big { color:#12796A; }
+
+  .cv-trap {
+    margin-top:16px; background:#FFFFFF; border:1px solid #DCE5F0; border-left:4px solid #F2A20C; border-radius:14px; padding:17px 19px;
+  }
+  .cv-trap h3 { margin:0 0 9px; font-size:16.5px; font-weight:800; letter-spacing:-.45px; display:flex; align-items:center; gap:7px; }
+  .cv-trap h3 i { color:#F2A20C; }
+  .cv-trap p { margin:0 0 9px; font-size:13.6px; line-height:1.78; color:#5A6B85; letter-spacing:-.2px; }
+  .cv-trap p:last-child { margin-bottom:0; }
+  .cv-trap b { color:#14233A; }
+
+  .cv-pick { margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .cv-pick div { background:#EDF2FA; border-radius:13px; padding:15px 16px; }
+  .cv-pick .pl { font-size:11.8px; font-weight:800; color:#8494AC; margin-bottom:6px; }
+  .cv-pick .pv { font-size:14.2px; font-weight:700; line-height:1.65; color:#14396E; letter-spacing:-.3px; }
+  .cv-pick .ps { font-size:12.6px; color:#5A6B85; line-height:1.65; margin-top:6px; }
+
+  .cv-src { margin-top:16px; font-size:11.8px; color:#8494AC; line-height:1.7; }
+
+  @media (max-width:680px){
+    .cv-h2 { font-size:22px; }
+    .cv-two, .cv-pick { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="cv-wrap">
+
+  <div class="cv-eyebrow"><i class="ti ti-arrows-split-2"></i>택일 사항</div>
+  <h2 class="cv-h2">세액공제와 세액감면, 같은 해에 둘 다는 안 됩니다</h2>
+  <p class="cv-sub">조세특례제한법 제127조 제4항은 동일 과세연도에 세액감면과 세액공제가 함께 적용될 수 있는 경우 <b>하나만 선택</b>하도록 정하고 있습니다. 태양광 발전사업자는 아래 두 갈래에서 반드시 계산기를 두드려야 합니다.</p>
+
+  <div class="cv-alert">
+    <i class="ti ti-alert-triangle"></i>
+    <div><b>먼저 확인할 것 —</b> 자가소비(전기요금 절감) 목적으로 설치한 태양광 설비에 대해서는 국세청이 통합투자세액공제를 적용할 수 없다고 회신한 바 있습니다(사전-2021-법령해석법인-1785, 2021.12.29.). 전력을 <b>생산·판매하는 발전사업용</b>인지, 자가소비용인지에 따라 결론이 달라지므로, 큰 금액이라면 사전답변 제도를 이용해 확정한 뒤 투자 구조를 짜는 편이 안전합니다.</div>
+  </div>
+
+  <div class="cv-two">
+
+    <div class="cv-col a">
+      <div class="cv-head">
+        <div class="cv-law">조세특례제한법 제24조</div>
+        <div class="cv-name">통합투자세액공제</div>
+      </div>
+      <div class="cv-body">
+        <div class="cv-row">
+          <div class="cv-k">2026년 일반 시설투자 기본공제율</div>
+          <div class="cv-v"><span class="cv-big">중소 10%</span><br />중견 5% · 대기업 1%</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">추가공제(증가분)</div>
+          <div class="cv-v">직전 3년 평균 초과 투자분 <b>10%</b><br />기본공제액의 2배 한도</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">달라진 점</div>
+          <div class="cv-v">중소·중견 <b>임시투자세액공제(중소 12%·중견 7%)는 2025년 말로 종료</b>. 2026년 투자분부터 원래 공제율로 복귀했습니다.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">감가상각과의 관계</div>
+          <div class="cv-v">세액공제만 받는 경우에는 <b>감가상각의제가 적용되지 않습니다.</b> 상각 속도를 스스로 조절할 여지가 남습니다.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">미공제액</div>
+          <div class="cv-v">최저한세 등으로 못 받은 금액은 <b>10년간 이월공제</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-col b">
+      <div class="cv-head">
+        <div class="cv-law">조세특례제한법 제7조</div>
+        <div class="cv-name">중소기업 특별세액감면</div>
+      </div>
+      <div class="cv-body">
+        <div class="cv-row">
+          <div class="cv-k">감면업종 해당 여부</div>
+          <div class="cv-v"><b>신·재생에너지 발전사업이 감면업종에 명시</b>되어 있습니다(제1항 제1호 누목). 태양광 발전사업은 여기에 해당합니다.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">감면비율</div>
+          <div class="cv-v"><span class="cv-big">소기업 30%</span><br />소기업 수도권 밖 30% · 수도권 안 20%<br />중기업 수도권 밖 15%</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">한도 · 적용기한</div>
+          <div class="cv-v">연 <b>1억원</b>(상시근로자가 줄면 1명당 500만원 차감)<br />2028년 12월 31일 이전 종료 과세연도까지</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">감가상각과의 관계</div>
+          <div class="cv-v" style="color:#B3271C;"><b>감가상각의제가 적용됩니다.</b> 감면을 실제로 받은 해에는 상각범위액만큼 반드시 비용으로 털어야 합니다.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-k">실익 조건</div>
+          <div class="cv-v">감면은 <b>산출세액이 있어야</b> 의미가 있습니다. 초기 결손 구간에서는 효과가 없습니다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cv-trap">
+    <h3><i class="ti ti-trap"></i>많이 놓치는 지점 : 감가상각의제</h3>
+    <p>법인세법 시행령 제30조와 소득세법 시행령 제68조는 “세액을 <b>면제·감면받은 경우</b>에는 개별 자산의 감가상각비가 상각범위액이 되도록 손금(필요경비)에 산입하여야 한다”고 정합니다. 쉽게 말해 <b>감면을 받는 해에는 감가상각을 아껴 둘 수 없습니다.</b></p>
+    <p>실무적으로 이게 왜 중요하냐면, 감면율 30%를 받으려고 감면을 선택했는데 그해 상각범위액이 통째로 강제 소진되면, 정작 이익이 커지는 6~10년차에 쓸 비용이 남지 않게 되기 때문입니다. 반대로 결손 등으로 <b>실제로 감면을 받지 않은 해</b>에는 의제 규정이 적용되지 않는다는 것이 과세관청의 해석입니다.</p>
+    <p>또 하나. 통합투자세액공제처럼 <b>투자액에 대한 세액공제만</b> 적용받는 경우에는 감가상각의제 대상이 아니라는 예규가 축적되어 있습니다. 감면과 공제를 고를 때 “세액 몇 원이 더 큰가”만 볼 게 아니라 <b>감가상각 통제권을 유지할 것인가</b>까지 함께 봐야 하는 이유입니다.</p>
+  </div>
+
+  <div class="cv-pick">
+    <div>
+      <div class="pl">이럴 땐 세액공제 쪽</div>
+      <div class="pv">준공 1~3년차, 이자비용과 감가상각으로 결손 또는 저이익이 예상될 때</div>
+      <div class="ps">감면은 어차피 실익이 없고, 공제는 10년 이월이 가능합니다. 감가상각 속도도 직접 조절할 수 있습니다.</div>
+    </div>
+    <div>
+      <div class="pl">이럴 땐 세액감면 쪽</div>
+      <div class="pv">대출 상환이 끝나 안정적으로 이익이 나고, 수도권 밖 소기업에 해당할 때</div>
+      <div class="ps">감면율 30%가 곧바로 세액을 줄입니다. 다만 감가상각의제로 상각이 강제된다는 점을 감안해 장기 시뮬레이션이 필요합니다.</div>
+    </div>
+  </div>
+
+  <p class="cv-src">근거 : 조세특례제한법 제7조·제24조·제127조 제4항(국가법령정보센터 현행 조문) / 법인세법 시행령 제30조, 소득세법 시행령 제68조 / 국세청 사전-2021-법령해석법인-1785(2021.12.29.) / 통합투자세액공제율 및 임시투자세액공제 종료는 2025년 12월 2일 국회 의결 개정세법 기준 · 2026년 7월 현재</p>
+
+</div>
+</body>
+</html>
