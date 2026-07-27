@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>태양광 발전소 세무 타임라인 – 계약부터 첫 신고까지</title>
+
+<meta property="og:title" content="태양광 발전소 세무 타임라인 – 계약부터 첫 신고까지" />
+<meta property="og:description" content="사업자등록 시점, 부가세 조기환급 신고, 내용연수·상각방법 신고서 제출 기한까지. 놓치면 되돌릴 수 없는 태양광 세무 일정을 순서대로 정리했습니다." />
+<meta property="og:image" content="https://example.com/images/thumb_solar_depreciation.png" />
+<meta property="og:url" content="https://example.com/solar-depreciation-tax" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<style>
+  html, body { margin:0; padding:0; }
+  body {
+    background:#F5F8FB;
+    font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    color:#14233A; -webkit-text-size-adjust:100%;
+  }
+  .tl-wrap { max-width:860px; margin:0 auto; padding:26px 16px 34px; box-sizing:border-box; }
+  .tl-eyebrow { display:inline-flex; align-items:center; gap:7px; background:#14396E; color:#fff; font-size:13px; font-weight:700; padding:7px 15px; border-radius:100px; }
+  .tl-h2 { margin:16px 0 8px; font-size:27px; font-weight:800; letter-spacing:-.85px; line-height:1.35; }
+  .tl-sub { margin:0 0 24px; font-size:14.5px; color:#5A6B85; line-height:1.7; letter-spacing:-.25px; }
+
+  .tl { position:relative; padding-left:56px; }
+  .tl::before { content:''; position:absolute; left:20px; top:12px; bottom:22px; width:2px; background:#DCE5F0; }
+
+  .tl-item { position:relative; margin-bottom:14px; }
+  .tl-dot {
+    position:absolute; left:-56px; top:16px; width:42px; height:42px; border-radius:50%;
+    background:#FFFFFF; border:2px solid #14396E; color:#14396E;
+    display:flex; align-items:center; justify-content:center; font-size:19px; z-index:2; box-sizing:border-box;
+  }
+  .tl-item.key .tl-dot { background:#F2A20C; border-color:#F2A20C; color:#FFFFFF; }
+  .tl-item.last .tl-dot { background:#12796A; border-color:#12796A; color:#FFFFFF; }
+
+  .tl-card { background:#FFFFFF; border:1px solid #DCE5F0; border-radius:14px; padding:17px 18px; }
+  .tl-item.key .tl-card { border-color:#F0CE8E; background:#FFFDF8; }
+  .tl-when { font-size:11.8px; font-weight:800; color:#8494AC; letter-spacing:.3px; margin-bottom:5px; }
+  .tl-item.key .tl-when { color:#C77E00; }
+  .tl-t { font-size:16.5px; font-weight:800; letter-spacing:-.45px; margin:0 0 8px; line-height:1.4; }
+  .tl-d { font-size:13.5px; line-height:1.75; color:#5A6B85; margin:0; letter-spacing:-.2px; }
+  .tl-d b { color:#14233A; }
+  .tl-tag {
+    display:inline-block; margin-top:10px; font-size:11.8px; font-weight:700;
+    background:#EDF2FA; color:#14396E; padding:5px 10px; border-radius:7px; letter-spacing:-.1px;
+  }
+  .tl-item.key .tl-tag { background:#FDECC8; color:#B36A00; }
+  .tl-item.last .tl-tag { background:#E6F3F1; color:#0E6659; }
+
+  .tl-src { margin-top:16px; font-size:11.8px; color:#8494AC; line-height:1.7; }
+
+  @media (max-width:680px){
+    .tl-h2 { font-size:22px; }
+    .tl { padding-left:46px; }
+    .tl::before { left:16px; }
+    .tl-dot { left:-46px; width:34px; height:34px; font-size:16px; top:14px; }
+  }
+</style>
+</head>
+<body>
+<div class="tl-wrap">
+
+  <div class="tl-eyebrow"><i class="ti ti-route"></i>실행 순서</div>
+  <h2 class="tl-h2">계약서에 도장 찍기 전부터 시작되는 태양광 세무 일정</h2>
+  <p class="tl-sub">아래 5단계 중 <b>2단계와 4단계</b>는 기한을 넘기면 그 해에는 물론 이후에도 되돌릴 수 없습니다.</p>
+
+  <div class="tl">
+
+    <div class="tl-item">
+      <div class="tl-dot"><i class="ti ti-file-text"></i></div>
+      <div class="tl-card">
+        <div class="tl-when">STEP 1 · 기자재 계약 전 또는 직후</div>
+        <h3 class="tl-t">사업자등록부터 (일반과세자로)</h3>
+        <p class="tl-d">업태는 전기업, 종목은 태양광발전업으로 등록합니다. <b>등록 신청 전에 받은 세금계산서의 매입세액은 원칙적으로 공제되지 않습니다.</b> 다만 공급시기가 속한 과세기간이 끝난 후 20일 이내에 등록을 신청하면 그 과세기간 기산일(1월 1일 또는 7월 1일)까지 소급해 공제받을 수 있습니다. 간이과세자로 등록하면 환급 자체가 막히니 주의하세요.</p>
+        <div class="tl-tag">부가가치세법 제39조 제1항 제8호</div>
+      </div>
+    </div>
+
+    <div class="tl-item key">
+      <div class="tl-dot"><i class="ti ti-cash-banknote"></i></div>
+      <div class="tl-card">
+        <div class="tl-when">STEP 2 · 대금 지급 다음 달 1~25일</div>
+        <h3 class="tl-t">부가세 조기환급 신고</h3>
+        <p class="tl-d">사업설비를 신설·취득·확장·증축하면 <b>매월 또는 매 2개월 단위</b>로 조기환급을 신고할 수 있고, 신고기한이 지난 후 <b>15일 이내</b>에 환급됩니다. 확정신고를 기다리면 최대 4개월 이상 늦어집니다. 신고서의 ‘영세율 등 조기환급’ 항목 체크와 <b>건물 등 감가상각자산 취득명세서</b> 제출이 필수입니다.</p>
+        <div class="tl-tag">부가가치세법 제59조 제2항 · 시행령 제107조</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"><i class="ti ti-plug-connected"></i></div>
+      <div class="tl-card">
+        <div class="tl-when">STEP 3 · 준공 · 계통연계 · 상업운전 개시</div>
+        <h3 class="tl-t">감가상각 시계가 이때부터 돌아간다</h3>
+        <p class="tl-d">감가상각은 취득한 날이 아니라 <b>사업에 사용하기 시작한 달</b>부터 월할 계산합니다. 11월에 상업운전을 시작하면 첫해에는 상각한도의 2/12만 인정됩니다. 준공이 연말에 몰려 있다면 첫해 절세 효과는 크지 않다고 보는 편이 정확합니다.</p>
+        <div class="tl-tag">법인세법 시행령 제26조 · 소득세법 시행령 제64조</div>
+      </div>
+    </div>
+
+    <div class="tl-item key">
+      <div class="tl-dot"><i class="ti ti-alarm"></i></div>
+      <div class="tl-card">
+        <div class="tl-when">STEP 4 · 취득 과세연도의 신고기한까지 (개인 5월 31일 / 법인 3월 31일 기준)</div>
+        <h3 class="tl-t">내용연수신고서 + 감가상각방법신고서 제출</h3>
+        <p class="tl-d">이 두 장이 이 글의 핵심입니다. 기한 안에 <b>내용연수 12년</b>과 <b>정률법</b>을 신고하지 않으면, 기준내용연수 16년이 자동 적용됩니다. 홈택스·손택스에서 전자 제출이 가능하며, 한 번 정한 상각방법은 이후 사업연도에도 계속 적용해야 합니다.</p>
+        <div class="tl-tag">법인세법 시행령 제26조 제3항 · 제28조 제3항</div>
+      </div>
+    </div>
+
+    <div class="tl-item last">
+      <div class="tl-dot"><i class="ti ti-checkbox"></i></div>
+      <div class="tl-card">
+        <div class="tl-when">STEP 5 · 첫 결산과 종합소득세·법인세 신고</div>
+        <h3 class="tl-t">장부에 ‘비용으로 계상’해야 인정된다</h3>
+        <p class="tl-d">감가상각비는 결산조정 항목입니다. 신고서만 내고 <b>장부에 비용으로 적지 않으면 손금·필요경비로 인정되지 않습니다.</b> 감가상각비조정명세서를 함께 제출하고, 이 시점에 통합투자세액공제와 중소기업 특별세액감면 중 무엇을 선택할지도 함께 결정해야 합니다.</p>
+        <div class="tl-tag">추계신고(경비율) 시에는 감가상각 전략 자체가 무의미</div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="tl-src">근거 : 국가법령정보센터 법령 원문(부가가치세법·법인세법·소득세법 및 각 시행령), 국세청 홈택스 신고 안내 · 2026년 7월 기준</p>
+
+</div>
+</body>
+</html>
