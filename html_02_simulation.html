@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>태양광 감가상각 시뮬레이션 – 16년 정액법 vs 12년 정률법</title>
+
+<meta property="og:title" content="태양광 감가상각 시뮬레이션 – 16년 정액법 vs 12년 정률법" />
+<meta property="og:description" content="취득가액 1억 2천만원 태양광 발전설비 기준. 내용연수와 상각방법 조합에 따라 초기 5년 비용 인정액이 3,750만원에서 8,558만원까지 벌어집니다." />
+<meta property="og:image" content="https://example.com/images/thumb_solar_depreciation.png" />
+<meta property="og:url" content="https://example.com/solar-depreciation-tax" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<style>
+  html, body { margin:0; padding:0; }
+  body {
+    background:#F5F8FB;
+    font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    color:#14233A; -webkit-text-size-adjust:100%;
+  }
+  .sm-wrap { max-width:860px; margin:0 auto; padding:26px 16px 34px; box-sizing:border-box; }
+
+  .sm-eyebrow { display:inline-flex; align-items:center; gap:7px; background:#12796A; color:#fff; font-size:13px; font-weight:700; padding:7px 15px; border-radius:100px; }
+  .sm-h2 { margin:16px 0 8px; font-size:27px; font-weight:800; letter-spacing:-.85px; line-height:1.35; }
+  .sm-sub { margin:0 0 20px; font-size:14.5px; color:#5A6B85; line-height:1.7; letter-spacing:-.25px; }
+
+  .sm-assume {
+    background:#EDF2FA; border:1px dashed #B9CBE4; border-radius:12px; padding:13px 16px;
+    font-size:13.2px; color:#31476A; line-height:1.7; letter-spacing:-.2px; margin-bottom:20px;
+  }
+  .sm-assume b { color:#14396E; }
+
+  /* signature : 누적 상각률 게이지 */
+  .sm-panel { background:#FFFFFF; border:1px solid #DCE5F0; border-radius:16px; padding:22px 20px; margin-bottom:16px; }
+  .sm-panel-t { font-size:12.5px; font-weight:800; letter-spacing:.4px; color:#8494AC; margin-bottom:18px; display:flex; align-items:center; gap:6px; }
+
+  .grow { margin-bottom:18px; }
+  .gtop { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px; gap:10px; }
+  .glabel { font-size:14px; font-weight:700; letter-spacing:-.3px; }
+  .glabel small { display:block; font-size:11.8px; font-weight:600; color:#8494AC; margin-top:2px; letter-spacing:0; }
+  .gval { font-size:21px; font-weight:800; letter-spacing:-.7px; white-space:nowrap; }
+  .gtrack { height:15px; background:#EEF3F9; border-radius:100px; overflow:hidden; }
+  .gfill { height:100%; border-radius:100px; }
+  .gA .gfill { width:31.3%; background:#9FB2CC; }
+  .gB .gfill { width:41.7%; background:#14396E; }
+  .gC .gfill { width:71.3%; background:linear-gradient(90deg,#F2A20C,#E07B00); }
+  .gA .gval { color:#7C8DA6; }
+  .gB .gval { color:#14396E; }
+  .gC .gval { color:#D98200; }
+
+  .sm-tblbox { background:#FFFFFF; border:1px solid #DCE5F0; border-radius:16px; overflow:hidden; }
+  table { width:100%; border-collapse:collapse; font-size:13.4px; }
+  thead th { background:#14396E; color:#fff; font-weight:700; padding:12px 8px; text-align:center; letter-spacing:-.2px; font-size:12.8px; }
+  thead th:first-child { text-align:left; padding-left:16px; }
+  tbody td { padding:11px 8px; text-align:right; border-bottom:1px solid #EEF3F9; font-variant-numeric:tabular-nums; }
+  tbody td:first-child { text-align:left; padding-left:16px; font-weight:700; color:#3D4B63; }
+  tbody tr:nth-child(even) { background:#FAFCFE; }
+  tbody td.hi { color:#C77E00; font-weight:800; background:#FEF6E7; }
+  tfoot td { padding:13px 8px; text-align:right; font-weight:800; background:#EDF2FA; color:#14396E; font-variant-numeric:tabular-nums; border-top:2px solid #14396E; }
+  tfoot td:first-child { text-align:left; padding-left:16px; }
+  tfoot td.hi { color:#C05F00; background:#FDECC8; }
+
+  .sm-out { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+  .sm-out div { background:#FFFFFF; border:1px solid #DCE5F0; border-radius:13px; padding:15px 14px; text-align:center; }
+  .sm-out .ol { font-size:11.8px; color:#8494AC; font-weight:700; margin-bottom:6px; }
+  .sm-out .ov { font-size:20px; font-weight:800; letter-spacing:-.7px; color:#12796A; }
+  .sm-out .os { font-size:11.6px; color:#8494AC; margin-top:5px; line-height:1.5; }
+
+  .sm-warn { margin-top:16px; background:#FFF7F5; border:1px solid #F3CFC8; border-left:4px solid #C0392B; border-radius:12px; padding:14px 16px; font-size:13.4px; line-height:1.75; color:#5B2A22; letter-spacing:-.2px; }
+  .sm-warn b { color:#C0392B; }
+  .sm-src { margin-top:14px; font-size:11.8px; color:#8494AC; line-height:1.7; }
+
+  @media (max-width:680px){
+    .sm-h2 { font-size:22px; }
+    .sm-out { grid-template-columns:1fr; }
+    table { font-size:12.2px; }
+    thead th, tbody td, tfoot td { padding:9px 5px; }
+    tbody td:first-child, thead th:first-child, tfoot td:first-child { padding-left:10px; }
+  }
+</style>
+</head>
+<body>
+<div class="sm-wrap">
+
+  <div class="sm-eyebrow"><i class="ti ti-calculator"></i>시뮬레이션</div>
+  <h2 class="sm-h2">같은 발전소, 다른 신고서 — 5년 뒤 비용 인정액은 2.3배 차이</h2>
+  <p class="sm-sub">설비도 같고 발전량도 같습니다. 달라지는 것은 첫 신고 때 제출한 종이 두 장뿐입니다.</p>
+
+  <div class="sm-assume">
+    <b>가정</b> · 100kW급 지상 태양광, 취득가액 1억 2,000만원(부가세 별도·토지 제외) · 1월 사용개시(월할 12/12) · 결산 시 상각범위액 전액을 비용 계상<br />
+    <b>상각률</b> · 법인세법 시행규칙 별표4 기준 : 12년 정률법 0.221, 16년 정액법 0.0625, 12년 정액법 0.0833
+  </div>
+
+  <div class="sm-panel">
+    <div class="sm-panel-t"><i class="ti ti-gauge"></i>5년 누적 상각률 (취득가액 대비)</div>
+
+    <div class="grow gA">
+      <div class="gtop">
+        <div class="glabel">A안 · 16년 + 정액법<small>신고서를 내지 않으면 자동 적용되는 기본값</small></div>
+        <div class="gval">31.3%</div>
+      </div>
+      <div class="gtrack"><div class="gfill"></div></div>
+    </div>
+
+    <div class="grow gB">
+      <div class="gtop">
+        <div class="glabel">B안 · 12년 + 정액법<small>내용연수만 단축 신고한 경우</small></div>
+        <div class="gval">41.7%</div>
+      </div>
+      <div class="gtrack"><div class="gfill"></div></div>
+    </div>
+
+    <div class="grow gC" style="margin-bottom:0;">
+      <div class="gtop">
+        <div class="glabel">C안 · 12년 + 정률법<small>내용연수 하한 + 체감상각을 함께 신고한 경우</small></div>
+        <div class="gval">71.3%</div>
+      </div>
+      <div class="gtrack"><div class="gfill"></div></div>
+    </div>
+  </div>
+
+  <div class="sm-tblbox">
+    <table>
+      <thead>
+        <tr>
+          <th>연차</th>
+          <th>A안<br />16년 정액</th>
+          <th>B안<br />12년 정액</th>
+          <th>C안<br />12년 정률</th>
+          <th>C − A<br />차이</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1년차</td><td>750</td><td>1,000</td><td class="hi">2,652</td><td>+1,902</td></tr>
+        <tr><td>2년차</td><td>750</td><td>1,000</td><td class="hi">2,066</td><td>+1,316</td></tr>
+        <tr><td>3년차</td><td>750</td><td>1,000</td><td class="hi">1,609</td><td>+859</td></tr>
+        <tr><td>4년차</td><td>750</td><td>1,000</td><td class="hi">1,254</td><td>+504</td></tr>
+        <tr><td>5년차</td><td>750</td><td>1,000</td><td class="hi">977</td><td>+227</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>5년 누적</td><td>3,750</td><td>5,000</td><td class="hi">8,558</td><td>+4,808</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <p style="font-size:11.6px;color:#8494AC;margin:8px 2px 0;">단위 : 만원 · 원 단위 반올림</p>
+
+  <div class="sm-out">
+    <div>
+      <div class="ol">개인 · 과표 1,400만~5,000만원</div>
+      <div class="ov">약 793만원</div>
+      <div class="os">세율 16.5%(지방소득세 포함)</div>
+    </div>
+    <div>
+      <div class="ol">개인 · 과표 5,000만~8,800만원</div>
+      <div class="ov">약 1,269만원</div>
+      <div class="os">세율 26.4%(지방소득세 포함)</div>
+    </div>
+    <div>
+      <div class="ol">법인 · 과표 2억원 이하</div>
+      <div class="ov">약 529만원</div>
+      <div class="os">2026년 개시 사업연도 10%+지방 1%</div>
+    </div>
+  </div>
+  <p style="font-size:11.6px;color:#8494AC;margin:8px 2px 0;">위 금액은 5년간 누적 <b>이연되는 세액</b>이며, 세금이 영구히 사라지는 금액이 아닙니다.</p>
+
+  <div class="sm-warn">
+    <b>반드시 함께 볼 것 —</b> 위 차액 4,808만원은 “깎인 세금”이 아니라 <b>뒤로 미뤄진 세금</b>입니다. 6년차 이후에는 A안보다 비용이 적게 잡혀 세부담이 역전됩니다. 실익은 ① 대출 원리금이 가장 무거운 초기 현금흐름 방어, ② 개인의 누진세율 구간 관리, ③ 화폐의 시간가치, 이 세 가지에서 나옵니다.
+  </div>
+
+  <p class="sm-src">계산 근거 : 법인세법 시행령 제26조(상각방법)·제28조(내용연수), 같은 법 시행규칙 별표4(상각률표)·별표6(업종별자산 내용연수) / 소득세법 시행령 제63조·제64조 / 법인세율은 2025년 개정 법인세법(2026.1.1. 이후 개시 사업연도 10·20·22·25%) 기준</p>
+
+</div>
+</body>
+</html>
