@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>태양광 감가상각 절세 – 실행 체크리스트와 5대 리스크</title>
+
+<meta property="og:title" content="태양광 감가상각 절세 – 실행 체크리스트와 5대 리스크" />
+<meta property="og:description" content="신고 전 확인할 8가지와, 인터넷에 남아 있는 폐지된 가속상각 특례까지. 태양광 감가상각 조기 절세의 함정을 정리했습니다." />
+<meta property="og:image" content="https://example.com/images/thumb_solar_depreciation.png" />
+<meta property="og:url" content="https://example.com/solar-depreciation-tax" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<style>
+  html, body { margin:0; padding:0; }
+  body {
+    background:#F5F8FB;
+    font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    color:#14233A; -webkit-text-size-adjust:100%;
+  }
+  .ck-wrap { max-width:860px; margin:0 auto; padding:26px 16px 34px; box-sizing:border-box; }
+  .ck-eyebrow { display:inline-flex; align-items:center; gap:7px; background:#14396E; color:#fff; font-size:13px; font-weight:700; padding:7px 15px; border-radius:100px; }
+  .ck-h2 { margin:16px 0 8px; font-size:27px; font-weight:800; letter-spacing:-.85px; line-height:1.35; }
+  .ck-sub { margin:0 0 22px; font-size:14.5px; color:#5A6B85; line-height:1.7; letter-spacing:-.25px; }
+
+  .ck-box { background:#FFFFFF; border:1px solid #DCE5F0; border-radius:16px; padding:20px 20px 14px; margin-bottom:20px; }
+  .ck-boxt { font-size:12.5px; font-weight:800; letter-spacing:.4px; color:#8494AC; margin-bottom:14px; display:flex; align-items:center; gap:6px; }
+
+  .ck-list { list-style:none; margin:0; padding:0; }
+  .ck-list li { display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #EEF3F9; }
+  .ck-list li:last-child { border-bottom:0; }
+  .ck-mark {
+    flex-shrink:0; width:24px; height:24px; border-radius:7px; background:#EDF2FA; color:#14396E;
+    display:flex; align-items:center; justify-content:center; font-size:15px; margin-top:1px;
+  }
+  .ck-txt { font-size:13.8px; line-height:1.72; color:#3D4B63; letter-spacing:-.2px; }
+  .ck-txt b { color:#14233A; }
+  .ck-txt em { font-style:normal; color:#B36A00; font-weight:700; }
+
+  .rk-grid { display:grid; gap:12px; }
+  .rk {
+    background:#FFFFFF; border:1px solid #DCE5F0; border-radius:14px; padding:16px 18px;
+    border-left:4px solid #C0392B;
+  }
+  .rk.soft { border-left-color:#F2A20C; }
+  .rk-n { font-size:11.6px; font-weight:800; color:#C0392B; letter-spacing:.5px; margin-bottom:5px; }
+  .rk.soft .rk-n { color:#C77E00; }
+  .rk-t { font-size:16px; font-weight:800; letter-spacing:-.45px; margin:0 0 7px; line-height:1.4; }
+  .rk-d { font-size:13.5px; line-height:1.76; color:#5A6B85; margin:0; letter-spacing:-.2px; }
+  .rk-d b { color:#14233A; }
+
+  .ck-final {
+    margin-top:20px; background:#14396E; color:#FFFFFF; border-radius:16px; padding:20px 22px;
+  }
+  .ck-final h3 { margin:0 0 9px; font-size:17px; font-weight:800; letter-spacing:-.5px; }
+  .ck-final p { margin:0; font-size:14px; line-height:1.8; color:#D6E2F2; letter-spacing:-.2px; }
+  .ck-final b { color:#F7C664; }
+
+  .ck-src { margin-top:16px; font-size:11.8px; color:#8494AC; line-height:1.7; }
+
+  @media (max-width:680px){ .ck-h2 { font-size:22px; } }
+</style>
+</head>
+<body>
+<div class="ck-wrap">
+
+  <div class="ck-eyebrow"><i class="ti ti-list-check"></i>실행 & 리스크</div>
+  <h2 class="ck-h2">신고서를 내기 전, 이 8가지부터 확인하세요</h2>
+  <p class="ck-sub">아래 항목 중 하나라도 비어 있으면 앞의 시뮬레이션 숫자는 그대로 실현되지 않습니다.</p>
+
+  <div class="ck-box">
+    <div class="ck-boxt"><i class="ti ti-checkbox"></i>사전 확인 체크리스트</div>
+    <ul class="ck-list">
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>자산 분류를 먼저 확정했는가.</b> 국세청은 태양광 발전설비를 법인세법 시행규칙 별표6의 업종별 자산으로 보아 내용연수를 적용한다고 회신했습니다(기준-2022-법무법인-0194). 다만 과거에는 별표5의 구축물로 본 해석도 있었고, 건물 부속설비로 처리하면 건축물 내용연수가 적용됩니다. <em>분류가 곧 내용연수입니다.</em></span></li>
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>토지와 설비를 분리했는가.</b> 토지 취득가액과 토지 취득 부대비용은 감가상각 대상이 아닙니다. 계약서·세금계산서 단계에서 금액을 명확히 갈라 두어야 합니다.</span></li>
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>부대비용을 취득가액에 넣었는가.</b> 설계·인허가·운반·설치·시운전비 등 사업에 사용하기까지 든 비용은 취득가액에 포함되어 함께 상각됩니다.</span></li>
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>국고보조금·정책자금 수령분을 구분했는가.</b> 보조금으로 취득한 부분은 감가상각과 투자세액공제 계산에서 별도 처리가 필요합니다.</span></li>
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>사용개시월을 확인했는가.</b> 첫해 상각은 상업운전 개시월부터 월할입니다. 12월 준공이면 첫해 인정액은 1/12뿐입니다.</span></li>
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>복식부기로 장부를 만들었는가.</b> 추계신고(기준·단순경비율)로 신고하면 감가상각비를 별도로 인정받는 구조가 아니므로 조기상각 전략 자체가 성립하지 않습니다.</span></li>
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>결산서에 비용으로 계상했는가.</b> 감가상각비는 결산조정 항목입니다. 신고서만 내고 장부에 안 적으면 손금·필요경비로 인정되지 않습니다.</span></li>
+      <li><span class="ck-mark"><i class="ti ti-check"></i></span><span class="ck-txt"><b>다른 소득과의 합산을 계산했는가.</b> 개인사업자라면 근로·연금·임대소득과 합산되어 6~45% 누진세율을 맞습니다. 조기상각의 가치는 이 합산 구간에서 가장 커집니다.</span></li>
+    </ul>
+  </div>
+
+  <div class="ck-box" style="padding-bottom:20px;">
+    <div class="ck-boxt"><i class="ti ti-alert-hexagon"></i>반드시 알고 시작해야 할 5대 리스크</div>
+    <div class="rk-grid">
+
+      <div class="rk">
+        <div class="rk-n">RISK 01</div>
+        <h3 class="rk-t">‘절세’가 아니라 ‘이연’입니다</h3>
+        <p class="rk-d">감가상각으로 비용 처리할 수 있는 총액은 취득가액을 넘지 않습니다. 초기에 많이 털면 <b>6년차 이후에는 오히려 비용이 줄어 세부담이 역전</b>됩니다. 총 절세액이 커지는 게 아니라, 세금 내는 시점이 뒤로 밀릴 뿐입니다.</p>
+      </div>
+
+      <div class="rk soft">
+        <div class="rk-n">RISK 02</div>
+        <h3 class="rk-t">‘태양광 4년 가속상각’ 같은 옛 정보에 주의</h3>
+        <p class="rk-d">조세특례제한법에는 설비투자자산 가속상각 특례(제28조의3, 2021년 12월 31일까지 취득분)와 에너지절약시설 가속상각 특례(제28조의4)가 있었지만, <b>모두 적용기한이 도래해 종료</b>되었습니다. 특히 제28조의4는 2024년 세법개정에서 적용 종료 대상으로 분류됐습니다. 지금 남아 있는 합법적 수단은 <b>내용연수 범위(12~20년) 내 신고와 정률법 선택</b>이며, 4년·5년 상각을 말하는 자료는 시점을 확인해야 합니다.</p>
+      </div>
+
+      <div class="rk">
+        <div class="rk-n">RISK 03</div>
+        <h3 class="rk-t">발전소를 팔 때 세금이 튀어나옵니다</h3>
+        <p class="rk-d">조기상각을 하면 장부가액이 빠르게 낮아집니다. 이후 발전소를 양도하면 <b>양도가액과 낮아진 장부가액의 차이만큼 이익이 커집니다.</b> 5~7년 내 매각을 염두에 둔 사업이라면, 조기상각의 순효과를 매각 시나리오까지 넣어 계산해야 합니다.</p>
+      </div>
+
+      <div class="rk">
+        <div class="rk-n">RISK 04</div>
+        <h3 class="rk-t">최저한세에 걸려 공제가 잘릴 수 있습니다</h3>
+        <p class="rk-d">세액공제·감면을 아무리 쌓아도 조세특례제한법 제132조의 최저한세 아래로는 세금을 줄일 수 없습니다. 잘려나간 통합투자세액공제는 <b>10년간 이월</b>되지만, 그 사이 감가상각으로 과세표준이 계속 낮으면 이월액을 다 못 쓰고 흘려보낼 수 있습니다.</p>
+      </div>
+
+      <div class="rk soft">
+        <div class="rk-n">RISK 05</div>
+        <h3 class="rk-t">수익 구조 자체가 흔들리는 국면입니다</h3>
+        <p class="rk-d">RPS 폐지 및 재생에너지 계약시장 전환 논의가 진행 중이고, 출력제어 확대와 SMP 변동성도 커졌습니다. 세금 설계는 <b>수익 시나리오 위에 얹는 것</b>이라, 매출 전망이 흔들리면 최적 상각 속도도 달라집니다. 세무 전략 이전에 수익 시나리오를 먼저 보수적으로 잡으세요.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ck-final">
+    <h3>정리하면</h3>
+    <p>태양광 감가상각 조기 절세는 <b>화려한 특례를 찾는 일이 아니라, 기한 안에 서류 두 장을 정확히 내는 일</b>입니다. 내용연수 12년과 정률법. 여기에 부가세 조기환급으로 초기 자금을 당기고, 세액공제와 세액감면 중 무엇을 고를지 <b>감가상각의제까지 감안해</b> 결정하면 소규모 발전사업자가 쓸 수 있는 카드는 사실상 다 쓴 셈입니다.</p>
+  </div>
+
+  <p class="ck-src">근거 : 국가법령정보센터 조세특례제한법 제28조의3·제28조의4·제132조 / 기획재정부 2024년 세법개정안(적용기한 종료 조세특례 목록) / 국세청 기준-2022-법무법인-0194 / 한국에너지공단·전력거래소 시장 동향 · 본 자료는 2026년 7월 기준 일반 정보이며 개별 사안은 세무 전문가 검토가 필요합니다.</p>
+
+</div>
+</body>
+</html>
