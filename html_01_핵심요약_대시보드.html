@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>한화솔루션·SK이터닉스 동반 폭락 — 2026.07.27 핵심 요약</title>
+
+<meta property="og:title" content="한화솔루션·SK이터닉스 주가 폭락 분석 — 원인과 전망" />
+<meta property="og:description" content="국제유가 6% 급락과 1.17조 유상증자 신주 오버행. 2026년 7월 27일 신재생에너지주 동반 급락의 구조를 데이터로 해부합니다." />
+<meta property="og:image" content="https://example.com/images/hanwha-sketernix-thumbnail.png" />
+<meta property="og:url" content="https://example.com/hanwha-solutions-sk-eternix-crash" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+<style>
+.hsx-wrap *{box-sizing:border-box;margin:0;padding:0}
+.hsx-wrap{
+  font-family:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic','맑은 고딕',sans-serif;
+  background:#F4F7F6;color:#12303A;padding:26px 20px 30px;border-radius:18px;
+  border:1px solid #D7E2E0;max-width:860px;margin:26px auto;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.hsx-eyebrow{display:flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.09em;
+  font-weight:700;color:#566C74;text-transform:uppercase}
+.hsx-eyebrow i{color:#D0342C;font-size:16px}
+.hsx-h2{font-size:26px;font-weight:800;letter-spacing:-.03em;margin:10px 0 6px;line-height:1.3}
+.hsx-lede{font-size:14.5px;color:#566C74;max-width:640px}
+.hsx-rule{height:3px;width:56px;background:#D0342C;border-radius:2px;margin:16px 0 22px}
+
+/* 지표 그리드 */
+.hsx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hsx-card{background:#FFFFFF;border:1px solid #D7E2E0;border-radius:14px;padding:16px 15px 15px;position:relative;overflow:hidden}
+.hsx-card::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 3px 3px 0;background:#D0342C}
+.hsx-card.oil::before{background:#B45309}
+.hsx-card.pol::before{background:#0E7C7B}
+.hsx-name{font-size:12.5px;font-weight:700;color:#566C74;letter-spacing:.01em}
+.hsx-code{font-size:11px;color:#8FA3A8;font-weight:600;letter-spacing:.04em}
+.hsx-num{font-size:29px;font-weight:800;letter-spacing:-.035em;margin-top:9px;
+  font-variant-numeric:tabular-nums;color:#12303A}
+.hsx-chg{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:800;
+  color:#D0342C;margin-top:3px;font-variant-numeric:tabular-nums}
+.hsx-chg.up{color:#0E7C7B}
+.hsx-foot{font-size:11.5px;color:#7E9298;margin-top:10px;padding-top:9px;border-top:1px dashed #E2EAE8}
+
+/* 신호등 레일 (시그니처) */
+.hsx-rail{background:#FFFFFF;border:1px solid #D7E2E0;border-radius:14px;padding:18px 18px 14px;margin-top:12px}
+.hsx-rail-t{font-size:12.5px;font-weight:700;color:#566C74;margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.hsx-rail-t i{color:#B45309;font-size:15px}
+.hsx-bar{position:relative;height:8px;background:#EEF4F3;border-radius:5px;margin:26px 0 8px}
+.hsx-fill{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:#D0342C;opacity:.85}
+.hsx-tick{position:absolute;top:-24px;transform:translateX(-50%);font-size:11px;font-weight:700;
+  color:#12303A;white-space:nowrap;font-variant-numeric:tabular-nums}
+.hsx-tick-r{transform:translateX(-100%)}
+.hsx-dot{position:absolute;top:-4px;width:16px;height:16px;border-radius:50%;background:#FFFFFF;
+  border:4px solid #D0342C;transform:translateX(-50%)}
+.hsx-dot-prev{border-color:#12303A;width:14px;height:14px;top:-3px}
+.hsx-ends{display:flex;justify-content:space-between;font-size:11px;color:#7E9298;font-weight:600;
+  font-variant-numeric:tabular-nums}
+
+.hsx-note{margin-top:14px;background:#EEF4F3;border:1px solid #DCE7E5;border-radius:12px;
+  padding:13px 15px;font-size:13px;color:#2B4952;display:flex;gap:10px;align-items:flex-start}
+.hsx-note i{color:#0E7C7B;font-size:17px;flex-shrink:0;margin-top:1px}
+.hsx-src{margin-top:14px;font-size:11.5px;color:#8FA3A8;line-height:1.65}
+.hsx-src b{color:#566C74;font-weight:700}
+
+@media(max-width:640px){
+  .hsx-grid{grid-template-columns:1fr}
+  .hsx-h2{font-size:21px}
+  .hsx-num{font-size:26px}
+  .hsx-wrap{padding:22px 15px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="hsx-wrap">
+
+  <div class="hsx-eyebrow"><i class="ti ti-alert-triangle"></i><span>2026.07.27 · 장중 스냅샷</span></div>
+  <h2 class="hsx-h2">유가가 꺾이자 신재생이 무너졌다</h2>
+  <p class="hsx-lede">주말 사이 미국과 이란이 상호 공격을 멈추자 브렌트유가 6% 가까이 밀렸고, 그 직전까지 유가 상승을 연료로 달리던 국내 신재생에너지 종목이 개장과 동시에 급락했습니다.</p>
+  <div class="hsx-rule"></div>
+
+  <div class="hsx-grid">
+
+    <div class="hsx-card">
+      <div class="hsx-name">한화솔루션</div>
+      <div class="hsx-code">KOSPI 009830</div>
+      <div class="hsx-num">27,300원</div>
+      <div class="hsx-chg"><i class="ti ti-arrow-down-right"></i>-2,700원 (-9.00%)</div>
+      <div class="hsx-foot">09:55 기준 · 전일 종가 30,000원<br/>장중 저가 26,050원까지 하락</div>
+    </div>
+
+    <div class="hsx-card">
+      <div class="hsx-name">SK이터닉스</div>
+      <div class="hsx-code">KOSPI 475150</div>
+      <div class="hsx-num">61,100원</div>
+      <div class="hsx-chg"><i class="ti ti-arrow-down-right"></i>-19,800원 (-24.47%)</div>
+      <div class="hsx-foot">10:31 기준 · 전일 종가 80,900원<br/>같은 날 장중 신고가 82,400원 기록</div>
+    </div>
+
+    <div class="hsx-card oil">
+      <div class="hsx-name">브렌트유 9월물</div>
+      <div class="hsx-code">ICE · 블룸버그</div>
+      <div class="hsx-num">$91.22</div>
+      <div class="hsx-chg"><i class="ti ti-arrow-down-right"></i>-5.7%</div>
+      <div class="hsx-foot">싱가포르 07.27 06:01 기준<br/>WTI 9월물 $83.35 (-6.7%)</div>
+    </div>
+
+  </div>
+
+  <div class="hsx-rail">
+    <div class="hsx-rail-t"><i class="ti ti-wave-sine"></i>SK이터닉스, 신고가를 찍은 바로 그 장에서 되돌린 거리</div>
+    <div class="hsx-bar">
+      <div class="hsx-fill" style="left:0;width:93%"></div>
+      <div class="hsx-tick" style="left:0%">61,100 현재가</div>
+      <div class="hsx-tick hsx-tick-r" style="left:100%">82,400 장중 신고가</div>
+      <div class="hsx-dot" style="left:0%"></div>
+      <div class="hsx-dot hsx-dot-prev" style="left:93%"></div>
+    </div>
+    <div class="hsx-ends"><span>◉ 붉은 구간 = 전일 종가 80,900원 대비 -24.47% · 신고가 대비 -25.9%</span><span>10:31 기준</span></div>
+  </div>
+
+  <div class="hsx-note">
+    <i class="ti ti-bulb"></i>
+    <div><b>같은 날 하락이지만 성격이 다릅니다.</b> SK이터닉스는 한 달 새 두 배 오른 뒤 나온 <b>차익실현형 되돌림</b>, 한화솔루션은 여기에 <b>8월 11일 신주 상장이라는 물량 부담</b>이 겹친 하락입니다. 아래에서 하나씩 뜯어봅니다.</div>
+  </div>
+
+  <div class="hsx-src">
+    <b>자료</b> · 한국거래소(KRX), 네이버페이 증권, 블룸버그, 뉴스1·이코노뉴스 장중 시세 보도(2026.07.27), 금융감독원 전자공시시스템(DART)<br/>
+    <b>유의</b> · 위 수치는 7월 27일 <b>장중</b> 시세이며 종가와 다를 수 있습니다. 본 자료는 정보 제공 목적이며 투자 권유가 아닙니다.
+  </div>
+
+</div>
+
+</body>
+</html>
