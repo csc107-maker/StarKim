@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>태양광 이격거리 규제, 10년의 흐름 | 정책 타임라인</title>
+
+<!-- ▼▼ 블로그 og 메타태그 (페이지 상단에 1회만 삽입, URL/이미지는 실제 값으로 교체하세요) ▼▼ -->
+<meta property="og:title" content="태양광 이격거리 해제, 정부 방침 총정리" />
+<meta property="og:description" content="2026년 재생에너지법 개정부터 최신 시행령 입법예고까지, 태양광 이격거리 규제 변화를 정부 자료 기반으로 정리했습니다." />
+<meta property="og:image" content="https://your-blog-domain.com/images/solar-setback-thumbnail.png" />
+<meta property="og:url" content="https://your-blog-domain.com/solar-setback-2026" />
+<!-- ▲▲ -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+<style>
+  .sst-wrap{
+    --navy:#12283F;
+    --navy-soft:#1E4B72;
+    --slate:#5B6B7B;
+    --slate-light:#8996A3;
+    --bg:#F4F8FB;
+    --card:#FFFFFF;
+    --line:#E2E8EE;
+    --gold:#F5A623;
+    --gold-bg:#FFF4DF;
+    --teal:#1FA98E;
+    --teal-bg:#E6F7F3;
+    --red:#E2574C;
+    --red-bg:#FDECEA;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+    padding: 36px 18px 44px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .sst-wrap *{ box-sizing: border-box; }
+  .sst-eyebrow{
+    display:inline-flex; align-items:center; gap:6px;
+    background: var(--navy); color:#fff; font-size:12.5px; font-weight:700;
+    padding:6px 14px; border-radius:999px; letter-spacing:.3px;
+  }
+  .sst-h2{
+    font-size: 24px; font-weight:800; margin:14px 0 6px; line-height:1.35;
+  }
+  .sst-desc{
+    font-size:14.5px; color:var(--slate); line-height:1.65; margin:0 0 28px;
+  }
+  .sst-timeline{
+    position:relative;
+    margin-left: 6px;
+    padding-left: 26px;
+    border-left: 2px solid var(--line);
+  }
+  .sst-item{
+    position:relative;
+    padding-bottom: 26px;
+  }
+  .sst-item:last-child{ padding-bottom:0; }
+  .sst-dot{
+    position:absolute; left:-33.5px; top:2px;
+    width:14px; height:14px; border-radius:50%;
+    background:var(--navy-soft); border:3px solid #fff; box-shadow:0 0 0 2px var(--navy-soft);
+  }
+  .sst-item.mark-live .sst-dot{ background:var(--teal); box-shadow:0 0 0 2px var(--teal); }
+  .sst-item.mark-alert .sst-dot{ background:var(--red); box-shadow:0 0 0 2px var(--red); }
+  .sst-item.mark-pending .sst-dot{ background:#fff; box-shadow:0 0 0 2px var(--gold); }
+  .sst-card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:16px 18px; box-shadow: 0 1px 2px rgba(18,40,63,0.04);
+  }
+  .sst-item.mark-pending .sst-card{ border-style:dashed; border-color:var(--gold); background:var(--gold-bg); }
+  .sst-date{
+    font-size:12.5px; font-weight:800; color:var(--navy-soft); letter-spacing:.2px;
+    display:flex; align-items:center; gap:6px; margin-bottom:6px;
+  }
+  .sst-item.mark-live .sst-date{ color:var(--teal); }
+  .sst-item.mark-alert .sst-date{ color:var(--red); }
+  .sst-item.mark-pending .sst-date{ color:#B9790C; }
+  .sst-title{ font-size:16px; font-weight:800; margin:0 0 6px; line-height:1.4; }
+  .sst-body{ font-size:14px; color:var(--slate); line-height:1.65; margin:0; }
+  .sst-tag{
+    display:inline-block; font-size:11.5px; font-weight:700; padding:3px 9px;
+    border-radius:6px; margin-top:10px; background:var(--teal-bg); color:var(--teal);
+  }
+  .sst-tag.warn{ background:var(--red-bg); color:var(--red); }
+  .sst-tag.pending{ background:#FFF; color:#B9790C; border:1px solid var(--gold); }
+  .sst-foot{
+    margin-top:26px; padding-top:16px; border-top:1px dashed var(--line);
+    font-size:12px; color:var(--slate-light); line-height:1.6;
+  }
+</style>
+</head>
+<body>
+<div class="sst-wrap">
+  <span class="sst-eyebrow"><i class="ti ti-clock-history"></i>&nbsp;정책 타임라인</span>
+  <h2 class="sst-h2">태양광 이격거리 규제, 10년의 흐름</h2>
+  <p class="sst-desc">지자체 조례 중심의 규제에서 &#39;원칙적 금지&#39;로, 그리고 다시 시행령 논쟁으로. 핵심 일정만 짚어봅니다.</p>
+
+  <div class="sst-timeline">
+
+    <div class="sst-item">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-map-pin"></i> 2015년</div>
+        <p class="sst-title">지자체 조례 기반 이격거리 규제 시작</p>
+        <p class="sst-body">주민 보호를 명분으로 기초지자체들이 조례로 태양광·풍력 설비의 이격거리를 각자 설정하기 시작. 국가 차원의 통일 기준은 없었습니다.</p>
+      </div>
+    </div>
+
+    <div class="sst-item">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-file-text"></i> 2017년 ~ 2024년</div>
+        <p class="sst-title">산업통상자원부, 비구속 가이드라인 반복 제시</p>
+        <p class="sst-body">2017년 &#39;입지 가이드라인&#39;을 시작으로 2020·2023·2024년까지 규제 완화 필요성을 언급했지만, 법적 구속력이 없어 실제 지자체 조례에는 거의 반영되지 않았습니다.</p>
+        <span class="sst-tag warn">구속력 없음</span>
+      </div>
+    </div>
+
+    <div class="sst-item mark-alert">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-scale"></i> 2024년 9월</div>
+        <p class="sst-title">시민단체, 산업부 상대 헌법소원 제기</p>
+        <p class="sst-body">기후솔루션 등 시민 15인이 &#34;정부가 입법 의무를 방치했다&#34;며 산업통상자원부를 상대로 헌법소원을 청구. 이격거리 규제가 직업의 자유·환경권을 침해한다는 취지였습니다.</p>
+      </div>
+    </div>
+
+    <div class="sst-item">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-writing"></i> 2025년 11월</div>
+        <p class="sst-title">여야 의원 10명, 재생에너지법 개정안 발의</p>
+        <p class="sst-body">이용우 의원(더불어민주당), 김소희 의원(국민의힘) 등 여야 의원 10명이 각각 이격거리 합리화를 담은 개정안을 대표발의했습니다.</p>
+      </div>
+    </div>
+
+    <div class="sst-item mark-live">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-gavel"></i> 2026년 2월 12일</div>
+        <p class="sst-title">국회 본회의 통과 — 이격거리 &#39;원칙적 금지&#39; 명문화</p>
+        <p class="sst-body">재생에너지법 등 기후에너지환경부 소관 8개 법률 개정안이 국회를 통과. 제27조의3 신설로 지자체의 임의적 이격거리 설정이 원칙적으로 금지됐습니다.</p>
+        <span class="sst-tag">법 개정 완료</span>
+      </div>
+    </div>
+
+    <div class="sst-item">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-news"></i> 2026년 2월 25일</div>
+        <p class="sst-title">안전 우려 보도 → 정부 공식 해명</p>
+        <p class="sst-body">언론에서 안전성 우려가 제기되자 기후에너지환경부는 &#34;안전규제 완화가 아니라 지자체별 과도한 입지규제 합리화&#34;라는 해명자료를 발표했습니다.</p>
+      </div>
+    </div>
+
+    <div class="sst-item mark-alert">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-alert-triangle"></i> 2026년 5월 19일</div>
+        <p class="sst-title">제1차 재생에너지 기본계획 — 시행령안에 &#39;수치&#39; 등장</p>
+        <p class="sst-body">기본계획에 담긴 시행령안이 태양광은 주거지 200m·도로 100m, 풍력은 최대 1000m라는 구체적 상한선을 제시하면서 업계에서 &#34;사실상 새 규제&#34;라는 반발이 나왔습니다.</p>
+        <span class="sst-tag warn">업계 반발</span>
+      </div>
+    </div>
+
+    <div class="sst-item">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-clipboard-text"></i> 2026년 7월 8일</div>
+        <p class="sst-title">시행령 개정안 입법예고, 국민의견 수렴 중</p>
+        <p class="sst-body">관광지·자연취락지구는 지자체장이 자율적으로 이격거리를 적용할 수 있도록 하는 내용이 추가된 시행령 개정안이 입법예고됐습니다. 찬반 의견이 함께 접수되고 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="sst-item mark-pending">
+      <div class="sst-dot"></div>
+      <div class="sst-card">
+        <div class="sst-date"><i class="ti ti-hourglass"></i> 2026년 9월(목표, 유동적)</div>
+        <p class="sst-title">개정 시행령 시행 예정</p>
+        <p class="sst-body">정부는 9월 시행을 목표로 하고 있으나, 입법예고 의견수렴과 규제·법제 심사 절차가 남아있어 최종 확정 시점과 세부 수치는 바뀔 수 있습니다.</p>
+        <span class="sst-tag pending">미확정</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sst-foot">
+    출처: 기후에너지환경부 보도·해명자료, 국회 국민참여입법센터(opinion.lawmaking.go.kr), 법률신문(율촌 기고), 전기신문, 에너지데일리 종합 · 세부 시행령 수치는 입법예고 단계로 확정 전 변경될 수 있습니다.
+  </div>
+</div>
+</body>
+</html>
