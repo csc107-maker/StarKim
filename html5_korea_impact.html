@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>한국 셀러 노출도와 대응 체크리스트 — 아마존 AI 이미지 표시 의무</title>
+
+<meta property="og:title" content="한국 셀러는 얼마나 노출돼 있나 — 역직구 데이터와 대응 체크리스트 7" />
+<meta property="og:description" content="국가데이터처 온라인 해외 직접 판매 통계와 식약처 화장품 수출 실적으로 본 한국 셀러의 실제 노출도, 그리고 지금 당장 해야 할 7가지 실무 조치를 정리했습니다." />
+<meta property="og:image" content="https://example.com/thumbnail_amazon_ny_ai_ad_law.png" />
+<meta property="og:url" content="https://example.com/amazon-ny-ai-ad-law" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+<style>
+  .kr-wrap *, .kr-wrap *::before, .kr-wrap *::after { box-sizing: border-box; }
+
+  .kr-wrap {
+    background: #F2F5F9; padding: 30px 18px 34px;
+    font-family: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont,
+                 "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    color: #10151F; line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  .kr-card {
+    max-width: 820px; margin: 0 auto; background: #FFFFFF;
+    border: 1px solid #DCE3EC; border-radius: 18px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(16,21,31,.04), 0 12px 28px rgba(16,21,31,.06);
+  }
+
+  .kr-head { padding: 26px 26px 20px; border-bottom: 1px solid #E4EAF1; }
+  .kr-kicker {
+    display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700;
+    color: #B4243A; background: #FCE8EB; border: 1px solid #F5C9D1;
+    border-radius: 999px; padding: 5px 12px; margin-bottom: 13px;
+  }
+  .kr-h { margin: 0 0 8px; font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
+  .kr-sub { margin: 0; font-size: 14.5px; color: #5B6675; }
+
+  .kr-sec { padding: 22px 26px 6px; }
+  .kr-sech { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; font-size: 16.5px; font-weight: 800; letter-spacing: -.015em; }
+  .kr-sech i { color: #6D3BF5; font-size: 19px; }
+  .kr-secsub { margin: 0 0 16px; font-size: 13px; color: #6B7684; }
+
+  .kr-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 6px; }
+  table.kr-t { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px; }
+  table.kr-t th, table.kr-t td { padding: 12px 14px; border-bottom: 1px solid #EDF1F6; text-align: left; }
+  table.kr-t thead th {
+    background: #F7F9FC; font-size: 12px; font-weight: 700; color: #5B6675;
+    letter-spacing: .03em; border-bottom: 1px solid #DCE3EC; white-space: nowrap;
+  }
+  table.kr-t td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: #10151F; white-space: nowrap; }
+  table.kr-t td.sm { font-size: 13px; color: #5B6675; }
+  table.kr-t tbody tr.hl td { background: #F6F3FF; }
+  table.kr-t tbody tr.hl td.num { color: #4B21C4; }
+  table.kr-t td b { color: #10151F; }
+
+  .kr-cap { font-size: 12px; color: #6B7684; margin: 0 0 4px; }
+
+  .kr-check { padding: 6px 26px 8px; }
+  .kr-ci { display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid #EDF1F6; }
+  .kr-ci:last-child { border-bottom: 0; }
+  .kr-cn {
+    flex: none; width: 30px; height: 30px; border-radius: 9px; background: #EDE8FE; color: #4B21C4;
+    display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;
+  }
+  .kr-ct { margin: 2px 0 4px; font-size: 15.5px; font-weight: 700; letter-spacing: -.015em; }
+  .kr-cd { margin: 0; font-size: 14px; color: #4A5563; }
+  .kr-cd b { color: #10151F; }
+
+  .kr-warn {
+    margin: 0; padding: 20px 26px; background: #FDF6E7; border-top: 1px solid #F0DFB6;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .kr-warn i { color: #B4740A; font-size: 22px; flex: none; line-height: 1.3; }
+  .kr-warn h4 { margin: 0 0 6px; font-size: 15px; font-weight: 800; color: #7A4F06; }
+  .kr-warn p { margin: 0; font-size: 13.5px; color: #6B5314; }
+
+  .kr-foot { padding: 16px 26px 20px; background: #F7F9FC; border-top: 1px solid #E4EAF1; font-size: 12.5px; color: #6B7684; }
+  .kr-foot strong { color: #10151F; }
+
+  @media (max-width: 520px) {
+    .kr-wrap { padding: 20px 12px 24px; }
+    .kr-h { font-size: 20px; }
+    .kr-head, .kr-sec, .kr-check, .kr-warn, .kr-foot { padding-left: 17px; padding-right: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="kr-wrap">
+  <div class="kr-card">
+
+    <div class="kr-head">
+      <span class="kr-kicker"><i class="ti ti-world-search"></i> 한국 노출도 진단</span>
+      <h2 class="kr-h">"우리랑 상관없는 미국 얘기"가 아닌 이유</h2>
+      <p class="kr-sub">라벨 규제가 정면으로 겨냥하는 카테고리가, 공교롭게도 한국 역직구 수출의 최대 품목입니다.</p>
+    </div>
+
+    <div class="kr-sec">
+      <h3 class="kr-sech"><i class="ti ti-chart-bar"></i> 데이터로 본 노출 규모</h3>
+      <p class="kr-secsub">인물 이미지 의존도가 높은 뷰티·패션이 역직구의 중심축입니다.</p>
+
+      <div class="kr-scroll">
+        <table class="kr-t">
+          <thead>
+            <tr><th>지표</th><th style="text-align:right">수치</th><th>시점 · 출처</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl">
+              <td><b>온라인 해외 직접 판매액</b> (역직구 전체)</td>
+              <td class="num">7,388억원</td>
+              <td class="sm">2025년 2분기, 전년 동기 +7.5% · 국가데이터처</td>
+            </tr>
+            <tr>
+              <td>└ 상품군 1위 <b>화장품</b></td>
+              <td class="num">4,046억원</td>
+              <td class="sm">같은 분기 · 전체의 약 55%</td>
+            </tr>
+            <tr>
+              <td>└ 지역별 <b>미국</b> (중국·일본에 이어 3위)</td>
+              <td class="num">1,382억원</td>
+              <td class="sm">같은 분기</td>
+            </tr>
+            <tr>
+              <td>연간 화장품 수출액</td>
+              <td class="num">114억 달러</td>
+              <td class="sm">2025년 · 식약처</td>
+            </tr>
+            <tr class="hl">
+              <td>└ <b>미국</b> — 수출 대상국 1위</td>
+              <td class="num">22억 달러</td>
+              <td class="sm">2025년 · 중국 20억, 일본 11억 달러</td>
+            </tr>
+            <tr>
+              <td>분기 화장품 수출 (역대 최대)</td>
+              <td class="num">31억 달러</td>
+              <td class="sm">2026년 1분기 잠정, 전년 동기 +19.0% · 식약처</td>
+            </tr>
+            <tr>
+              <td>└ 그중 미국</td>
+              <td class="num">6.2억 달러</td>
+              <td class="sm">전체 수출의 19.8%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="kr-cap">※ 역직구 통계는 아마존만이 아닌 전체 온라인 해외 판매를 포함합니다. 아마존 한국 셀러의 개별 매출 규모는 아마존이 공개하지 않아 확인할 수 없습니다.</p>
+    </div>
+
+    <div class="kr-sec" style="padding-bottom:0">
+      <h3 class="kr-sech"><i class="ti ti-checklist"></i> 지금 해야 할 7가지</h3>
+      <p class="kr-secsub">규제 대응이 아니라 크리에이티브 예산 재설계의 문제입니다.</p>
+    </div>
+
+    <div class="kr-check">
+      <div class="kr-ci">
+        <div class="kr-cn">1</div>
+        <div>
+          <h4 class="kr-ct">카탈로그부터 훑는다</h4>
+          <p class="kr-cd">합성 인물을 쓴 ASIN을 색출합니다. <b>트래픽 상위 리스팅의 메인 이미지부터</b> 시작해 A+ 모듈, 브랜드 스토어 순으로 내려갑니다.</p>
+        </div>
+      </div>
+      <div class="kr-ci">
+        <div class="kr-cn">2</div>
+        <div>
+          <h4 class="kr-ct">태깅을 제작 단계로 끌어올린다</h4>
+          <p class="kr-cd">업로드 후 정리가 아니라 <b>제작 산출물에 메타데이터가 이미 박혀 나오도록</b> 워크플로를 바꿉니다. IPTC 지원 편집기가 필요합니다.</p>
+        </div>
+      </div>
+      <div class="kr-ci">
+        <div class="kr-cn">3</div>
+        <div>
+          <h4 class="kr-ct">외주 계약서에 책임을 명시한다</h4>
+          <p class="kr-cd">대행사·프리랜서 납품 요건에 <b>합성 요소 식별 의무</b>를 넣고, 태깅 책임과 과태료 부담 주체를 계약으로 배분합니다.</p>
+        </div>
+      </div>
+      <div class="kr-ci">
+        <div class="kr-cn">4</div>
+        <div>
+          <h4 class="kr-ct">제작 기록을 남긴다</h4>
+          <p class="kr-cd">법이 <b>'실제 인식(actual knowledge)'</b>을 요건으로 삼기 때문에, 마네킹·일러스트·추상 아바타를 지시한 브리프와 프롬프트가 방어 자료가 됩니다.</p>
+        </div>
+      </div>
+      <div class="kr-ci">
+        <div class="kr-cn">5</div>
+        <div>
+          <h4 class="kr-ct">카테고리별로 제작 노선을 나눈다</h4>
+          <p class="kr-cd">제품 단독컷 / 실제 모델(초상 사용 동의 확보) / 합성 모델은 비용도 라벨 결과도 다릅니다. <b>실제 모델 + AI 배경</b>은 합성 인물 요건에 걸리지 않습니다.</p>
+        </div>
+      </div>
+      <div class="kr-ci">
+        <div class="kr-cn">6</div>
+        <div>
+          <h4 class="kr-ct">라벨이 아니라 '노선'을 테스트한다</h4>
+          <p class="kr-cd">브랜드 레지스트리 셀러는 아마존 실험 도구로 제품컷·실모델컷·합성모델컷을 비교할 수 있습니다. <b>표시 노출 여부 자체는 셀러가 통제할 수 없는 변수</b>입니다.</p>
+        </div>
+      </div>
+      <div class="kr-ci">
+        <div class="kr-cn">7</div>
+        <div>
+          <h4 class="kr-ct">국내 AI 기본법과 함께 설계한다</h4>
+          <p class="kr-cd">한국은 2026년 1월 22일부터 생성형 AI 결과물 표시 의무가 시행 중입니다. <b>계도기간이 끝나기 전에 한 번의 워크플로로 양쪽을 만족시키는 설계</b>가 비용 면에서 유리합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="kr-warn">
+      <i class="ti ti-alert-circle"></i>
+      <div>
+        <h4>모르는 것은 모른다고 적습니다</h4>
+        <p>기존 업로드 이미지의 소급 적용 여부, 아마존의 자체 제재 수위, 소비자 표시의 노출 기준은 <b>공개 문서에 명시돼 있지 않습니다.</b> 아마존 한국 셀러의 AI 이미지 사용률에 관한 신뢰할 만한 공개 통계도 확인되지 않았습니다. 추정치로 의사결정하지 마시고 셀러 센트럴 공지를 직접 확인하시기 바랍니다.</p>
+      </div>
+    </div>
+
+    <div class="kr-foot">
+      <i class="ti ti-file-analytics"></i> <strong>출처</strong> — 국가데이터처(구 통계청) 온라인쇼핑동향 및 온라인 해외 직접 판매·구매 동향, 식품의약품안전처 화장품 생산·수출 실적, 뉴욕주 상원 법안 S8420A, CNBC·eWeek·포브스 보도. 본 자료는 정보 제공 목적이며 법률 자문이나 투자 권유가 아닙니다.
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
