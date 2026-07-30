@@ -1,0 +1,72 @@
+<!--
+  삽입 위치: 본문 "4. 왜 코스피 전체가 무너졌나" 섹션 바로 아래
+  사용법: 이 <div class="kjc-wrap">...</div> 블록 전체를 블로그 HTML 편집기에 붙여넣기
+  배경: 밝은 민트그레이(#F6F8F7), Tabler Icons CDN 포함, 실제 HEX 값 사용
+-->
+<div class="kjc-wrap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+  <style>
+    .kjc-wrap{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;background:#F6F8F7;padding:28px 20px;border-radius:16px;box-sizing:border-box;}
+    .kjc-wrap *{box-sizing:border-box;}
+    .kjc-eyebrow{font-size:12px;font-weight:700;letter-spacing:.04em;color:#D0342C;background:#FBEAE8;padding:4px 10px;border-radius:20px;display:inline-block;}
+    .kjc-title{font-size:20px;font-weight:900;color:#12303A;margin:10px 0 2px;}
+    .kjc-sub{font-size:13px;color:#566C74;margin:0 0 20px;line-height:1.6;}
+    .kjc-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
+    @media (max-width:640px){.kjc-stat-grid{grid-template-columns:repeat(2,1fr);}}
+    .kjc-stat{background:#FFFFFF;border:1px solid #E4EBEA;border-radius:12px;padding:14px 12px;text-align:left;}
+    .kjc-stat-label{font-size:11.5px;color:#8C9CA1;margin-bottom:6px;line-height:1.4;min-height:28px;}
+    .kjc-stat-val{font-size:22px;font-weight:900;color:#D0342C;}
+    .kjc-stat-val.ink{color:#12303A;}
+    .kjc-table{width:100%;border-collapse:collapse;background:#FFFFFF;border:1px solid #E4EBEA;border-radius:12px;overflow:hidden;font-size:13.5px;}
+    .kjc-table th{background:#EFF4F3;color:#566C74;font-weight:700;text-align:left;padding:10px 12px;font-size:12px;}
+    .kjc-table td{padding:11px 12px;border-top:1px solid #EEF2F1;color:#12303A;}
+    .kjc-table td.num{font-weight:800;text-align:right;font-variant-numeric:tabular-nums;}
+    .kjc-table td.down{color:#D0342C;}
+    .kjc-table tr.hi td{background:#FFF7F0;}
+    .kjc-note{display:flex;gap:8px;background:#FFFDF8;border:1px solid #F1DDA8;border-radius:10px;padding:12px 14px;margin-top:16px;font-size:13px;color:#7A5300;line-height:1.6;}
+    .kjc-note i{color:#B47809;font-size:16px;margin-top:2px;}
+    .kjc-foot{margin-top:14px;font-size:11.5px;color:#8C9CA1;display:flex;align-items:center;gap:6px;}
+  </style>
+
+  <span class="kjc-eyebrow">MARKET CONTEXT</span>
+  <div class="kjc-title">2026년 7월, 코스피는 왜 이렇게 무너졌나</div>
+  <p class="kjc-sub">SK이터닉스만의 문제가 아니다. 7월 한 달 코스피 전체가 사상 최악 수준의 낙폭을 기록했다.</p>
+
+  <div class="kjc-stat-grid">
+    <div class="kjc-stat">
+      <div class="kjc-stat-label">7월 월간 하락률<br>(7/1 종가→7/29)</div>
+      <div class="kjc-stat-val">-31.8%</div>
+    </div>
+    <div class="kjc-stat">
+      <div class="kjc-stat-label">이틀간(7/28~29)<br>시가총액 증발분</div>
+      <div class="kjc-stat-val">약 864조원</div>
+    </div>
+    <div class="kjc-stat">
+      <div class="kjc-stat-label">서킷브레이커<br>동반 발동</div>
+      <div class="kjc-stat-val ink">사상 최초<br><span style="font-size:13px;font-weight:700;">(2거래일 연속)</span></div>
+    </div>
+    <div class="kjc-stat">
+      <div class="kjc-stat-label">비교 대상 대비</div>
+      <div class="kjc-stat-val ink" style="font-size:16px;line-height:1.5;">2008 금융위기·<br>1997 IMF 위기 상회</div>
+    </div>
+  </div>
+
+  <table class="kjc-table">
+    <thead>
+      <tr><th>날짜</th><th>코스피 종가</th><th>등락률</th><th>비고</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>7월 1일 (수)</td><td class="num">8,303.41</td><td class="num">-</td><td>월간 하락률 기준점</td></tr>
+      <tr class="hi"><td>7월 28일 (화)</td><td class="num">6,023.66</td><td class="num down">-10.84%</td><td>양대 시장 서킷브레이커 발동</td></tr>
+      <tr class="hi"><td>7월 29일 (수)</td><td class="num">5,663.24</td><td class="num down">-5.98%</td><td>2거래일 연속 서킷브레이커, F4 긴급회의</td></tr>
+      <tr><td>7월 30일 (목)</td><td class="num">5,593.56</td><td class="num down">-1.23%</td><td>장중 5,976까지 반등 시도 후 반납</td></tr>
+    </tbody>
+  </table>
+
+  <div class="kjc-note">
+    <i class="ti ti-alert-triangle"></i>
+    <div><strong>핵심 원인 3가지</strong> — ① SK하이닉스가 분기 사상 최대 영업이익(60조원 돌파)에도 시장 기대치(약 64조원)를 밑돌며 반도체 업종 전반 밸류에이션 조정 촉발 ② 단일종목 레버리지 ETF 쏠림에 따른 변동성 확대(정부는 7/29 F4 회의에서 개인 투자한도·거래비용 규제 강화 발표) ③ 미·이란 중동 정세 재확전에 따른 유가·환율 변동성. SK이터닉스를 포함한 신재생에너지 테마주는 이 전반적 패닉셀 구간에서 유가 급등 초기 수혜 되돌림까지 겹치며 낙폭이 더 컸다.</div>
+  </div>
+
+  <div class="kjc-foot"><i class="ti ti-info-circle"></i> 자료: 한국거래소(KRX), 파이낸셜뉴스·서울경제·머니투데이·미디어워치 보도 종합, 2026년 7월 30일 기준</div>
+</div>
