@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시공사는 왜 컨설팅비가 아깝다고 느낄까</title>
+
+<meta property="og:title" content="시공사는 왜 컨설팅비가 아깝다고 느낄까 | 그린브릿지파트너스" />
+<meta property="og:description" content="가시성 부재, 학습 효과, 매몰비용 회피 — 태양광 시공사가 금융컨설팅사와 거리를 두게 되는 3가지 심리와 거래 단계별 인식 변화를 정리했습니다." />
+<meta property="og:image" content="썸네일 이미지 URL" />
+<meta property="og:url" content="페이지 URL" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+    background: #F4F8FB;
+    padding: 32px 16px;
+    color: #1F2D36;
+  }
+  .card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid #DCE7EC;
+    border-radius: 20px;
+    padding: 36px 32px 32px;
+    box-shadow: 0 6px 24px rgba(11, 59, 73, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #F2A93B 0%, #1E8F6D 100%);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #0B3B49;
+    background: #EAF1F4;
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 21px; font-weight: 800; color: #0B3B49; line-height: 1.4; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .subtitle { font-size: 13.5px; color: #64798A; margin-bottom: 26px; line-height: 1.6; }
+
+  .psy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 620px) {
+    .psy-grid { grid-template-columns: 1fr; }
+  }
+  .psy-card {
+    background: #F7FAFB;
+    border: 1px solid #E4ECF0;
+    border-radius: 14px;
+    padding: 16px 14px;
+  }
+  .psy-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #F2A93B;
+    margin-bottom: 8px;
+  }
+  .psy-icon {
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    background: #EAF1F4;
+    color: #0B3B49;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .psy-title { font-size: 13.5px; font-weight: 800; color: #14304A; margin-bottom: 6px; line-height: 1.4; }
+  .psy-text { font-size: 12px; color: #5B6B7A; line-height: 1.6; }
+
+  .stage-table { margin-top: 4px; }
+  .stage-head {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #0B3B49;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  thead th {
+    text-align: left;
+    font-size: 11px;
+    color: #8496A3;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-bottom: 1px solid #DCE7EC;
+  }
+  tbody td {
+    padding: 11px 10px;
+    border-bottom: 1px solid #EEF3F5;
+    line-height: 1.55;
+    color: #33454F;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .stage-name { font-weight: 700; color: #14304A; width: 26%; }
+  .perception { font-weight: 700; }
+  .perception.risk { color: #C0392B; }
+  .perception.ok { color: #1E8F6D; }
+
+  .source { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #DCE7EC; font-size: 11.5px; color: #8496A3; line-height: 1.7; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="eyebrow"><i class="ti ti-brain"></i>&nbsp;DROPOUT PSYCHOLOGY</span>
+    <h1>시공사는 왜 "컨설팅비 아깝다"고 느낄까요</h1>
+    <p class="subtitle">세 가지 심리가 겹치면, 아무리 좋은 조건이어도 "다음번엔 우리끼리"로 결론 납니다</p>
+
+    <div class="psy-grid">
+      <div class="psy-card">
+        <div class="psy-num">01</div>
+        <div class="psy-icon"><i class="ti ti-eye-off"></i></div>
+        <div class="psy-title">가시성 부재</div>
+        <div class="psy-text">시공비·기자재비는 현장에서 눈에 보이지만, 컨설팅비는 서류 한 장의 결과물처럼 느껴집니다.</div>
+      </div>
+      <div class="psy-card">
+        <div class="psy-num">02</div>
+        <div class="psy-icon"><i class="ti ti-trending-up"></i></div>
+        <div class="psy-title">학습 효과</div>
+        <div class="psy-text">2~3건 경험하고 나면 "이 정도는 우리도 할 수 있겠다"는 자신감이 생깁니다.</div>
+      </div>
+      <div class="psy-card">
+        <div class="psy-num">03</div>
+        <div class="psy-icon"><i class="ti ti-coin-off"></i></div>
+        <div class="psy-title">매몰비용 회피</div>
+        <div class="psy-text">수수료 1~2%가 수백만~수천만 원. 직접 처리해서라도 아끼려는 동기가 강합니다.</div>
+      </div>
+    </div>
+
+    <div class="stage-table">
+      <div class="stage-head"><i class="ti ti-route"></i>거래 단계별 인식 변화</div>
+      <table>
+        <thead>
+          <tr><th>단계</th><th>컨설팅사의 현재 역할</th><th>시공사의 인식</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="stage-name">① 프로젝트 초기</td>
+            <td>사업성 분석·금융구조 설계</td>
+            <td class="perception ok">"필요하다"</td>
+          </tr>
+          <tr>
+            <td class="stage-name">② 대출 심사·실행</td>
+            <td>서류 준비·금융사 연결</td>
+            <td class="perception ok">"핵심 역할"</td>
+          </tr>
+          <tr>
+            <td class="stage-name">③ 대출 실행 직후</td>
+            <td>관계 단절</td>
+            <td class="perception risk">"이미 필요 없다"</td>
+          </tr>
+          <tr>
+            <td class="stage-name">④ 차기 프로젝트</td>
+            <td>신규 접촉 시도</td>
+            <td class="perception risk">"직접 할 수 있다"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="source">자료: 태양광 금융구조화 사업 파트너십 전략보고서(2025) 내부 분석, 230kW 프로젝트 예시 기준</div>
+  </div>
+</body>
+</html>
