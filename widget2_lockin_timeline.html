@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이탈을 막는 3단계 Lock-in 파트너십 모델</title>
+
+<meta property="og:title" content="이탈을 막는 3단계 Lock-in 파트너십 모델 | 그린브릿지파트너스" />
+<meta property="og:description" content="컨설팅사의 역할을 대출 실행 시점에서 발전소 운영 20년 전체로 넓히는 3단계 락인 전략과 구체적 전술 5가지를 정리했습니다." />
+<meta property="og:image" content="썸네일 이미지 URL" />
+<meta property="og:url" content="페이지 URL" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+    background: #F4F8FB;
+    padding: 32px 16px;
+    color: #1F2D36;
+  }
+  .card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid #DCE7EC;
+    border-radius: 20px;
+    padding: 36px 32px 32px;
+    box-shadow: 0 6px 24px rgba(11, 59, 73, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #F2A93B 0%, #1E8F6D 100%);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #1E8F6D;
+    background: #EAF6F0;
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 22px; font-weight: 800; color: #0B3B49; line-height: 1.4; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .subtitle { font-size: 14px; color: #64798A; margin-bottom: 28px; line-height: 1.6; }
+  .subtitle b { color: #C0392B; }
+
+  .timeline { position: relative; padding-left: 34px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 11px; top: 6px; bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, #F2A93B 0%, #1E8F6D 100%);
+  }
+  .item { position: relative; padding-bottom: 22px; }
+  .item:last-child { padding-bottom: 0; }
+  .dot {
+    position: absolute;
+    left: -34px; top: 2px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 3px solid #F2A93B;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    color: #F2A93B;
+  }
+  .item.final .dot { border-color: #1E8F6D; color: #1E8F6D; }
+
+  .stage-card {
+    background: #F7FAFB;
+    border: 1px solid #E4ECF0;
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .item.final .stage-card { background: #F3FBF8; border-color: #C9E9DC; }
+  .stage-label { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .stage-name { font-size: 13px; font-weight: 800; color: #0B3B49; letter-spacing: 0.2px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #EAF1F4; color: #33454F; }
+  .tag.final { background: #DEF3EB; color: #167A5B; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+  .col-label { font-size: 10.5px; font-weight: 700; color: #96A5B0; margin-bottom: 4px; }
+  .col-text { font-size: 12.5px; color: #33454F; line-height: 1.5; }
+  .effect {
+    margin-top: 12px;
+    display: flex; align-items: flex-start; gap: 6px;
+    font-size: 12px; font-weight: 700; color: #1E7A5E;
+    background: #EAF8F2;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .tactics { margin-top: 24px; padding-top: 20px; border-top: 1px dashed #DCE7EC; }
+  .tactics-title { font-size: 13px; font-weight: 800; color: #0B3B49; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .tlist { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  @media (max-width: 640px) { .tlist { grid-template-columns: repeat(2, 1fr); } }
+  .tchip { background: #F7FAFB; border: 1px solid #E4ECF0; border-radius: 12px; padding: 10px 8px; text-align: center; }
+  .tchip i { font-size: 18px; color: #F2A93B; margin-bottom: 6px; display: block; }
+  .tchip span { font-size: 10.5px; font-weight: 700; color: #33454F; line-height: 1.35; display: block; }
+
+  .source { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #DCE7EC; font-size: 11.5px; color: #8496A3; line-height: 1.7; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="eyebrow"><i class="ti ti-link"></i>&nbsp;LOCK-IN MODEL</span>
+    <h1>이탈을 막는 3단계 Lock-in 파트너십 모델</h1>
+    <p class="subtitle">컨설팅사의 역할을 "대출 실행 시점"에서 <b>발전소 운영 20년 전체</b>로 넓히는 것이 핵심입니다</p>
+
+    <div class="timeline">
+      <div class="item">
+        <div class="dot"><i class="ti ti-flag"></i></div>
+        <div class="stage-card">
+          <div class="stage-label"><span class="stage-name">사전 단계</span><span class="tag">진입 전</span></div>
+          <div class="row">
+            <div><div class="col-label">컨설팅사 역할</div><div class="col-text">사업성 분석 리포트 무상 제공 · 인허가 전략 조언</div></div>
+            <div><div class="col-label">시공사 제공 가치</div><div class="col-text">입찰 성공률 향상 · 사전 리스크 제거</div></div>
+          </div>
+          <div class="effect"><i class="ti ti-target-arrow"></i>진입 단계부터 의존성 형성</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dot"><i class="ti ti-file-dollar"></i></div>
+        <div class="stage-card">
+          <div class="stage-label"><span class="stage-name">실행 단계</span><span class="tag">대출 실행</span></div>
+          <div class="row">
+            <div><div class="col-label">컨설팅사 역할</div><div class="col-text">최저금리 협상 · 복수 금융사 병행 · 거치기간 극대화</div></div>
+            <div><div class="col-label">시공사 제공 가치</div><div class="col-text">실질 금융비용 절감 · 자금흐름 안정화</div></div>
+          </div>
+          <div class="effect"><i class="ti ti-target-arrow"></i>금리 차이로 ROI 입증</div>
+        </div>
+      </div>
+      <div class="item final">
+        <div class="dot"><i class="ti ti-repeat"></i></div>
+        <div class="stage-card">
+          <div class="stage-label"><span class="stage-name">사후 단계</span><span class="tag final">★ 락인 핵심</span></div>
+          <div class="row">
+            <div><div class="col-label">컨설팅사 역할</div><div class="col-text">정기 포트폴리오 리뷰 · 리파이낸싱 · 세제 혜택 조언</div></div>
+            <div><div class="col-label">시공사 제공 가치</div><div class="col-text">20년 운영 기간 수익 최적화</div></div>
+          </div>
+          <div class="effect" style="background:#DEF3EB;"><i class="ti ti-target-arrow"></i>지속 관계의 핵심 구간</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tactics">
+      <div class="tactics-title"><i class="ti ti-list-check"></i>구체적인 롱런 전술 5가지</div>
+      <div class="tlist">
+        <div class="tchip"><i class="ti ti-user-star"></i><span>전담 AM 제도</span></div>
+        <div class="tchip"><i class="ti ti-chart-arrows-vertical"></i><span>Gain-Sharing 계약</span></div>
+        <div class="tchip"><i class="ti ti-building-bank"></i><span>독점 금융상품</span></div>
+        <div class="tchip"><i class="ti ti-database"></i><span>파이프라인 DB 공동관리</span></div>
+        <div class="tchip"><i class="ti ti-scale"></i><span>세무·법무 번들</span></div>
+      </div>
+    </div>
+
+    <div class="source">자료: 태양광 금융구조화 사업 파트너십 전략보고서(2025) 내부 분석</div>
+  </div>
+</body>
+</html>
