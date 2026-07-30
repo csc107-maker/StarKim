@@ -1,0 +1,122 @@
+<!--
+  삽입 위치: 본문 "2. SK이터닉스 주가, 이번 달 어떻게 움직였나" 섹션 바로 아래
+  사용법: 이 <div class="ske-tl-wrap">...</div> 블록 전체를 블로그 HTML 편집기에 그대로 붙여넣기
+  배경: 밝은 민트그레이(#F6F8F7), Tabler Icons CDN 포함, CSS 변수 없이 실제 HEX 값 사용
+-->
+<div class="ske-tl-wrap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+  <style>
+    .ske-tl-wrap{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;background:#F6F8F7;padding:28px 20px;border-radius:16px;box-sizing:border-box;}
+    .ske-tl-wrap *{box-sizing:border-box;}
+    .ske-tl-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+    .ske-tl-eyebrow{font-size:12px;font-weight:700;letter-spacing:.04em;color:#B47809;background:#FBF1DD;padding:4px 10px;border-radius:20px;}
+    .ske-tl-title{font-size:20px;font-weight:900;color:#12303A;margin:10px 0 2px;}
+    .ske-tl-sub{font-size:13px;color:#566C74;margin:0 0 22px;line-height:1.6;}
+    .ske-tl-line{position:relative;padding-left:28px;}
+    .ske-tl-line:before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:#D7E2E0;}
+    .ske-tl-item{position:relative;padding-bottom:22px;}
+    .ske-tl-item:last-child{padding-bottom:0;}
+    .ske-tl-dot{position:absolute;left:-28px;top:2px;width:20px;height:20px;border-radius:50%;background:#FFFFFF;border:3px solid #D7E2E0;display:flex;align-items:center;justify-content:center;}
+    .ske-tl-dot.up{border-color:#0E7C7B;}
+    .ske-tl-dot.down{border-color:#D0342C;}
+    .ske-tl-dot.flag{border-color:#B47809;background:#B47809;}
+    .ske-tl-card{background:#FFFFFF;border:1px solid #E4EBEA;border-radius:12px;padding:14px 16px;}
+    .ske-tl-date{font-size:12px;font-weight:700;color:#8C9CA1;margin-bottom:4px;}
+    .ske-tl-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+    .ske-tl-name{font-size:15px;font-weight:700;color:#12303A;}
+    .ske-tl-price{font-size:17px;font-weight:900;}
+    .ske-tl-price.up{color:#0E7C7B;}
+    .ske-tl-price.down{color:#D0342C;}
+    .ske-tl-price.flag{color:#B47809;}
+    .ske-tl-desc{font-size:13px;color:#566C74;margin-top:6px;line-height:1.6;}
+    .ske-tl-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;}
+    .ske-tl-badge.up{background:#E4F4F1;color:#0E7C7B;}
+    .ske-tl-badge.down{background:#FBEAE8;color:#D0342C;}
+    .ske-tl-badge.flag{background:#FBF1DD;color:#B47809;}
+    .ske-tl-foot{margin-top:18px;font-size:11.5px;color:#8C9CA1;display:flex;align-items:center;gap:6px;}
+  </style>
+
+  <div class="ske-tl-head">
+    <span class="ske-tl-eyebrow">TIMELINE</span>
+  </div>
+  <div class="ske-tl-title">SK이터닉스, 5주 만에 두 번 롤러코스터</div>
+  <p class="ske-tl-sub">6월 저점 대비 7월 24일 +115% 급등 → 사흘 만에 고점 대비 -40% 급락. 종가·장중가 기준, 출처는 하단 참고.</p>
+
+  <div class="ske-tl-line">
+
+    <div class="ske-tl-item">
+      <div class="ske-tl-dot"><i class="ti ti-point-filled" style="font-size:8px;color:#D7E2E0;"></i></div>
+      <div class="ske-tl-card">
+        <div class="ske-tl-date">6월 23일 (화)</div>
+        <div class="ske-tl-row">
+          <span class="ske-tl-name">이번 랠리의 출발점</span>
+          <span class="ske-tl-price">37,700원</span>
+        </div>
+        <div class="ske-tl-desc">종가 기준 저점. 이후 한 달간 벌어질 급등락의 기준점이 된다.</div>
+      </div>
+    </div>
+
+    <div class="ske-tl-item">
+      <div class="ske-tl-dot up"><i class="ti ti-arrow-up" style="font-size:10px;color:#0E7C7B;"></i></div>
+      <div class="ske-tl-card">
+        <div class="ske-tl-date">7월 23일 (목)</div>
+        <div class="ske-tl-row">
+          <span class="ske-tl-name">상한가 <span class="ske-tl-badge up">+29.9%대</span></span>
+          <span class="ske-tl-price up">상한가</span>
+        </div>
+        <div class="ske-tl-desc">중동發 유가 급등에 대체에너지 수혜 부각 + KKR·SK 재생에너지 통합 기대감 겹침.</div>
+      </div>
+    </div>
+
+    <div class="ske-tl-item">
+      <div class="ske-tl-dot up"><i class="ti ti-trending-up" style="font-size:10px;color:#0E7C7B;"></i></div>
+      <div class="ske-tl-card">
+        <div class="ske-tl-date">7월 24일 (금)</div>
+        <div class="ske-tl-row">
+          <span class="ske-tl-name">52주 신고가 <span class="ske-tl-badge up">6/23 대비 +115%</span></span>
+          <span class="ske-tl-price up">80,900원</span>
+        </div>
+        <div class="ske-tl-desc">장중 87,700원까지 터치. 코스피가 -5.72% 급락한 날에도 나홀로 상승.</div>
+      </div>
+    </div>
+
+    <div class="ske-tl-item">
+      <div class="ske-tl-dot down"><i class="ti ti-arrow-down" style="font-size:10px;color:#D0342C;"></i></div>
+      <div class="ske-tl-card">
+        <div class="ske-tl-date">7월 27일 (월)</div>
+        <div class="ske-tl-row">
+          <span class="ske-tl-name">차익실현 급락 <span class="ske-tl-badge down">고점 대비 약 -35%</span></span>
+          <span class="ske-tl-price down">57,100원</span>
+        </div>
+        <div class="ske-tl-desc">장중 한때 -27%대까지 밀림. 국제유가 급락 + 단기 급등 되돌림 + 밸류 부담 복합 작용.</div>
+      </div>
+    </div>
+
+    <div class="ske-tl-item">
+      <div class="ske-tl-dot down"><i class="ti ti-arrow-down" style="font-size:10px;color:#D0342C;"></i></div>
+      <div class="ske-tl-card">
+        <div class="ske-tl-date">7월 28일 (화)</div>
+        <div class="ske-tl-row">
+          <span class="ske-tl-name">코스피 서킷브레이커 발동일 <span class="ske-tl-badge down">-14%대</span></span>
+          <span class="ske-tl-price down">48,700원</span>
+        </div>
+        <div class="ske-tl-desc">코스피 전체가 -10.84% 폭락(6,023.66)한 '검은 화요일'. 반도체發 쇼크에 재생에너지주도 동반 급락.</div>
+      </div>
+    </div>
+
+    <div class="ske-tl-item">
+      <div class="ske-tl-dot flag"><i class="ti ti-flag-3-filled" style="font-size:10px;color:#fff;"></i></div>
+      <div class="ske-tl-card" style="border-color:#F1DDA8;background:#FFFDF8;">
+        <div class="ske-tl-date">7월 31일 (금) · 오늘</div>
+        <div class="ske-tl-row">
+          <span class="ske-tl-name">최대주주 지분 거래종결 예정일 <span class="ske-tl-badge flag">D-Day</span></span>
+          <span class="ske-tl-price flag">확인 중</span>
+        </div>
+        <div class="ske-tl-desc">SK디스커버리(30.98%)·한앤컴퍼니(12.52%) 지분의 KKR(Eclipse Holdco) 매각 거래종결 예정일. 당초 6월 30일에서 한 차례 연기됐다. 이 글 작성 시점 기준 당일 종가는 공개 자료로 확정되지 않아 별도 표기했다.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ske-tl-foot"><i class="ti ti-info-circle"></i> 자료: 한국거래소(KRX), 전자공시(DART), 이투데이·한국경제·톱스타뉴스·CBC뉴스 보도 종합</div>
+</div>
