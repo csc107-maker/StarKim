@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>갈등 없는 상생 방정식 — Win-Win 마진 계산</title>
+
+<meta property="og:title" content="갈등 없는 상생 방정식, 숫자로 보면 | 그린브릿지파트너스" />
+<meta property="og:description" content="시공사의 기존 이익을 건드리지 않고, 절감된 금액 안에서만 컨설팅사 성과보수를 나누는 Win-Win 마진 구조를 230kW 프로젝트 예시로 계산했습니다." />
+<meta property="og:image" content="썸네일 이미지 URL" />
+<meta property="og:url" content="페이지 URL" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+    background: #F4F8FB;
+    padding: 32px 16px;
+    color: #1F2D36;
+  }
+  .card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid #DCE7EC;
+    border-radius: 20px;
+    padding: 36px 32px 32px;
+    box-shadow: 0 6px 24px rgba(11, 59, 73, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #F2A93B 0%, #1E8F6D 100%);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #1E8F6D;
+    background: #EAF6F0;
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 22px; font-weight: 800; color: #0B3B49; line-height: 1.4; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .subtitle { font-size: 14px; color: #64798A; margin-bottom: 22px; line-height: 1.6; }
+  .subtitle b { color: #C0392B; }
+
+  .case { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .case span { font-size: 11.5px; font-weight: 700; color: #0B3B49; background: #EAF1F4; padding: 6px 11px; border-radius: 999px; }
+  .case span b { color: #C0392B; }
+
+  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; gap: 10px; margin-bottom: 22px; }
+  @media (max-width: 620px) {
+    .flow { grid-template-columns: 1fr; }
+    .arrow { transform: rotate(90deg); margin: 2px auto; }
+  }
+  .box { background: #F7FAFB; border: 1px solid #E4ECF0; border-radius: 14px; padding: 16px 14px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+  .box.main { border: 1.5px solid #F2A93B; background: #FBF6EC; }
+  .box.result { border: 1.5px solid #1E8F6D; background: #F3FBF8; }
+  .box .lb { font-size: 11px; font-weight: 700; color: #96A5B0; margin-bottom: 6px; }
+  .box .num { font-family: 'IBM Plex Mono', monospace; font-size: 21px; font-weight: 800; color: #0B3B49; line-height: 1.2; }
+  .box.result .num { color: #167A5B; }
+  .box .unit { font-size: 11px; color: #96A5B0; margin-top: 2px; }
+  .arrow { display: flex; align-items: center; justify-content: center; color: #E9CE8F; font-size: 18px; }
+
+  .result-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 520px) { .result-row { grid-template-columns: 1fr; } }
+  .result-row .rcard { border-radius: 16px; padding: 18px; }
+  .result-row .rcard.builder { background: #0B3B49; color: #fff; }
+  .result-row .rcard.consultant { background: #FBF6EC; border: 1px solid #F0DDB0; }
+  .result-row .who { font-size: 12.5px; font-weight: 700; display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+  .result-row .rcard.builder .who { color: #9FD9C4; }
+  .result-row .rcard.consultant .who { color: #B5720F; }
+  .result-row .amount { font-family: 'IBM Plex Mono', monospace; font-size: 25px; font-weight: 800; }
+  .result-row .rcard.consultant .amount { color: #0B3B49; }
+  .result-row .desc { font-size: 11.5px; margin-top: 6px; line-height: 1.5; }
+  .result-row .rcard.builder .desc { color: #C9D8E5; }
+  .result-row .rcard.consultant .desc { color: #8A7B4E; }
+
+  .callout {
+    margin-top: 20px;
+    background: #FBF6EC;
+    border: 1px solid #F0DDB0;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .callout i { font-size: 20px; color: #F2A93B; margin-top: 2px; }
+  .callout-text { font-size: 12.5px; color: #6B5A2E; line-height: 1.7; }
+  .callout-text b { color: #C0392B; }
+
+  .source { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #DCE7EC; font-size: 11.5px; color: #8496A3; line-height: 1.7; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="eyebrow"><i class="ti ti-calculator"></i>&nbsp;WIN-WIN FORMULA</span>
+    <h1>갈등 없는 상생 방정식, 숫자로 보면</h1>
+    <p class="subtitle">시공사의 기존 이익을 건드리지 않고, <b>절감된 금액 안에서만</b> 성과보수를 나눕니다</p>
+
+    <div class="case">
+      <span>230kW 프로젝트</span>
+      <span>팩토링 <b>3.6억 원</b></span>
+      <span>금리 <b>4.7% → 3.9%</b> 협상 성공</span>
+      <span>대출기간 <b>10년</b></span>
+    </div>
+
+    <div class="flow">
+      <div class="box main">
+        <div class="lb">① 이자 절감액</div>
+        <div class="num">2,880</div>
+        <div class="unit">만 원 (3.6억×0.8%p×10년)</div>
+      </div>
+      <div class="arrow"><i class="ti ti-minus"></i></div>
+      <div class="box">
+        <div class="lb">② 성과보수 (25%)</div>
+        <div class="num">720</div>
+        <div class="unit">만 원 · 컨설팅사 몫</div>
+      </div>
+      <div class="arrow"><i class="ti ti-equal"></i></div>
+      <div class="box result">
+        <div class="lb">③ 시공사 순이익</div>
+        <div class="num">2,160</div>
+        <div class="unit">만 원 · 추가 수익</div>
+      </div>
+    </div>
+
+    <div class="result-row">
+      <div class="rcard builder">
+        <div class="who"><i class="ti ti-building-factory-2"></i>시공사</div>
+        <div class="amount">+2,160만 원</div>
+        <div class="desc">아무것도 하지 않고 확보하는 순이익. 기존 마진은 그대로 유지됩니다.</div>
+      </div>
+      <div class="rcard consultant">
+        <div class="who"><i class="ti ti-users-group"></i>금융컨설팅사</div>
+        <div class="amount">+720만 원</div>
+        <div class="desc">기존 수수료 외 추가 수익. 협상 노력에 대한 정당한 보상입니다.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <i class="ti ti-bulb"></i>
+      <div class="callout-text"><b>핵심</b>은 컨설팅사의 수익을 시공사가 절감한 금액의 일부에서 만드는 구조 설계입니다. 시공사의 기존 파이를 나누는 게 아니라, 함께 더 큰 파이를 만드는 방식입니다.</div>
+    </div>
+
+    <div class="source">자료: 태양광 금융구조화 사업 파트너십 전략보고서(2025) 내부 분석 · 예시 계산이며 실제 조건에 따라 달라질 수 있습니다</div>
+  </div>
+</body>
+</html>
