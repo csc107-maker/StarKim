@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI 생성 콘텐츠 표시 규제 타임라인 2025-2027</title>
+
+<meta property="og:title" content="AI 생성 콘텐츠 표시 규제 타임라인 — 뉴욕에서 캘리포니아, 그리고 한국까지" />
+<meta property="og:description" content="2025년 6월 뉴욕주 법안 발의부터 2027년 1월 캘리포니아 대형 플랫폼 의무 개시까지, AI 이미지 표시 규제가 확산되는 경로를 한 장으로 정리했습니다." />
+<meta property="og:image" content="https://example.com/thumbnail_amazon_ny_ai_ad_law.png" />
+<meta property="og:url" content="https://example.com/amazon-ny-ai-ad-law" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+<style>
+  .tl-wrap *, .tl-wrap *::before, .tl-wrap *::after { box-sizing: border-box; }
+
+  .tl-wrap {
+    background: #F2F5F9; padding: 30px 18px 34px;
+    font-family: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont,
+                 "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    color: #10151F; line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  .tl-card {
+    max-width: 800px; margin: 0 auto; background: #FFFFFF;
+    border: 1px solid #DCE3EC; border-radius: 18px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(16,21,31,.04), 0 12px 28px rgba(16,21,31,.06);
+  }
+
+  .tl-head { padding: 26px 26px 18px; border-bottom: 1px solid #E4EAF1; }
+  .tl-kicker {
+    display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700;
+    color: #B4740A; background: #FDF2DC; border: 1px solid #F0DFB6;
+    border-radius: 999px; padding: 5px 12px; margin-bottom: 13px;
+  }
+  .tl-h { margin: 0 0 8px; font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
+  .tl-sub { margin: 0 0 16px; font-size: 14.5px; color: #5B6675; }
+
+  .tl-legend { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tl-lg { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #5B6675; }
+  .tl-lg span { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+  .tl-body { padding: 8px 26px 6px; }
+
+  .tl-row { position: relative; padding: 18px 0 18px 46px; border-bottom: 1px solid #EDF1F6; }
+  .tl-row:last-child { border-bottom: 0; }
+  .tl-row::before {
+    content: ""; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: #E4EAF1;
+  }
+  .tl-row:first-child::before { top: 26px; }
+  .tl-row:last-child::before { bottom: auto; height: 26px; }
+
+  .tl-dot {
+    position: absolute; left: 8px; top: 21px; width: 16px; height: 16px;
+    border-radius: 50%; background: #FFFFFF; border: 3px solid #94A3B4; z-index: 1;
+  }
+  .tl-row.ny  .tl-dot { border-color: #0E8F6E; }
+  .tl-row.biz .tl-dot { border-color: #6D3BF5; }
+  .tl-row.kr  .tl-dot { border-color: #D9354A; }
+  .tl-row.us  .tl-dot { border-color: #B4740A; }
+  .tl-row.now .tl-dot { background: #6D3BF5; border-color: #6D3BF5; box-shadow: 0 0 0 5px rgba(109,59,245,.15); }
+
+  .tl-date {
+    display: inline-block; font-size: 12.5px; font-weight: 800; letter-spacing: .01em;
+    color: #FFFFFF; background: #94A3B4; border-radius: 5px; padding: 2px 8px; margin-bottom: 7px;
+  }
+  .tl-row.ny  .tl-date { background: #0E8F6E; }
+  .tl-row.biz .tl-date { background: #6D3BF5; }
+  .tl-row.kr  .tl-date { background: #D9354A; }
+  .tl-row.us  .tl-date { background: #B4740A; }
+
+  .tl-t { margin: 0 0 5px; font-size: 16px; font-weight: 700; letter-spacing: -.015em; }
+  .tl-d { margin: 0; font-size: 14px; color: #4A5563; }
+  .tl-d b { color: #10151F; }
+
+  .tl-badge-now {
+    display: inline-block; margin-left: 7px; font-size: 11px; font-weight: 800;
+    color: #4B21C4; background: #EDE8FE; border: 1px solid #D9CFFC;
+    border-radius: 999px; padding: 2px 8px; vertical-align: 2px;
+  }
+
+  .tl-foot { padding: 16px 26px 20px; background: #F7F9FC; border-top: 1px solid #E4EAF1; font-size: 12.5px; color: #6B7684; }
+  .tl-foot strong { color: #10151F; }
+
+  @media (max-width: 520px) {
+    .tl-wrap { padding: 20px 12px 24px; }
+    .tl-h { font-size: 20px; }
+    .tl-head, .tl-foot { padding-left: 17px; padding-right: 17px; }
+    .tl-body { padding-left: 17px; padding-right: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tl-wrap">
+  <div class="tl-card">
+
+    <div class="tl-head">
+      <span class="tl-kicker"><i class="ti ti-timeline"></i> 규제 확산 경로 · 2025 → 2027</span>
+      <h2 class="tl-h">라벨 규제는 뉴욕에서 멈추지 않습니다</h2>
+      <p class="tl-sub">법안 발의부터 아마존 정책 시행, 그리고 캘리포니아의 다음 마감일까지 실제 날짜 기준으로 배열했습니다.</p>
+      <div class="tl-legend">
+        <span class="tl-lg"><span style="background:#0E8F6E"></span>뉴욕주 입법</span>
+        <span class="tl-lg"><span style="background:#6D3BF5"></span>기업 정책</span>
+        <span class="tl-lg"><span style="background:#D9354A"></span>한국</span>
+        <span class="tl-lg"><span style="background:#B4740A"></span>미국 연방·타주</span>
+      </div>
+    </div>
+
+    <div class="tl-body">
+
+      <div class="tl-row ny">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2025.06.09</span>
+        <h3 class="tl-t">뉴욕주 상원 S8420 발의</h3>
+        <p class="tl-d">지아나리스(Gianaris) 상원의원 발의. 하원 대응 법안은 로젠탈(Rosenthal) 의원의 A8887. 2021년부터 네 차례 폐기됐던 법안의 재도전이었습니다.</p>
+      </div>
+
+      <div class="tl-row ny">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2025.06.13</span>
+        <h3 class="tl-t">상원 본회의 통과 — 찬성 59, 반대 0</h3>
+        <p class="tl-d">반대표 없이 통과. 6월 17일 하원 통과. AI 규제가 <b>초당적 합의 영역</b>이 됐음을 보여준 표결입니다.</p>
+      </div>
+
+      <div class="tl-row ny">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2025.12.11</span>
+        <h3 class="tl-t">호컬 주지사 서명 (2025년 제617호 법률)</h3>
+        <p class="tl-d">시행일은 서명 후 180일째. 배우조합 SAG-AFTRA가 공식 지지 성명을 냈습니다.</p>
+      </div>
+
+      <div class="tl-row us">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2025.12</span>
+        <h3 class="tl-t">미 연방 행정명령 — 주(州) AI 규제 견제</h3>
+        <p class="tl-d">국가 AI 프레임워크 행정명령으로 법무부 소송 태스크포스가 설치되고 상무부에 주법 검토가 지시됐습니다. 다만 <b>주 공개 의무를 선점(preempt)하는 연방법은 현재 없습니다.</b></p>
+      </div>
+
+      <div class="tl-row kr">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2026.01.22</span>
+        <h3 class="tl-t">한국 AI 기본법 + 시행령 동시 시행</h3>
+        <p class="tl-d">생성형 AI 결과물 표시 의무 발효. 일반 생성물은 <b>워터마크·메타데이터 등 기계판독 방식도 허용</b>, 딥페이크는 이용자가 인식 가능한 가시적 표시만 허용. 최대 3,000만원 과태료이나 <b>1년 이상 계도기간</b> 운영.</p>
+      </div>
+
+      <div class="tl-row ny">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2026.06.09</span>
+        <h3 class="tl-t">뉴욕주 §396-b 시행</h3>
+        <p class="tl-d">주지사실은 "미국 최초(first-in-the-nation)"라고 발표. 광고에 합성 인물이 있으면 <b>눈에 띄게 공개</b>해야 합니다.</p>
+      </div>
+
+      <div class="tl-row biz now">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2026.07.22</span>
+        <h3 class="tl-t">아마존, 셀러 통지 <span class="tl-badge-now">이번 뉴스</span></h3>
+        <p class="tl-d">시행 43일 만에 대형 마켓플레이스 중 처음으로 셀러 대상 요구사항을 도입. 다음 날 CNBC 보도로 공개됐습니다.</p>
+      </div>
+
+      <div class="tl-row us">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2026.08.02</span>
+        <h3 class="tl-t">캘리포니아 AI 투명성법(AB 853 개정) 발효</h3>
+        <p class="tl-d">일주일 뒤 다가오는 다음 마감일. 프로버넌스(출처) 데이터 체계를 다룹니다.</p>
+      </div>
+
+      <div class="tl-row us">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2027.01.01</span>
+        <h3 class="tl-t">캘리포니아 대형 온라인 플랫폼 의무 개시</h3>
+        <p class="tl-d">업로드된 콘텐츠에서 <b>규격에 맞는 프로버넌스 데이터를 알면서 제거하는 행위 금지</b>가 포함됩니다. 메타데이터가 파일을 따라 이동하도록 설계된 이유입니다.</p>
+      </div>
+
+    </div>
+
+    <div class="tl-foot">
+      <i class="ti ti-database-search"></i> <strong>출처</strong> — nysenate.gov 법안 이력, 뉴욕주지사실 보도자료, 캘리포니아 주의회 AB 853 법안정보, 과기정통부 AI 기본법 시행 관련 자료 및 국내 로펌 뉴스레터(세종·신한 등), 포브스·CNBC 보도.
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
