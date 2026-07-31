@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<div class="gce-card-3">
+  <style>
+    .gce-card-3 * { box-sizing: border-box; }
+    .gce-card-3 {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #F7FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 32px 28px 26px;
+      max-width: 860px;
+      margin: 28px auto;
+      color: #17223B;
+    }
+    .gce-card-3 .gce-eyebrow {
+      font-size: 13px; font-weight: 700; color:#4F46E5; letter-spacing:.02em;
+      background:#EEF2FF; padding:4px 10px; border-radius:20px; display:inline-block;
+    }
+    .gce-card-3 h3 { font-size: 23px; font-weight: 800; margin: 10px 0 2px; letter-spacing:-0.01em; }
+    .gce-card-3 .gce-sub { font-size: 13.5px; color:#64748B; margin: 0 0 22px; }
+
+    .gce-bars { display:flex; flex-direction:column; gap:14px; margin-bottom: 26px; }
+    .gce-bar-row { display:grid; grid-template-columns: 110px 1fr 70px; align-items:center; gap:12px; }
+    .gce-bar-row .gce-name { font-size:13.5px; font-weight:700; }
+    .gce-bar-track { background:#E9EEF5; border-radius:8px; height:16px; overflow:hidden; }
+    .gce-bar-fill { height:100%; border-radius:8px; }
+    .gce-bar-row .gce-pct { font-family:'Roboto Mono',monospace; font-weight:700; font-size:14px; text-align:right; }
+
+    table.gce-table { width:100%; border-collapse: collapse; font-size: 13.5px; }
+    table.gce-table th {
+      text-align:left; background:#17223B; color:#fff; padding:11px 12px; font-weight:700;
+      font-size:12.5px;
+    }
+    table.gce-table th:first-child { border-radius:10px 0 0 0; }
+    table.gce-table th:last-child { border-radius:0 10px 0 0; }
+    table.gce-table td {
+      padding:12px; border-bottom:1px solid #E2E8F0; vertical-align:top; background:#fff;
+    }
+    table.gce-table tr:last-child td { border-bottom:none; }
+    table.gce-table td.gce-co { font-weight:700; }
+    table.gce-table td .gce-num { font-family:'Roboto Mono',monospace; font-weight:700; }
+    .gce-pill { display:inline-block; padding:2px 8px; border-radius:6px; font-weight:700; font-family:'Roboto Mono',monospace; font-size:12.5px; }
+    .gce-note { margin-top:16px; font-size:12px; color:#94A3B8; line-height:1.6; }
+  </style>
+
+  <span class="gce-eyebrow">CLOUD COMPARISON</span>
+  <h3>구글 클라우드 vs AWS vs 애저, 성장률로 줄 세우면?</h3>
+  <p class="gce-sub">2026년 2분기(4~6월) 클라우드 매출 성장률 비교</p>
+
+  <div class="gce-bars">
+    <div class="gce-bar-row">
+      <div class="gce-name">Google Cloud</div>
+      <div class="gce-bar-track"><div class="gce-bar-fill" style="width:96%; background:#0D9488;"></div></div>
+      <div class="gce-pct" style="color:#0D9488;">+82%</div>
+    </div>
+    <div class="gce-bar-row">
+      <div class="gce-name">MS Azure*</div>
+      <div class="gce-bar-track"><div class="gce-bar-fill" style="width:50%; background:#2563EB;"></div></div>
+      <div class="gce-pct" style="color:#2563EB;">+43%</div>
+    </div>
+    <div class="gce-bar-row">
+      <div class="gce-name">AWS</div>
+      <div class="gce-bar-track"><div class="gce-bar-fill" style="width:43%; background:#D97706;"></div></div>
+      <div class="gce-pct" style="color:#D97706;">+37%</div>
+    </div>
+  </div>
+
+  <table class="gce-table">
+    <thead>
+      <tr><th>기업</th><th>클라우드 매출</th><th>YoY 성장률</th><th>핵심 코멘트</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="gce-co">Google Cloud</td>
+        <td class="gce-num">$248억</td>
+        <td><span class="gce-pill" style="background:#E6F7F5;color:#0D9488;">+82%</span></td>
+        <td>TPU 시스템 매출 최초 인식, 백로그 $5,140억로 급증. 3사 중 성장률 1위.</td>
+      </tr>
+      <tr>
+        <td class="gce-co">AWS</td>
+        <td class="gce-num">$422억</td>
+        <td><span class="gce-pill" style="background:#FEF3E2;color:#D97706;">+37%</span></td>
+        <td>18분기 만의 최고 성장률. AI·자체 칩 사업 각각 연환산 250억달러 돌파.</td>
+      </tr>
+      <tr>
+        <td class="gce-co">MS Azure*</td>
+        <td class="gce-num">비공개</td>
+        <td><span class="gce-pill" style="background:#EEF2FF;color:#2563EB;">+43%</span></td>
+        <td>전분기 +40%에서 가속. Copilot 등 AI 매출이 견인, 절대 매출은 별도 공시하지 않음.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="gce-note">
+    * MS는 Azure 단독 매출을 공시하지 않고 'Intelligent Cloud' 부문 실적 발표 시 성장률만 공개합니다.
+    자료: Alphabet(7.22) · Amazon(7.30) · Microsoft(7.29) 실적발표, CNBC 종합. 각 사 회계 결산월이 달라 절대 비교보다는 추세 참고용입니다.
+  </p>
+</div>
