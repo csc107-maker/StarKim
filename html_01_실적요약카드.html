@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<div class="gce-card-1">
+  <style>
+    .gce-card-1 * { box-sizing: border-box; }
+    .gce-card-1 {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #F7FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 32px 28px 24px;
+      max-width: 860px;
+      margin: 28px auto;
+      color: #17223B;
+    }
+    .gce-card-1 .gce-head { display:flex; align-items:center; gap:10px; margin-bottom:4px; }
+    .gce-card-1 .gce-head .ti { font-size: 22px; color:#2563EB; }
+    .gce-card-1 .gce-eyebrow {
+      font-size: 13px; font-weight: 700; color:#2563EB; letter-spacing:.02em;
+      background:#EAF1FF; padding:4px 10px; border-radius:20px; display:inline-block;
+    }
+    .gce-card-1 h3 {
+      font-size: 23px; font-weight: 800; margin: 10px 0 2px; letter-spacing:-0.01em;
+    }
+    .gce-card-1 .gce-sub {
+      font-size: 13.5px; color:#64748B; margin: 0 0 22px;
+    }
+    .gce-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 720px) { .gce-grid { grid-template-columns: repeat(2, 1fr); } }
+    .gce-stat {
+      background:#FFFFFF; border:1px solid #E2E8F0; border-radius:14px;
+      padding:16px 14px 14px; position:relative; overflow:hidden;
+    }
+    .gce-stat::before {
+      content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background: var(--bar,#2563EB);
+    }
+    .gce-stat .ti { font-size:18px; color: var(--bar,#2563EB); margin-bottom:8px; display:block; }
+    .gce-stat .gce-label { font-size:12.5px; color:#64748B; font-weight:600; margin-bottom:6px; }
+    .gce-stat .gce-num {
+      font-family:'Roboto Mono', monospace; font-weight:700; font-size:20px; color:#17223B; line-height:1.2;
+    }
+    .gce-stat .gce-yoy {
+      font-family:'Roboto Mono', monospace; font-size:12.5px; font-weight:600; margin-top:5px; display:inline-block;
+      padding:2px 7px; border-radius:6px;
+    }
+    .gce-up { color:#0D9488; background:#E6F7F5; }
+    .gce-down { color:#DC2626; background:#FCEBEA; }
+    .gce-note {
+      margin-top:18px; font-size:12.5px; color:#94A3B8; line-height:1.6;
+      border-top:1px dashed #E2E8F0; padding-top:14px;
+    }
+    .gce-note b { color:#475569; }
+  </style>
+
+  <div class="gce-head">
+    <i class="ti ti-report-money"></i>
+    <span class="gce-eyebrow">EARNINGS SNAPSHOT</span>
+  </div>
+  <h3>알파벳(구글) 2026년 2분기 핵심 실적</h3>
+  <p class="gce-sub">발표일 2026.07.22(현지시간) · 회계기준 GAAP · 자료: Alphabet IR, CNBC, Bloomberg 종합</p>
+
+  <div class="gce-grid">
+    <div class="gce-stat" style="--bar:#2563EB">
+      <i class="ti ti-currency-dollar"></i>
+      <div class="gce-label">총매출</div>
+      <div class="gce-num">$1,198.0억</div>
+      <span class="gce-yoy gce-up">▲ YoY +24%</span>
+    </div>
+    <div class="gce-stat" style="--bar:#2563EB">
+      <i class="ti ti-chart-line"></i>
+      <div class="gce-label">영업이익 (마진 34%)</div>
+      <div class="gce-num">$408억</div>
+      <span class="gce-yoy gce-up">▲ YoY +30%</span>
+    </div>
+    <div class="gce-stat" style="--bar:#0D9488">
+      <i class="ti ti-cloud"></i>
+      <div class="gce-label">구글클라우드 매출</div>
+      <div class="gce-num">$248억</div>
+      <span class="gce-yoy gce-up">▲ YoY +82%</span>
+    </div>
+    <div class="gce-stat" style="--bar:#0D9488">
+      <i class="ti ti-server-2"></i>
+      <div class="gce-label">클라우드 영업이익 (마진 35.6%)</div>
+      <div class="gce-num">$88억</div>
+      <span class="gce-yoy gce-up">전년 $28억</span>
+    </div>
+    <div class="gce-stat" style="--bar:#0D9488">
+      <i class="ti ti-stack-2"></i>
+      <div class="gce-label">클라우드 수주잔고(백로그)</div>
+      <div class="gce-num">$5,140억</div>
+      <span class="gce-yoy gce-up">전분기比 +500억↑</span>
+    </div>
+    <div class="gce-stat" style="--bar:#D97706">
+      <i class="ti ti-building-factory-2"></i>
+      <div class="gce-label">2026년 CAPEX 가이던스</div>
+      <div class="gce-num">$1,950~2,050억</div>
+      <span class="gce-yoy" style="color:#D97706;background:#FEF3E2;">기존比 +150억 상향</span>
+    </div>
+    <div class="gce-stat" style="--bar:#DC2626">
+      <i class="ti ti-alert-triangle"></i>
+      <div class="gce-label">잉여현금흐름(FCF)</div>
+      <div class="gce-num">-$59억</div>
+      <span class="gce-yoy gce-down">▼ 적자 전환</span>
+    </div>
+    <div class="gce-stat" style="--bar:#2563EB">
+      <i class="ti ti-coin"></i>
+      <div class="gce-label">순이익</div>
+      <div class="gce-num">$1,121억</div>
+      <span class="gce-yoy gce-up">▲ YoY +298%*</span>
+    </div>
+  </div>
+
+  <div class="gce-note">
+    <b>* 순이익 급증 주의:</b> 앤트로픽 지분에 대한 시가평가(ASU 2016-01 회계기준) 재평가 이익이 크게 반영된 일회성 성격이 강합니다. 핵심 사업 체력은 영업이익(+30%) 지표로 보는 것이 더 정확합니다.
+  </div>
+</div>
