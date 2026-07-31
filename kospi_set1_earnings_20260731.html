@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026년 2분기 실적 스냅샷 | 삼성전자 × SK하이닉스</title>
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="삼성전자 2분기 영업익 89.5조 — 반도체가 이끈 역대 최대 실적, DX는 첫 적자" />
+<meta property="og:description" content="삼성전자·SK하이닉스 2026년 2분기 확정실적 완전 정리. DS 영업이익 89.2조, HBM4 3분기 3배 성장 가이던스, DX부문 사상 첫 적자까지 카드형 데이터로 한눈에." />
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-HOSTED-URL/samsung-kospi-20260731-thumbnail.png" />
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-BLOG-URL/samsung-earnings-20260731.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
+
+<style>
+  :root{ }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#f4f5f8;
+    font-family:'Pretendard','Noto Sans KR',sans-serif;
+    color:#12151c;
+    padding:28px 14px 60px;
+  }
+  .mono{ font-family:'Roboto Mono',monospace; }
+  .wrap{ max-width:920px; margin:0 auto; }
+
+  /* ticker */
+  .ticker{
+    background:#0e1733; border-radius:10px; overflow:hidden;
+    height:40px; display:flex; align-items:center; margin-bottom:18px;
+    border:1px solid #0e1733;
+  }
+  .ticker-track{
+    display:flex; gap:36px; white-space:nowrap; padding-left:100%;
+    animation:scroll 26s linear infinite;
+  }
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-100%);} }
+  .ticker-item{ font-family:'Roboto Mono',monospace; font-size:12.5px; color:#dfe6f5; display:flex; gap:6px; align-items:center;}
+  .up{ color:#ff6b63; font-weight:700; }
+  .down{ color:#6ea3ff; font-weight:700; }
+
+  header.masthead{
+    display:flex; align-items:center; justify-content:space-between;
+    background:#fff; border:1px solid #e3e6ec; border-radius:14px;
+    padding:18px 22px; margin-bottom:16px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12px; font-weight:700; color:#0e1733;
+    background:#eef1f8; border:1px solid #dde2ee; padding:5px 10px; border-radius:999px;
+  }
+  h1.title{ font-size:23px; font-weight:900; margin-top:8px; letter-spacing:-0.3px; }
+  .datebadge{ text-align:right; font-size:12px; color:#636c7a; }
+  .datebadge b{ display:block; color:#12151c; font-size:14px; }
+
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+  @media (max-width:640px){ .grid2{ grid-template-columns:1fr; } }
+
+  .card{
+    background:#fff; border:1px solid #e3e6ec; border-radius:14px; padding:20px;
+  }
+  .card .co{ display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+  .codebadge{
+    font-family:'Roboto Mono',monospace; font-size:11.5px; font-weight:700;
+    background:#0e1733; color:#a9bce8; padding:3px 8px; border-radius:5px;
+  }
+  .co-name{ font-weight:900; font-size:16.5px; }
+  .kpi-row{ display:flex; justify-content:space-between; align-items:flex-end; margin:14px 0 6px; }
+  .kpi-label{ font-size:12.5px; color:#636c7a; font-weight:500; }
+  .kpi-value{ font-family:'Roboto Mono',monospace; font-size:27px; font-weight:700; letter-spacing:-0.5px; }
+  .kpi-sub{ font-size:12px; margin-top:2px; }
+  .divider{ height:1px; background:#edeff3; margin:14px 0; }
+  .pillrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
+  .pill{ font-size:11.5px; font-weight:700; padding:4px 9px; border-radius:999px; }
+  .pill.red{ background:#fdeceb; color:#c62828; }
+  .pill.blue{ background:#eaf0fd; color:#1d4fc4; }
+  .pill.gold{ background:#faf1de; color:#93701f; }
+  .pill.gray{ background:#f0f1f4; color:#5b6472; }
+
+  .sec-title{ display:flex; align-items:center; gap:8px; font-size:15px; font-weight:900; margin:22px 2px 10px; }
+  .sec-title i{ color:#c4363a; font-size:18px; }
+
+  table{ width:100%; border-collapse:collapse; background:#fff; border:1px solid #e3e6ec; border-radius:14px; overflow:hidden; }
+  thead th{
+    background:#0e1733; color:#dfe6f5; font-size:12px; font-weight:700; text-align:left;
+    padding:11px 12px;
+  }
+  tbody td{ padding:11px 12px; font-size:13px; border-top:1px solid #eef0f4; }
+  tbody tr:nth-child(even){ background:#fafbfd; }
+  td.num{ font-family:'Roboto Mono',monospace; text-align:right; }
+  td.neg{ color:#1d4fc4; font-weight:700; }
+  td.pos{ color:#c62828; font-weight:700; }
+  .loss-row{ background:#fdf4f3 !important; }
+
+  .callout{
+    background:#fff8ea; border:1px solid #f0dfae; border-radius:14px; padding:18px 20px; margin-top:16px;
+  }
+  .callout .head{ display:flex; align-items:center; gap:8px; font-weight:900; font-size:14.5px; color:#7a5a12; margin-bottom:8px;}
+  .callout .head i{ font-size:18px; }
+  .callout ul{ margin:0; padding-left:18px; font-size:13.5px; line-height:1.75; color:#3b3120; }
+  .callout b{ color:#8a4a12; }
+
+  .flagcard{
+    display:flex; gap:14px; background:#fdf4f3; border:1px solid #f4d7d5; border-radius:14px;
+    padding:16px 18px; margin-top:14px; align-items:flex-start;
+  }
+  .flagcard i{ color:#c62828; font-size:22px; margin-top:2px; }
+  .flagcard b{ display:block; font-size:14px; margin-bottom:4px; }
+  .flagcard p{ font-size:13px; color:#5b4442; line-height:1.6; }
+
+  footer{ margin-top:22px; }
+  .src{ font-size:11.5px; color:#8a93a3; line-height:1.7; background:#fff; border:1px solid #e3e6ec; border-radius:12px; padding:14px 16px; }
+  .disclaimer{ font-size:11px; color:#9aa1ad; margin-top:10px; line-height:1.7; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">005930 삼성전자 <span class="up">▲89.4924조</span> 영업이익</span>
+      <span class="ticker-item">000660 SK하이닉스 <span class="up">▲60.5426조</span> 영업이익</span>
+      <span class="ticker-item">DS부문 영업이익률 <span class="up">70.0%</span></span>
+      <span class="ticker-item">DX부문 <span class="down">▼8,000억 적자전환</span></span>
+      <span class="ticker-item">HBM4 3Q 매출 <span class="up">전분기比 3배↑ 가이던스</span></span>
+      <span class="ticker-item">005930 삼성전자 <span class="up">▲89.4924조</span> 영업이익</span>
+      <span class="ticker-item">000660 SK하이닉스 <span class="up">▲60.5426조</span> 영업이익</span>
+      <span class="ticker-item">DS부문 영업이익률 <span class="up">70.0%</span></span>
+      <span class="ticker-item">DX부문 <span class="down">▼8,000억 적자전환</span></span>
+      <span class="ticker-item">HBM4 3Q 매출 <span class="up">전분기比 3배↑ 가이던스</span></span>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div>
+      <span class="eyebrow"><i class="ti ti-report-money"></i> 2026 Q2 EARNINGS SNAPSHOT</span>
+      <h1 class="title">삼성전자 × SK하이닉스 2분기 실적 완전정리</h1>
+    </div>
+    <div class="datebadge">발표일<b>2026.07.30</b></div>
+  </header>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="co"><span class="codebadge">005930</span><span class="co-name">삼성전자 (연결)</span></div>
+      <div class="kpi-row">
+        <div>
+          <div class="kpi-label">매출액</div>
+          <div class="kpi-value">171조 4,995억</div>
+        </div>
+      </div>
+      <div class="kpi-sub"><span class="pill red">YoY +130.0%</span> <span class="pill red">QoQ +28.1%</span></div>
+      <div class="divider"></div>
+      <div class="kpi-row">
+        <div>
+          <div class="kpi-label">영업이익 (역대 최대)</div>
+          <div class="kpi-value">89조 4,924억</div>
+        </div>
+      </div>
+      <div class="kpi-sub"><span class="pill red">YoY +1,813.8%</span> <span class="pill red">QoQ +56.4%</span></div>
+      <div class="pillrow">
+        <span class="pill gray">영업이익률 52.2%</span>
+        <span class="pill gold">DS 비중 99.7%</span>
+        <span class="pill gray">R&D 16조 (역대 최대)</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="co"><span class="codebadge">000660</span><span class="co-name">SK하이닉스 (연결)</span></div>
+      <div class="kpi-row">
+        <div>
+          <div class="kpi-label">매출액</div>
+          <div class="kpi-value">79조 3,187억</div>
+        </div>
+      </div>
+      <div class="kpi-sub"><span class="pill red">YoY +256.8%</span></div>
+      <div class="divider"></div>
+      <div class="kpi-row">
+        <div>
+          <div class="kpi-label">영업이익 (역대 최대)</div>
+          <div class="kpi-value">60조 5,426억</div>
+        </div>
+      </div>
+      <div class="kpi-sub"><span class="pill red">YoY +557.2%</span> <span class="pill red">QoQ +61%</span></div>
+      <div class="pillrow">
+        <span class="pill gray">영업이익률 76% (역대 최대)</span>
+        <span class="pill gold">상반기 매출 첫 100조 돌파</span>
+        <span class="pill gray">순현금 69.4조</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title"><i class="ti ti-chart-bar"></i>삼성전자 사업부문별 실적 (2분기)</div>
+  <table>
+    <thead>
+      <tr><th>부문</th><th style="text-align:right">매출</th><th style="text-align:right">영업이익(손실)</th><th>비고</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>DS</b> 반도체</td>
+        <td class="num">127.5조</td>
+        <td class="num pos">+89.2조</td>
+        <td>D램·낸드 역대 최대 비트 출하, 영업이익률 70%</td>
+      </tr>
+      <tr>
+        <td>· 메모리</td>
+        <td class="num">120.8조</td>
+        <td class="num">-</td>
+        <td>서버향 비중 역대 최고, HBM4E 업계 최초 샘플 출하</td>
+      </tr>
+      <tr class="loss-row">
+        <td><b>DX</b> 세트 전체</td>
+        <td class="num">48.0조</td>
+        <td class="num neg">-8,000억</td>
+        <td><b>DX 출범(2021) 이후 첫 분기 적자</b></td>
+      </tr>
+      <tr class="loss-row">
+        <td>· MX(모바일)</td>
+        <td class="num">33.2조</td>
+        <td class="num neg">-7,000억</td>
+        <td>IM 시절 포함 <b>첫 적자</b> · 갤럭시 S26 판매 호조에도 원가 부담</td>
+      </tr>
+      <tr>
+        <td>· 삼성디스플레이(SDC)</td>
+        <td class="num">7.5조</td>
+        <td class="num pos">+7,000억</td>
+        <td>중소형 OLED·게이밍 모니터 호조</td>
+      </tr>
+      <tr>
+        <td>· 하만(Harman)</td>
+        <td class="num">4.6조</td>
+        <td class="num pos">+4,000억</td>
+        <td>전분기 대비 매출 21.1%↑, 영업이익 2배</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="flagcard">
+    <i class="ti ti-alert-triangle"></i>
+    <div>
+      <b>왜 '메모리 초호황' 삼성전자의 완제품은 적자를 냈나?</b>
+      <p>2분기 D램 가격이 전분기 대비 58~63%, 낸드플래시가 55~60% 급등하면서 스마트폰·가전에 들어가는 부품 원가가 급증했습니다. 반도체를 팔아 번 돈을, 반도체를 사서 쓰는 완제품 사업부가 그대로 비용으로 지불한 셈 — 이른바 '칩플레이션(chipflation)' 현상입니다.</p>
+    </div>
+  </div>
+
+  <div class="sec-title"><i class="ti ti-bulb"></i>3분기 가이던스 & 컨퍼런스콜 핵심</div>
+  <div class="callout">
+    <div class="head"><i class="ti ti-cpu"></i>HBM·메모리 3분기 전망 (컨퍼런스콜 발표 기준)</div>
+    <ul>
+      <li>3분기 <b>HBM4 매출, 2분기 대비 3배 이상</b> 증가 전망 — 하반기 HBM4 비중이 전체 HBM 매출의 <b>60% 상회</b> 예상</li>
+      <li>3분기 비트 성장(가이던스): D램 <b>한 자릿수 중반</b>, 낸드 <b>한 자릿수 후반</b> 증가</li>
+      <li>파운드리: 연간 두 자릿수 매출 성장 가이던스, 美 대형 고객사 2나노 HPC 수주 확보 · 2026년 하반기 2세대 2나노 모바일 양산 예정</li>
+      <li>KB증권(김동원 리서치본부장): 3분기 메모리 가격 최소 30%↑ 전망 → 삼성전자 3분기 매출 209조·영업이익 110조 추정 (3개 분기 연속 어닝 서프라이즈 기대)</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="src">
+      <b>자료 출처</b> · 삼성전자 뉴스룸(2026.07.30 실적발표) · SK hynix Newsroom(2026.07.29) · 전자신문 · ZDNet Korea · 한국일보 · 디일렉(THE ELEC) 컨퍼런스콜 전문 · 뉴시스 · 각 사 IR 공시자료(DART) 기준. 수치는 2026년 2분기(K-IFRS 연결) 확정실적입니다.
+    </div>
+    <div class="disclaimer">본 자료는 공개된 기업 공시와 언론 보도를 기반으로 제작된 정보 제공용 콘텐츠이며 투자 권유가 아닙니다. 투자 판단과 그 결과에 대한 책임은 투자자 본인에게 있습니다.</div>
+  </footer>
+
+</div>
+</body>
+</html>
