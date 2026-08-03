@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK이터닉스 오늘의 시세 요약 | 2026.08.03</title>
+
+<!-- ============================================================================
+ 이 <head> 안의 OG 메타태그는 "미리보기용 예시"입니다.
+ 실제로는 블로그 플랫폼의 [검색엔진최적화 / 메타정보] 설정 메뉴에 등록해야 동작합니다.
+ (본문 HTML 삽입창에 <head> 태그를 넣어도 대부분의 블로그에서 무시/삭제됩니다.)
+================================================================================ -->
+<meta property="og:title" content="SK이터닉스 주가, 코스피 급락 속 나홀로 상승한 이유 | 2026.08.03 오늘장 분석" />
+<meta property="og:description" content="코스피가 5.12% 급락한 8월 3일, SK이터닉스는 46,550원(+2.42%)으로 선방했습니다. KKR 지분 인수, 국제유가·환율 변수, 증권가 목표주가까지 데이터로 정리했습니다." />
+<meta property="og:image" content="여기에 업로드한 썸네일 이미지의 실제 URL을 입력하세요" />
+<meta property="og:url" content="여기에 이 글이 게시될 실제 블로그 URL을 입력하세요" />
+</head>
+<body>
+
+<!-- ============================================================================
+   ▼▼▼ 블로그 '본문에 HTML 삽입' 기능에는 아래 <style>부터 맨 아래 위젯 </div> 까지만
+   복사해서 붙여넣어 주세요. 외부 CDN(폰트·아이콘)을 전혀 쓰지 않는 완전 독립형이라
+   네이버블로그·티스토리 등 어디에 붙여도 그대로 동일하게 보입니다.
+================================================================================ -->
+<style>
+  .ske-wrap, .ske-wrap * { box-sizing: border-box; }
+  .ske-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", Roboto, sans-serif;
+    background: #F7F6F1;
+    color: #16211D;
+    padding: 28px 20px 32px;
+    max-width: 760px;
+    margin: 28px auto;
+    border-radius: 22px;
+    border: 1px solid #E4E1D6;
+  }
+  .ske-icon { width: 16px; height: 16px; display: inline-block; vertical-align: -3px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ske-eyebrow {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 700; letter-spacing: .04em;
+    color: #0B6E4F; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .ske-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 14px; margin-bottom: 18px;
+  }
+  .ske-name { font-weight: 900; font-size: 26px; line-height: 1.3; letter-spacing: -0.02em; }
+  .ske-code { font-size: 14px; color: #5C6B62; font-weight: 600; margin-top: 4px; }
+  .ske-badge {
+    background: #0B6E4F; color: #fff; font-size: 12.5px; font-weight: 700;
+    padding: 6px 12px; border-radius: 100px; white-space: nowrap; height: fit-content;
+  }
+  .ske-price-row {
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 16px;
+    padding: 20px 22px; margin-bottom: 18px;
+  }
+  .ske-price { font-weight: 900; font-size: 44px; color: #16211D; letter-spacing: -0.02em; }
+  .ske-change {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #FCEBEA; color: #D93025; font-weight: 800; font-size: 17px;
+    padding: 6px 12px; border-radius: 10px;
+  }
+  .ske-asof { width: 100%; font-size: 13px; color: #8a938c; margin-top: 4px; }
+
+  .ske-range-block { margin-bottom: 16px; }
+  .ske-range-label { display: flex; justify-content: space-between; font-size: 13.5px; font-weight: 700; color: #16211D; margin-bottom: 8px; }
+  .ske-range-label span.muted { color: #8a938c; font-weight: 500; }
+  .ske-bar { position: relative; height: 10px; border-radius: 6px; background: linear-gradient(90deg,#EAF1FC 0%, #F1F0EA 50%, #FCEBEA 100%); margin-bottom: 6px; }
+  .ske-bar .marker {
+    position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%;
+    background: #16211D; border: 3px solid #fff; box-shadow: 0 0 0 1.5px #16211D;
+    transform: translate(-50%,-50%);
+  }
+  .ske-bar .marker.prev { background: #8a938c; width: 10px; height: 10px; box-shadow: 0 0 0 1.5px #8a938c; }
+  .ske-bar-labels { display: flex; justify-content: space-between; font-size: 12px; color: #8a938c; font-weight: 600; }
+
+  .ske-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+  .ske-stat { background: #FFFFFF; border: 1px solid #E4E1D6; border-radius: 14px; padding: 14px 14px; }
+  .ske-stat .l { font-size: 12px; color: #8a938c; font-weight: 700; margin-bottom: 6px; display:flex; align-items:center; gap:4px;}
+  .ske-stat .v { font-size: 17px; font-weight: 800; color: #16211D; }
+  .ske-note { margin-top: 18px; font-size: 12.5px; color: #8a938c; line-height: 1.6; border-top: 1px dashed #E4E1D6; padding-top: 12px; }
+  .ske-note b { color: #5C6B62; }
+  @media (max-width:480px){ .ske-grid{ grid-template-columns: repeat(2,1fr);} .ske-price{ font-size:36px;} }
+</style>
+
+<div class="ske-wrap">
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <symbol id="w1-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol>
+      <symbol id="w1-bank" viewBox="0 0 24 24"><path d="M4 21h16"/><path d="M4 10h16"/><path d="M6 10v8"/><path d="M10 10v8"/><path d="M14 10v8"/><path d="M18 10v8"/><path d="M12 3 3 8h18z"/></symbol>
+      <symbol id="w1-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></symbol>
+      <symbol id="w1-candle" viewBox="0 0 24 24"><path d="M7 3v4"/><rect x="5" y="7" width="4" height="7" rx="1"/><path d="M7 14v7"/><path d="M17 5v3"/><rect x="15" y="8" width="4" height="9" rx="1"/><path d="M17 17v4"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="ske-eyebrow"><svg class="ske-icon"><use href="#w1-bolt"/></svg> 오늘의 시세 스냅샷</div>
+
+  <div class="ske-top">
+    <div>
+      <div class="ske-name">SK이터닉스</div>
+      <div class="ske-code">475150 · KOSPI · 신재생에너지</div>
+    </div>
+    <div class="ske-badge">2026.08.03 종가 기준</div>
+  </div>
+
+  <div class="ske-price-row">
+    <div class="ske-price">46,550<span style="font-size:20px;font-weight:700;color:#5C6B62;">원</span></div>
+    <div class="ske-change">▲ +1,100원 (+2.42%)</div>
+    <div class="ske-asof">전일종가 45,450원 대비 · 같은 날 코스피는 -5.12% 하락</div>
+  </div>
+
+  <div class="ske-range-block">
+    <div class="ske-range-label">오늘의 거래범위 <span class="muted">42,100원 ~ 48,300원</span></div>
+    <div class="ske-bar">
+      <div class="marker prev" style="left:54.0%;" title="전일종가 45,450원"></div>
+      <div class="marker" style="left:71.8%;" title="현재가 46,550원"></div>
+    </div>
+    <div class="ske-bar-labels"><span>42,100</span><span>48,300</span></div>
+  </div>
+
+  <div class="ske-range-block">
+    <div class="ske-range-label">52주 거래범위 <span class="muted">17,210원 ~ 87,700원</span></div>
+    <div class="ske-bar">
+      <div class="marker" style="left:41.6%;" title="현재가 46,550원"></div>
+    </div>
+    <div class="ske-bar-labels"><span>17,210</span><span>87,700</span></div>
+  </div>
+
+  <div class="ske-grid">
+    <div class="ske-stat">
+      <div class="l"><svg class="ske-icon"><use href="#w1-bank"/></svg> 시가총액</div>
+      <div class="v">약 1.55조원</div>
+    </div>
+    <div class="ske-stat">
+      <div class="l"><svg class="ske-icon"><use href="#w1-cal"/></svg> 다음 실적발표</div>
+      <div class="v">2026.08.19(예정)</div>
+    </div>
+    <div class="ske-stat">
+      <div class="l"><svg class="ske-icon"><use href="#w1-candle"/></svg> 거래소</div>
+      <div class="v">유가증권(KOSPI)</div>
+    </div>
+  </div>
+
+  <div class="ske-note">
+    <b>자료 출처</b> · Investing.com 'SK Eternix Co Ltd(475150)' 페이지, 2026년 8월 3일 조회 기준. 시세는 지연·변동될 수 있으므로 실제 매매 시에는 증권사 HTS/MTS의 실시간 시세를 반드시 재확인하시기 바랍니다. 본 카드는 투자 판단을 위한 참고 정보이며, 특정 종목의 매수·매도를 권유하는 자료가 아닙니다.
+  </div>
+</div>
+<!-- ▲▲▲ 여기까지 복사 (블로그 본문 삽입용) ▲▲▲ -->
+
+</body>
+</html>
