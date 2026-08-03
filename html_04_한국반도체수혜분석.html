@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<div class="gce-card-4">
+  <style>
+    .gce-card-4 * { box-sizing: border-box; }
+    .gce-card-4 {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #F7FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 32px 28px 24px;
+      max-width: 860px;
+      margin: 28px auto;
+      color: #17223B;
+    }
+    .gce-card-4 .gce-eyebrow {
+      font-size: 13px; font-weight: 700; color:#DC2626; letter-spacing:.02em;
+      background:#FCEBEA; padding:4px 10px; border-radius:20px; display:inline-block;
+    }
+    .gce-card-4 h3 { font-size: 23px; font-weight: 800; margin: 10px 0 2px; letter-spacing:-0.01em; }
+    .gce-card-4 .gce-sub { font-size: 13.5px; color:#64748B; margin: 0 0 22px; }
+
+    .gce-kospi {
+      display:flex; gap:12px; margin-bottom:18px; flex-wrap:wrap;
+    }
+    .gce-kospi .gce-mini {
+      flex:1; min-width:150px; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:12px; padding:13px 16px;
+    }
+    .gce-kospi .gce-mini .l { font-size:12px; color:#64748B; font-weight:600; margin-bottom:4px;}
+    .gce-kospi .gce-mini .v { font-family:'Roboto Mono',monospace; font-weight:700; font-size:18px; }
+    .gce-up-txt { color:#0D9488; }
+
+    .gce-stock-cards { display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-bottom:20px; }
+    @media (max-width:640px){ .gce-stock-cards{ grid-template-columns: 1fr; } }
+    .gce-stock {
+      background:#FFFFFF; border:1px solid #E2E8F0; border-radius:14px; padding:16px 18px;
+    }
+    .gce-stock .gce-s-name { font-weight:800; font-size:15.5px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;}
+    .gce-stock .gce-s-name .gce-code { font-family:'Roboto Mono',monospace; font-size:11.5px; color:#94A3B8; font-weight:500;}
+    .gce-stock .gce-row { display:flex; justify-content:space-between; font-size:13px; padding:5px 0; border-top:1px dashed #EEF1F6; }
+    .gce-stock .gce-row:first-of-type { border-top:none; }
+    .gce-stock .gce-row .k { color:#64748B; }
+    .gce-stock .gce-row .v { font-weight:700; font-family:'Roboto Mono',monospace; }
+    .gce-buy { color:#0D9488; }
+
+    .gce-points { background:#FFFFFF; border:1px solid #E2E8F0; border-radius:14px; padding:18px 20px; }
+    .gce-points h4 { font-size:14.5px; margin:0 0 10px; display:flex; align-items:center; gap:6px;}
+    .gce-points ul { margin:0; padding-left:18px; }
+    .gce-points li { font-size:13.3px; line-height:1.85; color:#334155; }
+    .gce-points b { color:#17223B; }
+
+    .gce-disclaimer {
+      margin-top:16px; font-size:11.5px; color:#94A3B8; line-height:1.7;
+      background:#F1F5F9; border-radius:10px; padding:10px 14px;
+    }
+  </style>
+
+  <span class="gce-eyebrow">KOREA IMPACT</span>
+  <h3>국내 증시엔 어떤 영향? 삼성전자·SK하이닉스 체크포인트</h3>
+  <p class="gce-sub">2026.07.23(한국시간) 알파벳 실적 발표 직후 국내 시장 반응</p>
+
+  <div class="gce-kospi">
+    <div class="gce-mini"><div class="l">코스피</div><div class="v gce-up-txt">▲ +4.4% (7,000선 회복)</div></div>
+    <div class="gce-mini"><div class="l">코스닥</div><div class="v gce-up-txt">▲ +5.22% (790.28)</div></div>
+  </div>
+
+  <div class="gce-stock-cards">
+    <div class="gce-stock">
+      <div class="gce-s-name">삼성전자 <span class="gce-code">005930</span></div>
+      <div class="gce-row"><span class="k">당일 등락률</span><span class="v gce-up-txt">+3.65%</span></div>
+      <div class="gce-row"><span class="k">당일 종가</span><span class="v">27만원</span></div>
+      <div class="gce-row"><span class="k">KB증권 의견 · 목표가</span><span class="v gce-buy">매수 · 60만원</span></div>
+    </div>
+    <div class="gce-stock">
+      <div class="gce-s-name">SK하이닉스 <span class="gce-code">000660</span></div>
+      <div class="gce-row"><span class="k">당일 등락률</span><span class="v gce-up-txt">+4.86%</span></div>
+      <div class="gce-row"><span class="k">당일 종가</span><span class="v">191만 9,000원</span></div>
+      <div class="gce-row"><span class="k">KB증권 의견 · 목표가</span><span class="v gce-buy">매수 · 420만원</span></div>
+    </div>
+  </div>
+
+  <div class="gce-points">
+    <h4><i class="ti ti-bulb" style="color:#D97706;"></i> 왜 반응했을까요?</h4>
+    <ul>
+      <li><b>수요 다변화 기대:</b> TPU 외부 판매·메타/앤트로픽向 공급 확대로, 엔비디아 GPU에 쏠렸던 AI 반도체 수요가 자체 칩(ASIC) 진영으로 넓어지는 흐름이 부각됐습니다.</li>
+      <li><b>HBM 공급 연결고리:</b> UBS는 SK하이닉스가 구글 TPU 'v7p·v7e'용 HBM3E의 1번 공급사가 될 가능성을 제시한 바 있습니다. SK하이닉스는 2026년 1분기 매출 기준 글로벌 HBM 점유율 58%로 1위입니다.</li>
+      <li><b>CAPEX 상향이 핵심 트리거:</b> 알파벳이 2026년 설비투자 가이던스를 150억달러 상향(최대 2,050억달러)하고 2027년에도 "상당한" 추가 확대를 예고하면서, 메모리 업황 피크아웃 우려가 완화됐습니다.</li>
+      <li><b>시차 존재:</b> TPU 판매 계약이 실제 매출로 크게 반영되는 시점은 2027년 이후로 예상되는 만큼, 국내 메모리 업체 실적에 미치는 효과는 즉각적이라기보다 점진적으로 나타날 가능성이 큽니다.</li>
+    </ul>
+  </div>
+
+  <div class="gce-disclaimer">
+    ※ 본 카드는 언론 보도 및 증권사 리포트를 종합 정리한 정보 제공용 콘텐츠이며, 특정 종목에 대한 투자 추천이 아닙니다. 목표주가·투자의견은 발표 시점 기준으로 이후 변경될 수 있으니 투자 판단과 책임은 투자자 본인에게 있습니다.
+  </div>
+</div>
