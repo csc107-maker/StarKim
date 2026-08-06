@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026.08.06 마감 시황 | 코스피·코스닥·환율 한눈에 보기</title>
+<meta property="og:title" content="2026.08.06 마감 시황 | 코스피·코스닥·환율 한눈에 보기" />
+<meta property="og:description" content="코스피 4.58% 급락, SK하이닉스 -10.37%, 원/달러 환율 1,423.8원 마감까지 오늘의 증시 데이터를 한 장으로 정리했습니다." />
+<meta property="og:image" content="https://your-domain.com/images/2026-08-06-thumbnail.png" />
+<meta property="og:url" content="https://your-domain.com/2026-08-06-kospi-analysis" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+<style>
+  :root{
+    --paper:#F2F4F7;
+    --card:#FFFFFF;
+    --ink:#151B2B;
+    --ink-soft:#5B6478;
+    --line:#E4E8EF;
+    --board:#101A33;
+    --board-line:#2A3A5C;
+    --up:#D6372A;
+    --down:#1657C9;
+    --amber:#C9962B;
+    --green:#1E8E63;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    font-family:'Pretendard', -apple-system, 'Noto Sans KR', sans-serif;
+    color:var(--ink);
+    padding:28px 14px;
+  }
+  .wrap{max-width:720px;margin:0 auto;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(16,26,51,0.06), 0 12px 32px -18px rgba(16,26,51,0.25);
+  }
+  .board{
+    background:linear-gradient(180deg,var(--board) 0%, #0B1428 100%);
+    color:#EAF0FF;
+    padding:20px 22px 18px;
+  }
+  .board-top{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:12.5px;color:#8FA0C7;letter-spacing:.02em;margin-bottom:14px;
+  }
+  .board-top .live{
+    display:inline-flex;align-items:center;gap:6px;color:#FF8A80;font-weight:600;
+  }
+  .live-dot{width:6px;height:6px;border-radius:50%;background:#FF5449;box-shadow:0 0 0 3px rgba(255,84,73,.25);}
+  .ticker-row{
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;
+  }
+  .ticker{
+    border-left:1px solid var(--board-line);
+    padding-left:12px;
+  }
+  .ticker:first-child{border-left:none;padding-left:0;}
+  .ticker .name{font-size:12.5px;color:#93A3C9;margin-bottom:6px;}
+  .ticker .val{
+    font-family:'Roboto Mono','Pretendard',monospace;
+    font-size:22px;font-weight:700;letter-spacing:-0.5px;
+  }
+  .ticker .chg{
+    font-family:'Roboto Mono','Pretendard',monospace;
+    font-size:12.5px;margin-top:4px;font-weight:600;
+  }
+  .up{color:#FF6B5E;}
+  .down{color:#5B9CFF;}
+  .body{padding:22px;}
+  .section-title{
+    display:flex;align-items:center;gap:8px;
+    font-size:15px;font-weight:700;color:var(--ink);margin:0 0 12px;
+  }
+  .section-title i{color:var(--amber);font-size:18px;}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#FFF7E8;color:#8A5E10;border:1px solid #F2DDAE;
+    border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:600;
+  }
+  .badge i{font-size:14px;}
+  table.flow{width:100%;border-collapse:collapse;margin-bottom:22px;}
+  table.flow th, table.flow td{
+    text-align:right;padding:10px 8px;font-size:13.5px;border-bottom:1px solid var(--line);
+  }
+  table.flow th:first-child, table.flow td:first-child{text-align:left;color:var(--ink-soft);font-weight:500;}
+  table.flow th{color:var(--ink-soft);font-weight:600;font-size:12.5px;border-bottom:2px solid var(--line);}
+  table.flow td{font-family:'Roboto Mono','Pretendard',monospace;font-weight:600;}
+  .movers{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .mover{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;
+  }
+  .mover .n{font-size:13px;font-weight:600;}
+  .mover .p{font-family:'Roboto Mono','Pretendard',monospace;font-size:13px;font-weight:700;}
+  .foot{
+    padding:14px 22px 20px;color:var(--ink-soft);font-size:11.5px;line-height:1.6;
+    border-top:1px solid var(--line);
+  }
+  @media(max-width:480px){
+    .ticker-row{grid-template-columns:1fr;gap:14px;}
+    .ticker{border-left:none;padding-left:0;border-top:1px solid var(--board-line);padding-top:10px;}
+    .ticker:first-child{border-top:none;padding-top:0;}
+    .movers{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="board">
+      <div class="board-top">
+        <span>KRX 마감 시황 · 2026.08.06(목)</span>
+        <span class="live"><span class="live-dot"></span>CLOSE 15:30</span>
+      </div>
+      <div class="ticker-row">
+        <div class="ticker">
+          <div class="name">KOSPI 코스피</div>
+          <div class="val down">6,296.38</div>
+          <div class="chg down">▼ 301.88 (-4.58%)</div>
+        </div>
+        <div class="ticker">
+          <div class="name">KOSDAQ 코스닥</div>
+          <div class="val up">801.67</div>
+          <div class="chg up">▲ 2.08 (+0.26%)</div>
+        </div>
+        <div class="ticker">
+          <div class="name">USD/KRW 원·달러</div>
+          <div class="val up">1,423.8</div>
+          <div class="chg up">▼ 0.7원 (-0.05%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="badge-row">
+        <span class="badge"><i class="ti ti-alert-triangle"></i>10:18 매도 사이드카 발동(5분)</span>
+        <span class="badge"><i class="ti ti-chart-candle"></i>코스닥 5거래일 연속 상승</span>
+      </div>
+
+      <div class="section-title"><i class="ti ti-users"></i>투자자별 매매동향 (코스피, 단위: 억원)</div>
+      <table class="flow">
+        <tr><th>투자자</th><th>순매수·매도</th><th>방향</th></tr>
+        <tr><td>외국인</td><td class="down">-33,285</td><td class="down">순매도</td></tr>
+        <tr><td>기관</td><td class="down">-1,229</td><td class="down">순매도</td></tr>
+        <tr><td>개인</td><td class="up">+33,412</td><td class="up">순매수</td></tr>
+      </table>
+
+      <div class="section-title"><i class="ti ti-arrows-vertical"></i>주요 종목 등락률</div>
+      <div class="movers">
+        <div class="mover"><span class="n">SK하이닉스</span><span class="p down">-10.37%</span></div>
+        <div class="mover"><span class="n">SK스퀘어</span><span class="p down">-13.32%</span></div>
+        <div class="mover"><span class="n">삼성전자</span><span class="p down">-6.30%</span></div>
+        <div class="mover"><span class="n">삼성전기</span><span class="p down">-9.37%</span></div>
+        <div class="mover"><span class="n">LG에너지솔루션</span><span class="p up">+2.83%</span></div>
+        <div class="mover"><span class="n">삼성바이오로직스</span><span class="p up">+1.54%</span></div>
+      </div>
+    </div>
+
+    <div class="foot">
+      자료: Korea JoongAng Daily, Businesskorea (2026.8.6 장 마감 기준) · 외국인 순매도 규모는 집계 시점에 따라 2.6조~3.3조 원 사이 편차가 있어 장 마감 후 발표치를 기준으로 표기했습니다. 본 콘텐츠는 정보 제공 목적이며 투자 권유가 아닙니다.
+    </div>
+  </div>
+</div>
+</body>
+</html>
