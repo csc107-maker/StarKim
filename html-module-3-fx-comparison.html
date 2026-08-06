@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>외국인 3조 매도, 환율은 왜 0.7원만 움직였나</title>
+<meta property="og:title" content="외국인 3조 매도, 환율은 왜 0.7원만 움직였나 | 원달러 환율 분석" />
+<meta property="og:description" content="한국은행 외환거래 데이터로 보는, 외국인 주식 매도와 원달러 환율 변동폭이 비례하지 않는 이유." />
+<meta property="og:image" content="https://your-domain.com/images/2026-08-06-thumbnail.png" />
+<meta property="og:url" content="https://your-domain.com/2026-08-06-kospi-analysis" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+<style>
+  :root{
+    --paper:#F2F4F7; --card:#FFFFFF; --ink:#151B2B; --ink-soft:#5B6478;
+    --line:#E4E8EF; --up:#D6372A; --down:#1657C9; --amber:#C9962B; --navy:#101A33;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);font-family:'Pretendard',-apple-system,'Noto Sans KR',sans-serif;color:var(--ink);padding:28px 14px;}
+  .wrap{max-width:720px;margin:0 auto;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 3px rgba(16,26,51,.06),0 12px 32px -18px rgba(16,26,51,.25);padding:26px 24px 22px;}
+  .head{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
+  .head i{font-size:22px;color:var(--amber);}
+  .head h1{font-size:17px;margin:0;font-weight:800;line-height:1.4;}
+  .sub{color:var(--ink-soft);font-size:13px;margin:6px 0 22px;}
+
+  .compare{background:var(--navy);border-radius:14px;padding:20px 20px 16px;margin-bottom:22px;}
+  .row{margin-bottom:16px;}
+  .row:last-child{margin-bottom:0;}
+  .row-label{display:flex;justify-content:space-between;color:#C7D2EA;font-size:12.5px;margin-bottom:6px;}
+  .row-label b{color:#fff;font-size:13.5px;}
+  .bar-track{background:#1E2A47;border-radius:8px;height:26px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:10px;font-family:'Roboto Mono','Pretendard',monospace;font-size:12px;font-weight:700;color:#fff;white-space:nowrap;}
+  .bar1{width:100%;background:linear-gradient(90deg,#3B6EF5,#5B9CFF);}
+  .bar2{width:2%;min-width:34px;background:linear-gradient(90deg,#E5484D,#FF6B5E);}
+  .compare-note{color:#8FA0C7;font-size:11.5px;margin-top:12px;line-height:1.6;}
+
+  .reasons{display:flex;flex-direction:column;gap:12px;margin-bottom:8px;}
+  .reason{display:flex;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;}
+  .reason .num{
+    flex:none;width:26px;height:26px;border-radius:50%;background:#101A33;color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;
+    font-family:'Roboto Mono',monospace;
+  }
+  .reason .txt .t{font-size:13.5px;font-weight:700;margin-bottom:2px;}
+  .reason .txt .d{font-size:12.5px;color:var(--ink-soft);line-height:1.55;}
+
+  .foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:11.5px;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="head"><i class="ti ti-scale"></i><h1>외국인 3.3조 팔았는데, 환율은 왜 0.7원만 움직였나</h1></div>
+    <div class="sub">규모의 차이로 보는 코스피 수급과 원/달러 환율의 관계</div>
+
+    <div class="compare">
+      <div class="row">
+        <div class="row-label"><span>국내 하루 평균 외환거래 규모</span><b>1,214.4억 달러</b></div>
+        <div class="bar-track"><div class="bar-fill bar1">2026년 2분기 평균(한국은행)</div></div>
+      </div>
+      <div class="row">
+        <div class="row-label"><span>오늘 외국인 코스피 순매도 환산액</span><b>약 23~24억 달러</b></div>
+        <div class="bar-track"><div class="bar-fill bar2">2%↓</div></div>
+      </div>
+      <div class="compare-note">
+        <i class="ti ti-info-circle"></i> 오늘 외국인 순매도(약 3조 3,285억 원)를 달러로 환산하면 국내 하루 평균 외환거래 규모의 2%에도 못 미칩니다. 주식시장에서는 '큰 매도'였지만, 외환시장 전체로는 작은 물결이었습니다.
+      </div>
+    </div>
+
+    <div class="reasons">
+      <div class="reason">
+        <div class="num">1</div>
+        <div class="txt"><div class="t">수출기업의 달러 매도(네고 물량)</div><div class="d">해외에서 벌어들인 달러를 원화로 바꾸는 수출 대기업들의 정기 환전 수요가 자연스러운 완충 역할을 했습니다.</div></div>
+      </div>
+      <div class="reason">
+        <div class="num">2</div>
+        <div class="txt"><div class="t">달러 자체가 강세가 아니었음</div><div class="d">간밤 달러인덱스(DXY)는 99.84로 전일 대비 -0.02%, 사실상 보합권에 머물렀습니다.</div></div>
+      </div>
+      <div class="reason">
+        <div class="num">3</div>
+        <div class="txt"><div class="t">외환 당국의 구두개입 경계감</div><div class="d">환율 급등 조짐에 당국이 개입할 수 있다는 경계감 자체가 투기적 달러 매수를 억제합니다.</div></div>
+      </div>
+      <div class="reason">
+        <div class="num">4</div>
+        <div class="txt"><div class="t">사전 환헤지 가능성</div><div class="d">외국인 자금 중 일부가 선물환·NDF로 이미 헤지돼 있었다면, 매도 당일 신규 달러 매수 충격은 줄어듭니다. (정확한 헤지 비율은 비공개로 확인이 어렵습니다.)</div></div>
+      </div>
+    </div>
+
+    <div class="foot">자료: 한국은행 「2026년 2분기 중 외국환은행의 외환거래 동향」(2026.7.31), Businesskorea, Investing.com DXY 데이터 종합. 환산액은 2026.8.6 마감 환율(1,423.8원) 기준 추정치입니다.</div>
+  </div>
+</div>
+</body>
+</html>
