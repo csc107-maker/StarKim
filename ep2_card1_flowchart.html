@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PFE 판정 흐름도 | 태양광 모듈 동향 ②</title>
+
+<meta property="og:title" content="우리 공급업체는 PFE일까? 판정 흐름도로 확인하세요" />
+<meta property="og:description" content="FEOC 연관성부터 지분·부채 테스트, MACR 계산까지 - 프로젝트가 세액공제 자격을 유지하는지 판단하는 흐름을 정리했습니다." />
+<meta property="og:image" content="[여기에_썸네일_이미지_URL을_입력하세요]" />
+<meta property="og:url" content="[여기에_블로그_게시글_URL을_입력하세요]" />
+<meta property="og:type" content="article" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&amp;family=Roboto+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
+
+<style>
+  :root{
+    --bg-page:#FAF6EC; --bg-card:#FFFFFF; --bg-soft:#F2ECDA;
+    --ink-900:#1E2A33; --ink-700:#3B4A56; --ink-500:#6B7A84;
+    --gold-600:#B9832E; --gold-200:#E9CE94; --gold-050:#FBF4E2;
+    --navy-700:#1C3D5C; --navy-050:#EAF0F5;
+    --teal-600:#1F7A67; --teal-050:#E7F4F0;
+    --rust-600:#A8402E; --rust-050:#FBEAE6;
+    --line-hair:#E3D9BE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg-page);font-family:'Pretendard','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink-900);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:720px;margin:0 auto;padding:36px 20px 44px;}
+  .eyebrow{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--gold-600);text-transform:uppercase;margin-bottom:10px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-600);}
+  .eyebrow .ep{background:var(--navy-700);color:#fff;padding:2px 8px;border-radius:999px;font-size:11px;letter-spacing:.03em;}
+  h1.title{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;line-height:1.4;margin:0 0 8px;color:var(--ink-900);}
+  .sub{font-size:14.5px;color:var(--ink-500);line-height:1.6;margin:0 0 26px;}
+
+  .flow{display:flex;flex-direction:column;align-items:center;gap:0;}
+  .fnode{
+    width:100%;background:var(--bg-card);border:1.5px solid var(--line-hair);border-radius:14px;
+    padding:16px 18px;box-shadow:0 1px 2px rgba(30,42,51,.04);position:relative;
+  }
+  .fnode.q{border-color:var(--navy-700);}
+  .fnode.result-pass{background:var(--teal-050);border-color:var(--teal-600);}
+  .fnode.result-fail{background:var(--rust-050);border-color:var(--rust-600);}
+  .fnode.calc{background:var(--gold-050);border-color:var(--gold-600);}
+  .fnode-label{font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--navy-700);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+  .fnode.result-pass .fnode-label{color:var(--teal-600);}
+  .fnode.result-fail .fnode-label{color:var(--rust-600);}
+  .fnode.calc .fnode-label{color:var(--gold-600);}
+  .fnode-title{font-size:14.5px;font-weight:800;color:var(--ink-900);line-height:1.5;margin-bottom:4px;}
+  .fnode-desc{font-size:12.5px;color:var(--ink-700);line-height:1.6;}
+  .fnode ul{margin:8px 0 0;padding-left:18px;}
+  .fnode li{font-size:12px;color:var(--ink-700);line-height:1.7;}
+
+  .arrow{display:flex;flex-direction:column;align-items:center;padding:6px 0;}
+  .arrow i{color:var(--line-hair);font-size:20px;}
+
+  .branch-row{width:100%;display:flex;gap:12px;margin:0 0 0;}
+  .branch{flex:1;display:flex;flex-direction:column;align-items:center;}
+  .branch-tag{
+    font-family:'Roboto Mono',monospace;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:8px;
+  }
+  .branch-tag.no{background:var(--rust-050);color:var(--rust-600);}
+  .branch-tag.yes{background:var(--teal-050);color:var(--teal-600);}
+  .branch-arrow{color:var(--line-hair);font-size:18px;margin-bottom:6px;}
+  .side-note{
+    font-size:11.5px;color:var(--ink-500);text-align:center;padding:10px 12px;background:var(--bg-soft);border-radius:10px;line-height:1.6;
+  }
+
+  .footer-note{margin-top:24px;padding-top:16px;border-top:1px solid var(--line-hair);font-size:11.5px;color:var(--ink-500);line-height:1.7;}
+  @media (max-width:480px){h1.title{font-size:20px;} .wrap{padding:26px 14px 32px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow"><span class="dot"></span>SOLAR MODULE REPORT<span class="ep">EP.02</span></div>
+  <h1 class="title">이 공급업체, PFE일까요?<br>흐름도로 확인해봅니다</h1>
+  <p class="sub">FEOC 연관성부터 MACR 계산까지, 세액공제 자격을 가르는 판단 순서</p>
+
+  <div class="flow">
+
+    <div class="fnode q">
+      <div class="fnode-label"><i class="ti ti-flag-3"></i>STEP 1</div>
+      <div class="fnode-title">공급업체가 우려대상국과 연관이 있나요?</div>
+      <div class="fnode-desc">우려대상국(Covered Nations): 중국·러시아·북한·이란</div>
+    </div>
+
+    <div class="arrow"><i class="ti ti-arrow-down"></i></div>
+
+    <div class="branch-row">
+      <div class="branch">
+        <span class="branch-tag no">아니오</span>
+        <div class="side-note">비PFE로 인정<br>세액공제 자격 유지</div>
+      </div>
+      <div class="branch">
+        <span class="branch-tag yes">예</span>
+        <div class="side-note">STEP 2로 진행 →</div>
+      </div>
+    </div>
+
+    <div class="arrow"><i class="ti ti-arrow-down"></i></div>
+
+    <div class="fnode q">
+      <div class="fnode-label"><i class="ti ti-scale"></i>STEP 2 · 지분·부채 테스트</div>
+      <div class="fnode-title">아래 중 하나라도 해당하나요?</div>
+      <ul>
+        <li>단일 FEOC가 지분 25% 초과 보유</li>
+        <li>복수 FEOC 합산 지분 40% 초과 보유</li>
+        <li>FEOC가 부채의 15% 초과 보유</li>
+      </ul>
+    </div>
+
+    <div class="arrow"><i class="ti ti-arrow-down"></i></div>
+
+    <div class="branch-row">
+      <div class="branch">
+        <span class="branch-tag no">아니오</span>
+        <div class="side-note">비PFE로 인정<br>세액공제 자격 유지</div>
+      </div>
+      <div class="branch">
+        <span class="branch-tag yes">예</span>
+        <div class="side-note">PFE로 분류 →</div>
+      </div>
+    </div>
+
+    <div class="arrow"><i class="ti ti-arrow-down"></i></div>
+
+    <div class="fnode calc">
+      <div class="fnode-label"><i class="ti ti-calculator"></i>STEP 3 · MACR 계산</div>
+      <div class="fnode-title">실질적 지원 비용 비율(MACR) 산출</div>
+      <div class="fnode-desc">MACR = (전체 제조비용 − PFE 귀속비용) ÷ 전체비용 × 100</div>
+    </div>
+
+    <div class="arrow"><i class="ti ti-arrow-down"></i></div>
+
+    <div class="fnode q">
+      <div class="fnode-label"><i class="ti ti-target-arrow"></i>STEP 4</div>
+      <div class="fnode-title">MACR이 해당 연도 기준비율 이상인가요?</div>
+      <div class="fnode-desc">기준비율은 연도·credit 종류(48E·45Y·45X)별로 다르게 적용됩니다</div>
+    </div>
+
+    <div class="arrow"><i class="ti ti-arrow-down"></i></div>
+
+    <div class="branch-row">
+      <div class="branch">
+        <span class="branch-tag yes" style="background:var(--teal-050);color:var(--teal-600);">이상</span>
+        <div class="fnode result-pass" style="padding:12px 14px;">
+          <div class="fnode-title" style="font-size:13.5px;">세액공제 자격 유지</div>
+        </div>
+      </div>
+      <div class="branch">
+        <span class="branch-tag no">미만</span>
+        <div class="fnode result-fail" style="padding:12px 14px;">
+          <div class="fnode-title" style="font-size:13.5px;">세액공제 자격 상실</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    출처: Baker Tilly, Bracewell LLP, Troutman Pepper Locke, IRS Notice 2026-15 분석 자료 종합 · 실제 적용 시에는 재무부·국세청의 정식 규정을 반드시 확인하세요.
+  </div>
+
+</div>
+</body>
+</html>
