@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SK이터닉스 직접 PPA 사업모델</title>
+<meta property="og:title" content="SK이터닉스는 정말 '직접 PPA'를 할까? 사업모델 완전분석" />
+<meta property="og:description" content="발전자산 매입부터 솔라닉스 SPC 금융구조화, 직접PPA·제3자PPA·VPPA 공급까지 SK이터닉스의 전력판매 밸류체인과 주요 계약 타임라인을 정리했습니다." />
+<meta property="og:image" content="썸네일 이미지 URL을 여기에 입력하세요" />
+<meta property="og:url" content="페이지 URL을 여기에 입력하세요" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+<style>
+  .skppa-wrap * { box-sizing: border-box; }
+  .skppa-wrap {
+    font-family: 'Pretendard','Noto Sans CJK KR','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+    background: #F6F7FB; padding: 26px 22px 28px; border-radius: 20px;
+    max-width: 820px; margin: 24px auto; color: #1D2433;
+  }
+  .skppa-eyebrow { font-size: 12px; letter-spacing: .14em; font-weight: 700; color: #1E8E6B; text-transform: uppercase; margin: 0 0 6px; }
+  .skppa-title { font-size: 21px; font-weight: 800; margin: 0 0 4px; color: #0B2545; }
+  .skppa-title i { color: #1E8E6B; margin-right: 6px; }
+  .skppa-desc { font-size: 13px; color: #5B6472; margin: 0 0 18px; line-height: 1.6; }
+
+  .skppa-chain { display:flex; align-items:stretch; gap:8px; flex-wrap:wrap; margin-bottom: 20px; }
+  .skppa-step {
+    flex: 1; min-width: 130px; background:#fff; border:1px solid #E4E8F0; border-radius:14px;
+    padding: 14px 12px; text-align:center; box-shadow:0 4px 12px rgba(11,37,69,.05);
+  }
+  .skppa-step .ico { width:36px;height:36px;border-radius:10px;background:#EAF6F1;color:#1E8E6B;display:flex;align-items:center;justify-content:center;font-size:18px;margin:0 auto 8px; }
+  .skppa-step h5 { margin:0 0 4px; font-size:13px; font-weight:800; color:#1D2433; }
+  .skppa-step p { margin:0; font-size:11.5px; color:#8891A0; line-height:1.5; }
+  .skppa-arrow { display:flex; align-items:center; color:#C7CEDB; font-size:18px; padding: 0 2px;}
+  @media (max-width:640px){ .skppa-arrow{ transform:rotate(90deg); margin:2px auto;} .skppa-chain{flex-direction:column;} }
+
+  .skppa-section-title { font-size:14px; font-weight:800; color:#0B2545; margin:20px 0 10px; display:flex; align-items:center; gap:6px;}
+  .skppa-section-title i { color:#1E8E6B; }
+
+  .skppa-list { position: relative; margin-top: 14px; padding-left: 26px; }
+  .skppa-list::before { content:""; position:absolute; left:8px; top:4px; bottom:4px; width:2px; background:#DCE1EC; }
+  .skppa-row { position:relative; padding-bottom: 16px; display:flex; gap:12px; align-items:flex-start; }
+  .skppa-row:last-child { padding-bottom:0; }
+  .skppa-dot { position:absolute; left:-26px; top:2px; width:18px; height:18px; border-radius:50%; background:#fff; border:3px solid #1E8E6B; }
+  .skppa-row.wind .skppa-dot { border-color:#1E6FEB; }
+  .skppa-row .tag { font-size:10.5px; font-weight:800; color:#1E8E6B; background:#EAF6F1; border-radius:999px; padding:2px 8px; white-space:nowrap; }
+  .skppa-row.wind .tag { color:#1E6FEB; background:#EAF1FD; }
+  .skppa-row .body h6 { margin:0 0 2px; font-size:13px; font-weight:800; color:#1D2433; }
+  .skppa-row .body p { margin:0; font-size:12px; color:#5B6472; line-height:1.5; }
+
+  .skppa-badges { display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; }
+  .skppa-badge { flex:1; min-width:140px; background:#fff; border:1px solid #E4E8F0; border-radius:14px; padding:12px 14px; box-shadow:0 4px 12px rgba(11,37,69,.05); }
+  .skppa-badge .v { font-size:18px; font-weight:800; color:#0B2545; }
+  .skppa-badge .l { font-size:11px; color:#8891A0; margin-top:2px; font-weight:600; }
+
+  .skppa-foot { margin-top:16px; font-size:11.5px; color:#8891A0; line-height:1.6; border-top:1px dashed #DCE1EC; padding-top:10px; }
+</style>
+</head>
+<body>
+<div class="skppa-wrap">
+  <p class="skppa-eyebrow">BUSINESS MODEL · DIRECT PPA</p>
+  <h2 class="skppa-title"><i class="ti ti-bolt"></i>SK이터닉스, 정말 '직접 PPA'를 할까?</h2>
+  <p class="skppa-desc">직접 PPA(직접전력거래계약)는 한국전력을 거치지 않고 재생에너지 발전사업자가 전기소비자(RE100 이행 기업)에게 직접 전력을 판매하는 방식입니다. SK이터닉스는 이 모델을 자사 핵심 사업으로 직접 운영하고 있습니다.</p>
+
+  <div class="skppa-chain">
+    <div class="skppa-step">
+      <div class="ico"><i class="ti ti-sun"></i></div>
+      <h5>발전자산 매입</h5>
+      <p>중소규모 태양광·풍력 발전소를 직접 개발·매입</p>
+    </div>
+    <div class="skppa-arrow"><i class="ti ti-arrow-narrow-right"></i></div>
+    <div class="skppa-step">
+      <div class="ico"><i class="ti ti-building-bank"></i></div>
+      <h5>솔라닉스(SPC)</h5>
+      <p>특수목적법인으로 금융 구조화 · 재무 안정성 확보</p>
+    </div>
+    <div class="skppa-arrow"><i class="ti ti-arrow-narrow-right"></i></div>
+    <div class="skppa-step">
+      <div class="ico"><i class="ti ti-plug-connected"></i></div>
+      <h5>직접·제3자·VPPA</h5>
+      <p>기업별 전력 사용 패턴에 맞춘 유연한 공급 계약</p>
+    </div>
+    <div class="skppa-arrow"><i class="ti ti-arrow-narrow-right"></i></div>
+    <div class="skppa-step">
+      <div class="ico"><i class="ti ti-building-factory-2"></i></div>
+      <h5>RE100 기업</h5>
+      <p>수요 기업에 25년 안팎 장기 전력 공급</p>
+    </div>
+  </div>
+
+  <div class="skppa-section-title"><i class="ti ti-timeline-event"></i>직접 PPA 계약 타임라인</div>
+  <div class="skppa-list">
+    <div class="skppa-row">
+      <div class="skppa-dot"></div>
+      <span class="tag">2024.11</span>
+      <div class="body"><h6>1호 직접 PPA (태양광)</h6><p>SK이터닉스 첫 대규모 직접 PPA 계약 체결.</p></div>
+    </div>
+    <div class="skppa-row">
+      <div class="skppa-dot"></div>
+      <span class="tag">2025.06</span>
+      <div class="body"><h6>2호 직접 PPA (태양광)</h6><p>RE100 이행 기업 대상 두 번째 대규모 계약.</p></div>
+    </div>
+    <div class="skppa-row">
+      <div class="skppa-dot"></div>
+      <span class="tag">2025.11.25</span>
+      <div class="body"><h6>3호 직접 PPA — 100MW, 5,023억원, 25년</h6><p>누적 180MW, 약 9,000억원 규모로 확대.</p></div>
+    </div>
+    <div class="skppa-row wind">
+      <div class="skppa-dot"></div>
+      <span class="tag">2025.12.23</span>
+      <div class="body"><h6>4호 — 첫 육상풍력 직접 PPA (풍백풍력, 75MW)</h6><p>대구·경북 풍백풍력단지, 연간 약 13만MWh. 태양광 중심에서 풍력으로 포트폴리오 확대. 누적 255MW.</p></div>
+    </div>
+    <div class="skppa-row">
+      <div class="skppa-dot"></div>
+      <span class="tag">2026.06</span>
+      <div class="body"><h6>5호 직접 PPA — 40MW, 2,030억원 (2028~2053)</h6><p>특수목적법인 '솔라닉스 2호'(3MW 이하 소규모 발전소 65개)를 통해 RE100 대기업에 공급.</p></div>
+    </div>
+  </div>
+
+  <div class="skppa-badges">
+    <div class="skppa-badge"><div class="v">300MW대</div><div class="l">2026년 중반 기준<br/>누적 직접PPA 추정</div></div>
+    <div class="skppa-badge"><div class="v">1.8조원대</div><div class="l">누적 직접PPA<br/>계약금액 추정</div></div>
+    <div class="skppa-badge"><div class="v">200MW</div><div class="l">2026년 발전자원<br/>매입 목표 규모</div></div>
+  </div>
+
+  <p class="skppa-foot">
+    ※ 누적 수치는 보도 시점별로 소폭 차이가 있어 "~대" 수준으로 표기했습니다. 정확한 최신 누적치는 SK이터닉스 IR 자료 및 분기보고서에서 재확인하시길 권장합니다. 대표이사 김해중. 자료: 인더스트리뉴스, 서울경제, 전기신문, ZDNet Korea, 이투데이, SK이터닉스 지속가능경영보고서 종합.
+  </p>
+</div>
+</body>
+</html>
