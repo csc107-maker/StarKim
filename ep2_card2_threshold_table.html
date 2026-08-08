@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>연도별 비PFE 문턱값 비교표 | 태양광 모듈 동향 ②</title>
+
+<meta property="og:title" content="비PFE 비중 요건, 연도별로 이렇게 올라갑니다" />
+<meta property="og:description" content="48E·45Y 프로젝트 세액공제, 45X 제조업 세액공제, 국내산 비중 보너스까지 - 세 가지 서로 다른 문턱값을 연도별로 비교했습니다." />
+<meta property="og:image" content="[여기에_썸네일_이미지_URL을_입력하세요]" />
+<meta property="og:url" content="[여기에_블로그_게시글_URL을_입력하세요]" />
+<meta property="og:type" content="article" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&amp;family=Roboto+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
+
+<style>
+  :root{
+    --bg-page:#FAF6EC; --bg-card:#FFFFFF; --bg-soft:#F2ECDA;
+    --ink-900:#1E2A33; --ink-700:#3B4A56; --ink-500:#6B7A84;
+    --gold-600:#B9832E; --gold-200:#E9CE94; --gold-050:#FBF4E2;
+    --navy-700:#1C3D5C; --navy-050:#EAF0F5;
+    --teal-600:#1F7A67; --teal-050:#E7F4F0;
+    --rust-600:#A8402E; --rust-050:#FBEAE6;
+    --line-hair:#E3D9BE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg-page);font-family:'Pretendard','Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink-900);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:36px 20px 44px;}
+  .eyebrow{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--gold-600);text-transform:uppercase;margin-bottom:10px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-600);}
+  .eyebrow .ep{background:var(--navy-700);color:#fff;padding:2px 8px;border-radius:999px;font-size:11px;letter-spacing:.03em;}
+  h1.title{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;line-height:1.4;margin:0 0 8px;color:var(--ink-900);}
+  .sub{font-size:14.5px;color:var(--ink-500);line-height:1.6;margin:0 0 22px;}
+
+  .table-wrap{background:var(--bg-card);border:1px solid var(--line-hair);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(30,42,51,.04);}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  thead th{
+    background:var(--navy-700);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.02em;
+    padding:12px 10px;text-align:center;
+  }
+  thead th:first-child{text-align:left;padding-left:14px;}
+  tbody td{padding:12px 10px;text-align:center;border-bottom:1px solid var(--bg-soft);font-family:'Roboto Mono',monospace;font-weight:700;color:var(--ink-900);}
+  tbody td:first-child{text-align:left;padding-left:14px;font-family:'Pretendard';font-weight:800;color:var(--ink-700);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(odd){background:var(--bg-page);}
+  td.est{color:var(--gold-600);}
+  td.unknown{color:var(--ink-500);font-family:'Pretendard';font-weight:600;font-size:12px;}
+  td.dash{color:var(--line-hair);}
+
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--ink-500);}
+  .legend span{display:inline-flex;align-items:center;gap:5px;}
+  .legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+
+  .note-box{margin-top:16px;background:var(--gold-050);border:1px solid var(--gold-200);border-radius:12px;padding:14px 16px;font-size:12.5px;line-height:1.7;color:var(--ink-700);}
+  .note-box b{color:var(--gold-600);}
+
+  .footer-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-hair);font-size:11.5px;color:var(--ink-500);line-height:1.7;}
+  @media (max-width:480px){
+    h1.title{font-size:20px;} .wrap{padding:26px 14px 32px;}
+    table{font-size:11.5px;} thead th{padding:9px 5px;font-size:10px;} tbody td{padding:9px 5px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow"><span class="dot"></span>SOLAR MODULE REPORT<span class="ep">EP.02</span></div>
+  <h1 class="title">비PFE 비중 요건,<br>연도별로 이렇게 올라갑니다</h1>
+  <p class="sub">서로 다른 세 가지 제도를 한 표에 정리했습니다 — 혼동하지 않도록 주의하세요</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>연도</th>
+          <th>프로젝트<br>태양광 (48E·45Y)</th>
+          <th>프로젝트<br>ESS (48E·45Y)</th>
+          <th>제조업<br>태양광부품 (45X)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2026</td><td>40%</td><td>55%</td><td>50%</td></tr>
+        <tr><td>2027</td><td>45%</td><td>60%</td><td class="unknown">단계적 상승</td></tr>
+        <tr><td>2028</td><td class="est">50%*</td><td class="est">65%*</td><td class="unknown">단계적 상승</td></tr>
+        <tr><td>2029</td><td class="est">55%*</td><td class="est">70%*</td><td class="unknown">단계적 상승</td></tr>
+        <tr><td>2030 이후</td><td>60%</td><td>75%</td><td>85%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--ink-900);"></i>공식 확인된 수치</span>
+    <span><i style="background:var(--gold-600);"></i>* 연 5%p 상승 규칙에 따른 추정치</span>
+    <span><i style="background:var(--ink-500);"></i>공식 세부 연도별 수치 미공개</span>
+  </div>
+
+  <div class="note-box">
+    <b>주의:</b> 표의 세 열은 모두 '비PFE(FEOC 미연관) 비중' 요건이지만, 적용 대상이 다릅니다. 왼쪽 두 열은 <b>발전 프로젝트</b>가 48E·45Y 세액공제를 받기 위한 기준이고, 오른쪽 열은 <b>부품 제조사</b>가 45X 첨단제조생산세액공제를 받기 위한 기준입니다. 이와는 완전히 별개로, 생산 '위치'만 따지는 <b>국내산 비중(도메스틱 콘텐츠)</b> 보너스 제도도 존재합니다(2026년 50%, 2027년 55% — 이 표에는 포함하지 않았습니다).
+  </div>
+
+  <div class="footer-note">
+    출처: Anza, StraightUp Solar, Baker Tilly, Troutman Pepper Locke (2026년 상반기 발표 자료 종합) · 2028~2029년 수치는 확인된 연간 상승폭(+5%p)을 적용한 계산값이며, 재무부의 정식 세이프하버 표(2026.12.31 확정 예정)로 대체될 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
