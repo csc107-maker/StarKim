@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>구하라법 상속권 상실 체크리스트</title>
+
+<meta property="og:title" content="구하라법 체크리스트 | 상속권 상실, 누구에게 언제 적용될까" />
+<meta property="og:description" content="상속결격과 무엇이 다른지, 어떤 경우에 가정법원에 청구할 수 있는지 3가지 사유와 절차를 정리했습니다." />
+<meta property="og:image" content="[여기에 실제 업로드한 썸네일 이미지 URL을 입력하세요]" />
+<meta property="og:url" content="[블로그 발행 후 실제 게시글 URL을 입력하세요]" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  .isk-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+  .isk-wrap {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #FBF7F0;
+    color: #1E2A4A;
+    padding: 34px 20px 32px;
+    border-radius: 18px;
+    max-width: 680px;
+    margin: 28px auto;
+    border: 1px solid #E9E0CB;
+  }
+  .isk-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #A9812F;
+    background: #FFF9EC;
+    border: 1px solid #E9D6A6;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .isk-title {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 900;
+    font-size: 23px;
+    line-height: 1.42;
+    color: #10182E;
+    margin-bottom: 10px;
+  }
+  .isk-sub { font-size: 13.5px; color: #5C6577; line-height: 1.65; margin-bottom: 22px; }
+
+  .isk-scope {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #10182E;
+    color: #F4EEDD;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    font-size: 13px;
+  }
+  .isk-scope i { font-size: 20px; color: #F4C765; }
+  .isk-scope b { color: #F4C765; }
+
+  .isk-section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #A9812F;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .isk-check-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .isk-check-item {
+    display: flex;
+    gap: 12px;
+    background: #FFFFFF;
+    border: 1px solid #EFE6CD;
+    border-radius: 12px;
+    padding: 14px 15px;
+  }
+  .isk-check-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #FFF9EC;
+    border: 1.5px solid #A9812F;
+    color: #A9812F;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .isk-check-text { font-size: 13.5px; line-height: 1.6; color: #2C3550; }
+  .isk-check-text b { color: #10182E; }
+
+  .isk-diff {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .isk-diff-box { border-radius: 12px; padding: 14px 14px; }
+  .isk-diff-box.a { background: #F3F0E8; border: 1px solid #DFD6B8; }
+  .isk-diff-box.b { background: #ECF5EE; border: 1px solid #BFE0C8; }
+  .isk-diff-head { font-size: 12px; font-weight: 700; margin-bottom: 6px; display:flex; align-items:center; gap:5px;}
+  .isk-diff-box.a .isk-diff-head { color: #7A5230; }
+  .isk-diff-box.b .isk-diff-head { color: #2E6E49; }
+  .isk-diff-body { font-size: 12px; line-height: 1.6; color: #46506A; }
+
+  .isk-footrow {
+    display: flex;
+    gap: 10px;
+    font-size: 12.5px;
+    color: #46506A;
+    background: #FFFFFF;
+    border: 1px dashed #DCD0AE;
+    border-radius: 10px;
+    padding: 12px 14px;
+    line-height: 1.6;
+  }
+  .isk-footrow i { color: #B5651D; flex-shrink: 0; margin-top: 1px; }
+
+  @media (max-width: 480px) {
+    .isk-title { font-size: 19px; }
+    .isk-diff { grid-template-columns: 1fr; }
+    .isk-wrap { padding: 26px 14px 26px; }
+  }
+</style>
+</head>
+<body style="margin:0; background:transparent;">
+
+<div class="isk-wrap">
+  <span class="isk-eyebrow"><i class="ti ti-shield-check"></i>&nbsp;CHECKLIST</span>
+  <div class="isk-title">'구하라법', 정확히<br/>어떤 경우에 적용될까요?</div>
+  <div class="isk-sub">민법 제1004조의2, 상속권 상실 선고 제도의 핵심만 체크리스트로 정리했습니다.</div>
+
+  <div class="isk-scope">
+    <i class="ti ti-users"></i>
+    <div>적용 대상 <b>직계존속 → 직계혈족</b>으로 확대<br/>(부모뿐 아니라 자녀 등 직계비속도 포함)</div>
+  </div>
+
+  <div class="isk-section-label">상속권 상실 사유 3가지</div>
+  <div class="isk-check-list">
+    <div class="isk-check-item">
+      <div class="isk-check-num">1</div>
+      <div class="isk-check-text"><b>미성년자에 대한 부양의무</b>를 중대하게 위반한 경우</div>
+    </div>
+    <div class="isk-check-item">
+      <div class="isk-check-num">2</div>
+      <div class="isk-check-text">피상속인 또는 그 가족에게 <b>중대한 범죄행위</b>를 한 경우</div>
+    </div>
+    <div class="isk-check-item">
+      <div class="isk-check-num">3</div>
+      <div class="isk-check-text">그 밖에 <b>심히 부당한 대우</b>를 한 경우</div>
+    </div>
+  </div>
+
+  <div class="isk-section-label">상속결격과 뭐가 다를까요?</div>
+  <div class="isk-diff">
+    <div class="isk-diff-box a">
+      <div class="isk-diff-head"><i class="ti ti-ban"></i> 상속결격 (기존)</div>
+      <div class="isk-diff-body">살인·유언 방해 등 극히 제한된 사유. 해당 시 <b>자동으로</b> 상속권 상실.</div>
+    </div>
+    <div class="isk-diff-box b">
+      <div class="isk-diff-head"><i class="ti ti-gavel"></i> 상속권 상실 (신설)</div>
+      <div class="isk-diff-body">부양의무 위반 등 폭넓은 사유. 가정법원에 <b>청구·선고</b>가 있어야 효력 발생.</div>
+    </div>
+  </div>
+
+  <div class="isk-footrow">
+    <i class="ti ti-info-circle"></i>
+    <div>선고가 확정되면 상속 개시 시점으로 소급 적용되지만, 그 전에 취득한 제3자의 권리는 보호됩니다. '중대한 위반'의 구체적 기준은 아직 판례가 충분히 쌓이지 않아, 개별 사안은 반드시 전문가 상담을 권합니다.</div>
+  </div>
+</div>
+
+</body>
+</html>
