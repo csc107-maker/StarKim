@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>태양광 발전소 상속과 유류분 팩트체크</title>
+
+<meta property="og:title" content="팩트체크 | 태양광 발전소를 상속하면 유류분에서 자유로워질까?" />
+<meta property="og:description" content="가업상속공제로 세금은 줄일 수 있어도, 유류분 반환 의무 자체는 자산 종류와 무관합니다. 근거 판례와 함께 정확히 정리했습니다." />
+<meta property="og:image" content="[여기에 실제 업로드한 썸네일 이미지 URL을 입력하세요]" />
+<meta property="og:url" content="[블로그 발행 후 실제 게시글 URL을 입력하세요]" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  .iss-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+  .iss-wrap {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #FBF7F0;
+    color: #1E2A4A;
+    padding: 34px 20px 30px;
+    border-radius: 18px;
+    max-width: 700px;
+    margin: 28px auto;
+    border: 1px solid #E9E0CB;
+  }
+  .iss-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #A9812F;
+    background: #FFF9EC;
+    border: 1px solid #E9D6A6;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .iss-title {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1.45;
+    color: #10182E;
+    margin-bottom: 6px;
+  }
+  .iss-sub { font-size: 13.5px; color: #5C6577; line-height: 1.65; margin-bottom: 24px; }
+
+  .iss-verdict {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #10182E;
+    color: #EDE6D1;
+    border-radius: 14px;
+    padding: 16px 17px;
+    margin-bottom: 24px;
+  }
+  .iss-verdict i { font-size: 22px; color: #F4C765; margin-top: 1px; }
+  .iss-verdict b { color: #F4C765; }
+  .iss-verdict p { font-size: 13.5px; line-height: 1.65; }
+
+  .iss-section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .iss-block { border-radius: 13px; padding: 15px 16px; margin-bottom: 12px; }
+  .iss-block.no { background: #FBEDE7; border: 1px solid #E3B79A; }
+  .iss-block.no .iss-section-label { color: #A6452B; }
+  .iss-block.yes { background: #ECF5EE; border: 1px solid #BFE0C8; }
+  .iss-block.yes .iss-section-label { color: #2E6E49; }
+  .iss-block.warn { background: #FBF1E0; border: 1px solid #E9CE97; }
+  .iss-block.warn .iss-section-label { color: #A9812F; }
+
+  .iss-block-body { font-size: 13.5px; line-height: 1.7; color: #33394A; }
+  .iss-block-body b { color: #10182E; }
+  .iss-block-body .src {
+    display: block;
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: #7B8194;
+  }
+
+  .iss-stat-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .iss-stat {
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid #EFE6CD;
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .iss-stat b { display: block; font-family: 'Noto Serif KR', serif; font-size: 17px; color: #10182E; }
+  .iss-stat span { font-size: 10.5px; color: #7B8194; }
+
+  @media (max-width: 480px) {
+    .iss-title { font-size: 18.5px; }
+    .iss-wrap { padding: 26px 14px 24px; }
+    .iss-stat-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body style="margin:0; background:transparent;">
+
+<div class="iss-wrap">
+  <span class="iss-eyebrow"><i class="ti ti-sun"></i>&nbsp;FACT CHECK</span>
+  <div class="iss-title">태양광 발전소를 상속하면<br/>유류분에서 자유로워질까요?</div>
+  <div class="iss-sub">"절세형 자산"이라는 말과 "유류분에서 자유롭다"는 말은 전혀 다른 이야기입니다. 확인된 사실만 정리했습니다.</div>
+
+  <div class="iss-verdict">
+    <i class="ti ti-alert-triangle"></i>
+    <p><b>결론부터 말씀드리면</b> — 자산이 태양광 발전설비이든 부동산이든, 유류분 계산 방식 자체가 달라지지는 않습니다. 세금(상속세)을 줄여주는 제도와 유류분 반환 의무는 서로 다른 트랙입니다.</p>
+  </div>
+
+  <div class="iss-block no">
+    <div class="iss-section-label"><i class="ti ti-x"></i> 사실이 아닌 것</div>
+    <div class="iss-block-body">유류분 산정 기초재산(민법 제1113조)은 자산의 종류를 가리지 않고 상속재산 전체 가액을 기준으로 계산됩니다. 발전설비라고 해서 이 계산에서 빠지거나 별도 예외를 받는 규정은 없습니다.
+      <span class="src">근거: 대법원 2015. 5. 14. 선고 2012다21720 — 유류분 산정 시 공제 대상 채무에 상속세 등 상속재산 관련 비용은 포함되지 않는다고 판시</span>
+    </div>
+  </div>
+
+  <div class="iss-block yes">
+    <div class="iss-section-label"><i class="ti ti-check"></i> 실제로 가능한 것 (조건부)</div>
+    <div class="iss-block-body">태양광 발전사업이 <b>10년 이상 피상속인이 경영한 중소·중견기업</b> 요건 등을 충족하면, '가업상속공제'로 <b>최대 600억 원까지 상속세 과세가액에서 공제</b>받을 수 있습니다. 다만 이는 업종을 불문하고 요건을 갖춘 모든 가업에 동일하게 적용되는 제도이며, 태양광만의 특혜가 아닙니다.
+      <span class="src">근거: 상속세 및 증여세법 제18조의2, 국세청 가업상속공제 안내</span>
+    </div>
+  </div>
+
+  <div class="iss-block warn">
+    <div class="iss-section-label"><i class="ti ti-alert-circle"></i> 반드시 알아야 할 함정</div>
+    <div class="iss-block-body">가업상속공제를 받았더라도 그 재산가액은 <b>여전히 유류분 산정 기초재산에 그대로 포함</b>됩니다. 즉 세금은 줄여도, 다른 형제자매·자녀의 유류분 반환 청구까지 막아주지는 못합니다. 또한 상속 후 5년간 자산 40% 이상 처분 금지, 고용 90% 이상 유지 등 사후관리 요건을 어기면 공제받은 세액이 이자와 함께 추징됩니다.
+      <span class="src">근거: 상속세 및 증여세법 시행령 제15조, 가업승계 지원제도 사후관리 규정</span>
+    </div>
+  </div>
+
+  <div class="iss-section-label" style="margin-top:6px; color:#5C6577;"><i class="ti ti-chart-bar"></i> 참고 — 업종별 세부담 비교</div>
+  <div class="iss-stat-row">
+    <div class="iss-stat"><b>18%+</b><span>태양광 발전업<br/>(소득 대비 세부담)</span></div>
+    <div class="iss-stat"><b>15.5%</b><span>반도체 제조업</span></div>
+    <div class="iss-stat"><b>13.8%</b><span>자동차 제조업</span></div>
+  </div>
+  <div class="iss-block-body" style="margin-top:8px; font-size:11.5px; color:#8A8F9C;">태양광 발전업이 오히려 다른 주요 산업보다 소득 대비 세부담 비중이 높다는 조사 결과도 있어, "절세에 특히 유리한 자산"이라 단정하기는 어렵습니다. (출처: 재생에너지 세제혜택 실효성 관련 정책 이슈브리프)</div>
+
+  <div class="iss-block-body" style="margin-top:16px; padding-top:14px; border-top:1px dashed #DCD0AE; font-size:12px; color:#7B8194;">
+    <i class="ti ti-info-circle" style="color:#B5651D;"></i>&nbsp; 다만 발전소는 REC·SMP 매출로 현금흐름이 꾸준한 편이라, 2026년 개정법의 '가액(금전) 반환' 방식에 대응할 자금을 마련하는 데는 상대적으로 유리할 수 있습니다 — 이는 '유류분 면제'가 아니라 '정산 대응력'의 문제입니다. 개별 사안은 세무사·변호사 상담을 권합니다.
+  </div>
+</div>
+
+</body>
+</html>
