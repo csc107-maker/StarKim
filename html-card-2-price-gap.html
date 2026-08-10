@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>새도약기금 매입가 vs 민간 NPL 시장가 비교 | 대부업 참여현황</title>
+
+<meta property="og:title" content="왜 대부업체는 새도약기금을 꺼릴까? 매입가 5% vs 20%의 진실" />
+<meta property="og:description" content="새도약기금 채권 매입가와 민간 부실채권(NPL) 시장가의 격차, 대부업권 참여 현황을 데이터로 정리했습니다." />
+<meta property="og:image" content="썸네일 이미지 URL" />
+<meta property="og:url" content="페이지 URL" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css" />
+
+<style>
+  .pgc-wrap * { box-sizing: border-box; }
+  .pgc-wrap {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F5F7FB;
+    color: #1B2438;
+    padding: 36px 20px 32px;
+    border-radius: 20px;
+    max-width: 720px;
+    margin: 24px auto;
+    border: 1px solid #E4E8F1;
+  }
+  .pgc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #D64545;
+    background: #FDEBEB;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .pgc-title {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1.4;
+    color: #10182B;
+    margin: 0 0 8px;
+  }
+  .pgc-sub {
+    font-size: 14.5px;
+    color: #5B6478;
+    margin: 0 0 26px;
+    line-height: 1.6;
+  }
+
+  .pgc-section-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #7C8496;
+    letter-spacing: 0.03em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+  }
+
+  .pgc-bars {
+    background: #FFFFFF;
+    border: 1px solid #E4E8F1;
+    border-radius: 16px;
+    padding: 22px 20px 18px;
+    margin-bottom: 22px;
+  }
+  .pgc-bar-row { margin-bottom: 16px; }
+  .pgc-bar-row:last-child { margin-bottom: 0; }
+  .pgc-bar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .pgc-bar-label { font-size: 13.5px; font-weight: 600; color: #363F55; }
+  .pgc-bar-value { font-size: 19px; font-weight: 800; font-family: 'Noto Serif KR', serif; }
+  .pgc-bar-track {
+    width: 100%;
+    height: 14px;
+    background: #EEF1F8;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .pgc-bar-fill { height: 100%; border-radius: 999px; }
+  .pgc-bar-fill.newleap { width: 25%; background: linear-gradient(90deg,#D64545,#EF7C6B); }
+  .pgc-bar-fill.market { width: 100%; background: linear-gradient(90deg,#2955E3,#6C8CF0); }
+  .pgc-bar-caption { font-size: 12px; color: #8890A0; margin-top: 5px; }
+
+  .pgc-gap-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: #FEF6F6;
+    border: 1px solid #F3C6C6;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #9C3A3A;
+    font-weight: 600;
+  }
+  .pgc-gap-note i { font-size: 18px; color: #D64545; }
+
+  .pgc-progress-wrap {
+    background: #FFFFFF;
+    border: 1px solid #E4E8F1;
+    border-radius: 16px;
+    padding: 20px 20px 18px;
+    margin-bottom: 22px;
+  }
+  .pgc-progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .pgc-progress-title { font-size: 14px; font-weight: 700; color: #10182B; }
+  .pgc-progress-num { font-size: 13.5px; font-weight: 800; color: #2955E3; }
+  .pgc-progress-track {
+    width: 100%;
+    height: 12px;
+    background: #EEF1F8;
+    border-radius: 999px;
+    overflow: hidden;
+    display: flex;
+  }
+  .pgc-progress-fill {
+    width: 50%;
+    background: linear-gradient(90deg,#1E9E82,#3FBFA2);
+  }
+  .pgc-progress-caption {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: #8890A0;
+    margin-top: 6px;
+  }
+
+  .pgc-table {
+    background: #FFFFFF;
+    border: 1px solid #E4E8F1;
+    border-radius: 16px;
+    padding: 18px 20px 8px;
+  }
+  .pgc-table-title { font-size: 14px; font-weight: 700; color: #10182B; margin-bottom: 12px; }
+  table.pgc-t { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.pgc-t th {
+    text-align: left;
+    font-weight: 700;
+    color: #7C8496;
+    font-size: 11.5px;
+    padding: 8px 6px;
+    border-bottom: 1px solid #E4E8F1;
+  }
+  table.pgc-t td {
+    padding: 10px 6px;
+    border-bottom: 1px solid #F0F2F7;
+    color: #363F55;
+  }
+  table.pgc-t td.num { text-align: right; font-weight: 700; color: #10182B; font-family: 'Noto Serif KR', serif; }
+  table.pgc-t tr:last-child td { border-bottom: none; font-weight: 800; }
+  .pgc-tag {
+    display: inline-block;
+    width: 8px; height: 8px; border-radius: 50%;
+    margin-right: 6px;
+  }
+
+  .pgc-foot {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #8890A0;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body style="margin:0; background:#F5F7FB;">
+
+<div class="pgc-wrap">
+  <span class="pgc-eyebrow"><i class="ti ti-report-money"></i>&nbsp;WHY THEY HESITATE</span>
+  <h3 class="pgc-title">왜 대부업체는 새도약기금을 꺼릴까?</h3>
+  <p class="pgc-sub">채권 매입가 격차와 참여 현황을 숫자로 확인해보세요.</p>
+
+  <p class="pgc-section-label">채권 매입가 비교 (액면가 대비)</p>
+  <div class="pgc-bars">
+    <div class="pgc-bar-row">
+      <div class="pgc-bar-top">
+        <span class="pgc-bar-label">새도약기금 평균 매입가</span>
+        <span class="pgc-bar-value" style="color:#D64545;">약 5%</span>
+      </div>
+      <div class="pgc-bar-track"><div class="pgc-bar-fill newleap"></div></div>
+      <div class="pgc-bar-caption">캠코가 소각을 전제로 매입하는 정책 가격</div>
+    </div>
+    <div class="pgc-bar-row">
+      <div class="pgc-bar-top">
+        <span class="pgc-bar-label">민간 NPL(부실채권) 시장가</span>
+        <span class="pgc-bar-value" style="color:#2955E3;">약 20%</span>
+      </div>
+      <div class="pgc-bar-track"><div class="pgc-bar-fill market"></div></div>
+      <div class="pgc-bar-caption">업계 실제 매입 관행은 15~40% 수준으로 더 넓게 형성</div>
+    </div>
+    <div class="pgc-gap-note">
+      <i class="ti ti-arrows-diff"></i>
+      <span>최대 4~8배 가격 차이가 대부업권 참여를 주저하게 만드는 핵심 원인</span>
+    </div>
+  </div>
+
+  <p class="pgc-section-label">대부업 상위 30개사 참여 현황 (2026.7월 말 기준)</p>
+  <div class="pgc-progress-wrap">
+    <div class="pgc-progress-top">
+      <span class="pgc-progress-title">새도약기금 협약 가입</span>
+      <span class="pgc-progress-num">15 / 30개사</span>
+    </div>
+    <div class="pgc-progress-track"><div class="pgc-progress-fill"></div></div>
+    <div class="pgc-progress-caption">
+      <span>가입 완료 50%</span>
+      <span>미가입 15개사 · 대상 채권 비중 최다</span>
+    </div>
+  </div>
+
+  <p class="pgc-section-label">업권별 누적 매입 규모 (6차 매입 기준)</p>
+  <div class="pgc-table">
+    <div class="pgc-table-title">새도약기금 누적 매입 실적 · 총 11조 7,378억 원</div>
+    <table class="pgc-t">
+      <thead>
+        <tr><th>업권</th><th style="text-align:right;">누적 매입액</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="pgc-tag" style="background:#2955E3;"></span>공공부문(캠코·국민행복기금 등)</td><td class="num">7조 3,566억</td></tr>
+        <tr><td><span class="pgc-tag" style="background:#6C8CF0;"></span>유동화회사(AMC) 등 기타</td><td class="num">1조 5,936억</td></tr>
+        <tr><td><span class="pgc-tag" style="background:#1E9E82;"></span>카드사</td><td class="num">8,473억</td></tr>
+        <tr><td><span class="pgc-tag" style="background:#D64545;"></span>대부업권</td><td class="num">7,394억</td></tr>
+        <tr><td><span class="pgc-tag" style="background:#E8A33D;"></span>은행권</td><td class="num">5,417억</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="pgc-foot">
+    <i class="ti ti-info-circle"></i> 대부업권 보유 대상채권 자체는 약 6.7~6.8조 원으로 전 업권 중 최대 규모지만, 실제 누적 매입 실적은 아직 7,394억 원 수준에 머물러 있습니다. 출처: 금융위원회·한국자산관리공사(캠코) 발표자료, 언론 종합.
+  </p>
+</div>
+
+</body>
+</html>
